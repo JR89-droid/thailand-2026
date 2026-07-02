@@ -1,6 +1,7 @@
 /* Thailand MMXXVI — offline cache.
-   Strategy: serve from cache instantly (airplane mode works), and when online,
-   re-download in the background so the NEXT open shows the latest version. */
+   Serve from cache instantly (airplane mode works); when online, re-download
+   in the background. If the page itself changed, tell open tabs so they can
+   show a "new edition ready" banner instead of silently staying stale. */
 const CACHE = 'thai-trip-v3';
 const ASSETS = [
   './', './index.html', './manifest.webmanifest', './icon-180.png', './icon-512.png',
@@ -24,12 +25,28 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+  // edition checks must reach the network, never the cache
+  if (e.request.url.indexOf('nocache=') > -1) {
+    e.respondWith(fetch(e.request).catch(() => caches.match('./index.html', { ignoreSearch: true })));
+    return;
+  }
+  const isPage = e.request.mode === 'navigate' || /\/(index\.html)?(\?.*)?$/.test(e.request.url);
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then(hit => {
       const fresh = fetch(e.request)
-        .then(res => {
+        .then(async res => {
           if (res && res.ok) {
             const copy = res.clone();
+            if (isPage && hit) {
+              // page changed upstream? -> notify open tabs
+              try {
+                const [oldTxt, newTxt] = await Promise.all([hit.clone().text(), res.clone().text()]);
+                if (oldTxt !== newTxt) {
+                  const clients = await self.clients.matchAll({ type: 'window' });
+                  clients.forEach(c => c.postMessage('tt-updated'));
+                }
+              } catch (err) {}
+            }
             caches.open(CACHE).then(c => c.put(e.request, copy));
           }
           return res;
