@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F4F3EF">
+<title>Thailand MMXXVI · Family Expedition</title>
+<!-- PWA — active when served from the family link; harmless as a plain file -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-180.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Thailand 26">
+<style>
+/* ============================================================
+   THAILAND MMXXVI — private family expedition
+   Design system adapted from the AISA editorial tokens.
+   Self-hosted fonts, zero external calls, offline-first.
+   ============================================================ */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/Archivo-400.woff2) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/Archivo-500.woff2) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/Archivo-600.woff2) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/Archivo-700.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/CormorantGaramond-500.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/CormorantGaramond-500i.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/CormorantGaramond-600.woff2) format('woff2')}
+@font-face{font-family:'EB Garamond';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/EBGaramond-400.woff2) format('woff2')}
+@font-face{font-family:'EB Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/EBGaramond-400i.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/JetBrainsMono-400.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/JetBrainsMono-600.woff2) format('woff2')}
+
+:root{
+  --ink:#0B0B0C; --charcoal:#232327; --paper:#F4F3EF; --white:#FCFBF9;
+  --line:rgba(11,11,12,.13); --line-strong:rgba(11,11,12,.32);
+  --accent:#B08D57; --accent-soft:rgba(176,141,87,.14); --accent-line:rgba(176,141,87,.34);
+  --ok:#3E6B4F; --ok-soft:rgba(62,107,79,.09);
+  --warn:#8A4B2D; --warn-soft:rgba(138,75,45,.09);
+  --muted:rgba(11,11,12,.62); --faint:rgba(11,11,12,.45);
+  --display:'Cormorant Garamond',Georgia,serif;
+  --body:'EB Garamond',Georgia,serif;
+  --util:'Archivo',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',Consolas,monospace;
+  --ls-over:.32em; --ls-caps:.18em;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;min-height:100vh;
+}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+svg{display:block}
+::selection{background:var(--accent-soft)}
+
+/* ---------- type utilities ---------- */
+.overline{font-family:var(--util);font-size:10.5px;font-weight:600;letter-spacing:var(--ls-over);text-transform:uppercase;color:var(--accent)}
+.caps{font-family:var(--util);font-size:11.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase}
+.display{font-family:var(--display);font-weight:500;line-height:1.08}
+.mono{font-family:var(--mono);font-size:.85em}
+.muted{color:var(--muted)}
+.sec-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:40;
+  background:rgba(244,243,239,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+header.site .bar{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  max-width:680px;margin:0 auto;
+  padding:calc(12px + env(safe-area-inset-top)) 20px 12px;
+}
+.brand{display:flex;align-items:baseline;gap:9px;white-space:nowrap}
+.brand .word{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:.02em}
+.brand .sub{font-family:var(--util);font-size:9px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--accent)}
+.hbtn{padding:8px;border:1px solid transparent;border-radius:2px;color:var(--charcoal)}
+.hbtn:active{border-color:var(--line-strong)}
+
+/* ---------- layout ---------- */
+main{max-width:680px;margin:0 auto;padding:0 20px calc(92px + env(safe-area-inset-bottom))}
+.view{display:none}
+.view.active{display:block;animation:fadeUp .35s var(--ease) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.crumbs{padding:16px 0 0;font-family:var(--util);font-size:11.5px;letter-spacing:.04em;color:var(--faint)}
+.crumbs .sep{margin:0 7px;color:var(--accent)}
+.crumbs button{font:inherit;color:inherit;letter-spacing:inherit}
+.crumbs button:active{color:var(--ink)}
+
+.section-head{display:flex;align-items:baseline;gap:14px;margin:26px 0 6px}
+h2.display{font-size:clamp(26px,7vw,34px);font-weight:500}
+p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
+
+/* ---------- hero ---------- */
+.hero{padding:38px 0 26px;border-bottom:1px solid var(--line)}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(34px,10vw,52px);line-height:1.06;margin:14px 0 12px;max-width:16ch}
+.hero .epigraph{font-family:var(--display);font-style:italic;font-size:17px;color:var(--muted);margin-top:10px}
+.stats-band{display:flex;border-bottom:1px solid var(--line)}
+.stats-band .stat{flex:1;padding:18px 6px 16px;border-right:1px solid var(--line);text-align:center}
+.stats-band .stat:last-child{border-right:0}
+.stat .num{font-family:var(--display);font-size:clamp(30px,9vw,42px);font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.stat .lbl{margin-top:5px;font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted)}
+.hero-line{padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--muted)}
+.hero-line b{color:var(--ink);font-weight:600}
+
+/* word of the day */
+.wotd{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.wotd .th{font-size:22px;line-height:1.2}
+.wotd .pt{flex:1}
+.wotd .en{font-family:var(--util);font-size:12.5px;font-weight:500;color:var(--muted);margin-top:1px}
+.wotd .ph{font-family:var(--body);font-style:italic;font-size:14px;color:var(--accent)}
+
+/* ---------- cards ---------- */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+@media(min-width:560px){.card-grid{grid-template-columns:1fr 1fr 1fr}}
+.qcard{
+  position:relative;background:var(--white);border:1px solid var(--line);border-radius:3px;
+  padding:16px 14px 14px;text-align:left;display:flex;flex-direction:column;gap:5px;overflow:hidden;
+  transition:border-color .25s var(--ease),transform .25s var(--ease);
+}
+.qcard:active{border-color:var(--accent-line);transform:translateY(-2px)}
+.qcard h3{font-family:var(--display);font-size:19px;font-weight:600;line-height:1.12}
+.qcard small{font-family:var(--body);font-size:13px;color:var(--muted);line-height:1.4}
+.qcard .big-num{position:absolute;right:6px;top:-6px;font-family:var(--display);font-size:56px;font-weight:500;color:var(--accent-soft);line-height:1;user-select:none;pointer-events:none}
+.progress{height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:8px}
+.progress .fill{height:100%;background:var(--accent);transition:width .35s var(--ease)}
+
+.card{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:18px;margin:12px 0}
+.note-block{background:var(--warn-soft);border:1px solid rgba(138,75,45,.25);border-left:3px solid var(--warn);border-radius:2px;padding:12px 15px;margin:10px 0;font-size:15px}
+.expected-block{background:var(--ok-soft);border:1px solid rgba(62,107,79,.22);border-left:3px solid var(--ok);border-radius:2px;padding:12px 15px;margin:10px 0;font-size:15px}
+
+.credit{text-align:center;padding:30px 10px 8px}
+.credit .tagline{font-family:var(--display);font-style:italic;font-size:18px}
+.credit .fine{font-family:var(--util);font-size:10.5px;color:var(--faint);letter-spacing:.04em;margin-top:8px;line-height:1.7}
+
+/* ---------- buttons / chips / tabs ---------- */
+.btn{
+  font-family:var(--util);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:13px 22px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--white);
+  transition:background .2s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;
+}
+.btn:active{background:var(--charcoal)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn.ghost:active{border-color:var(--ink);background:transparent}
+.btn.warn{background:transparent;color:var(--warn);border-color:rgba(138,75,45,.4)}
+.btn.slim{width:auto;padding:9px 16px}
+.chip{
+  display:inline-flex;align-items:center;font-family:var(--mono);font-size:11.5px;
+  background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:2px;padding:3px 9px;white-space:nowrap;
+}
+.chip.plain{background:transparent;border-color:var(--line-strong);color:var(--muted)}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.fchip{
+  font-family:var(--util);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:8px 13px;border:1px solid var(--line-strong);border-radius:2px;color:var(--muted);background:transparent;
+}
+.fchip.on{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line-strong);margin:16px 0 20px}
+.tabs button{
+  font-family:var(--util);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 16px;color:var(--faint);border-bottom:2px solid transparent;margin-bottom:-1px;
+}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--accent)}
+.method-label{margin:26px 0 10px;display:flex;align-items:center;gap:12px}
+.method-label::after{content:"";flex:1;height:1px;background:var(--line-strong)}
+
+/* ---------- fieldlist / tables ---------- */
+.fieldlist{border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white)}
+.frow{display:grid;grid-template-columns:minmax(90px,34%) 1fr;border-bottom:1px solid var(--line)}
+.frow:last-child{border-bottom:none}
+.fname{padding:10px 13px;font-family:var(--util);font-size:12px;font-weight:500;background:var(--paper);border-right:1px solid var(--line)}
+.fval{padding:10px 13px;font-family:var(--mono);font-size:12.5px;overflow-wrap:anywhere}
+.tbl{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);font-size:15px}
+.tbl th{text-align:left;font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted);padding:10px 13px;border-bottom:1px solid var(--line-strong);background:var(--paper)}
+.tbl td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .mono{color:var(--accent)}
+
+/* ---------- itinerary ---------- */
+.daycard{background:var(--white);border:1px solid var(--line);border-radius:3px;margin:14px 0;overflow:hidden}
+.dayhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 16px 12px;border-bottom:1px solid var(--line)}
+.dayhead h3{font-family:var(--display);font-size:22px;font-weight:600;line-height:1.1}
+.dayhead .ov{margin-bottom:3px}
+.itemrow{display:flex;gap:14px;align-items:baseline;width:100%;text-align:left;padding:11px 16px;border-bottom:1px solid var(--line)}
+.itemrow:last-of-type{border-bottom:none}
+.itemrow .t{font-family:var(--mono);font-size:11.5px;color:var(--accent);min-width:44px;font-variant-numeric:tabular-nums}
+.itemrow .x{font-size:15.5px;flex:1;line-height:1.4}
+.addrow{width:100%;text-align:left;padding:11px 16px;font-family:var(--util);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border-top:1px solid var(--line)}
+.iconbtn{padding:7px;border:1px solid var(--line);border-radius:2px;color:var(--charcoal);background:var(--white)}
+.iconbtn:active{border-color:var(--accent-line)}
+
+/* ---------- phrasebook ---------- */
+.phrase{display:flex;align-items:center;gap:13px;background:var(--white);border:1px solid var(--line);border-radius:3px;padding:11px 14px;margin-bottom:8px}
+.phrase .pt{flex:1;min-width:0}
+.phrase .en{font-family:var(--util);font-size:13.5px;font-weight:500}
+.phrase .th{font-size:18px;margin:2px 0 1px;line-height:1.35}
+.phrase .ph{font-family:var(--body);font-style:italic;font-size:13.5px;color:var(--accent)}
+.speakbtn{width:40px;height:40px;flex:none;border:1px solid var(--accent-line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);background:var(--accent-soft);transition:transform .15s}
+.speakbtn:active{transform:scale(.88)}
+.speakbtn.talking{background:var(--accent);color:var(--white);animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.07)}}
+
+/* ---------- money ---------- */
+.convrow{display:flex;align-items:stretch;gap:10px;margin-bottom:12px}
+.convbox{flex:1;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:10px 12px}
+.convbox label{display:block;font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.convbox input{width:100%;background:none;border:none;outline:none;font-family:var(--mono);font-size:21px;font-weight:600;font-variant-numeric:tabular-nums}
+.swap{display:flex;align-items:center;color:var(--faint)}
+.raterow{display:flex;align-items:center;gap:8px;font-family:var(--util);font-size:12.5px;color:var(--muted);flex-wrap:wrap;margin:6px 0}
+.raterow select,.raterow input{background:var(--white);border:1px solid var(--line-strong);border-radius:2px;padding:6px 9px;font-family:var(--mono);font-size:12.5px;outline:none}
+.raterow input{width:76px;text-align:center}
+.chipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.mchip{background:var(--white);border:1px solid var(--line);border-radius:2px;padding:9px 6px;text-align:center}
+.mchip b{display:block;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.mchip span{font-family:var(--util);font-size:11px;color:var(--muted)}
+
+/* expenses */
+.exp-form{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:16px;margin:12px 0}
+.exp-form .row2{display:flex;gap:10px}
+.exp-form .row2>*{flex:1}
+.field{margin-bottom:12px}
+.field label{display:block;font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;
+  padding:10px 12px;font-size:15px;outline:none;font-family:var(--util);
+}
+.field textarea{min-height:84px;resize:vertical;font-family:var(--body)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+.exprow{display:flex;align-items:baseline;gap:10px;width:100%;text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--white)}
+.exprow:last-child{border-bottom:none}
+.exprow .amt{font-family:var(--mono);font-size:14px;font-weight:600;min-width:74px;font-variant-numeric:tabular-nums}
+.exprow .note{flex:1;font-size:14.5px}
+.exprow .who{font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.explist{border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:14px}
+.expday{padding:9px 14px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+
+/* ---------- dishes / spinner ---------- */
+.dishscroll{display:flex;gap:12px;overflow-x:auto;padding:6px 20px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -20px}
+.dishscroll::-webkit-scrollbar{display:none}
+.dish{flex:0 0 74%;max-width:300px;scroll-snap-align:center;background:var(--white);border:1px solid var(--line);border-radius:3px;padding:18px 16px}
+.dish .de{font-size:34px;line-height:1}
+.dish h3{font-family:var(--display);font-size:22px;font-weight:600;margin:9px 0 1px}
+.dish .dth{font-size:14px;color:var(--muted);margin-bottom:7px}
+.dish .dp{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin-bottom:7px}
+.dish .spice{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.dish .spice i{width:8px;height:8px;border-radius:50%;border:1px solid var(--accent);display:inline-block}
+.dish .spice i.f{background:var(--accent)}
+.dish .spice span{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted)}
+.dish p{font-size:14px;color:var(--muted);margin-bottom:9px;line-height:1.45}
+.dish .how{font-size:13px;background:var(--ok-soft);border:1px solid rgba(62,107,79,.22);border-radius:2px;padding:8px 11px;color:var(--ok)}
+.spinstage{
+  min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:20px 16px;border:1px dashed var(--line-strong);border-radius:3px;margin:12px 0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(11,11,12,.015) 12px,rgba(11,11,12,.015) 24px);
+}
+.spinstage .se{font-size:34px;margin-bottom:8px}
+.spinstage h3{font-family:var(--display);font-size:23px;font-weight:600;line-height:1.15}
+.spinstage p{font-size:14px;color:var(--muted);margin-top:5px;max-width:38ch}
+.spinstage.rolling h3{color:var(--faint)}
+.spinstage.landed{border-style:solid;border-color:var(--accent-line);background:var(--white);animation:pop .4s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{transform:scale(.9);opacity:.4}to{transform:scale(1);opacity:1}}
+
+/* ---------- guide ---------- */
+.sosband{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(138,75,45,.35);border-radius:3px;overflow:hidden;margin:12px 0}
+.sositem{padding:14px 12px;background:var(--warn-soft);text-align:center;border-right:1px solid rgba(138,75,45,.2);border-bottom:1px solid rgba(138,75,45,.2)}
+.sositem b{display:block;font-family:var(--mono);font-size:22px;font-weight:600}
+.sositem span{font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--warn)}
+details.acc{background:var(--white);border:1px solid var(--line);border-radius:3px;margin-bottom:10px;overflow:hidden}
+details.acc summary{list-style:none;display:flex;align-items:center;gap:11px;padding:14px 16px;cursor:pointer;font-family:var(--util);font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary .sec-num{min-width:24px}
+details.acc summary::after{content:'›';margin-left:auto;color:var(--faint);font-size:19px;font-family:var(--body);transition:transform .25s var(--ease)}
+details.acc[open] summary::after{transform:rotate(90deg)}
+details.acc .accbody{padding:2px 18px 16px;font-size:15px;color:var(--muted)}
+details.acc .accbody li{margin:0 0 9px 17px}
+details.acc .accbody b{color:var(--ink)}
+.taxibtn{display:block;width:100%;text-align:left;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:12px 15px;margin-bottom:8px}
+.taxibtn .tb-en{font-family:var(--util);font-size:13.5px;font-weight:500}
+.taxibtn .tb-th{font-size:13.5px;color:var(--accent);margin-top:2px}
+
+/* ---------- vault ---------- */
+.vault-sec{margin-bottom:6px}
+.ventry{display:flex;align-items:baseline;gap:12px;width:100%;text-align:left;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:11px 14px;margin-bottom:7px}
+.ventry .vl{font-family:var(--util);font-size:12px;font-weight:600;min-width:34%;color:var(--charcoal)}
+.ventry .vv{font-family:var(--mono);font-size:12.5px;overflow-wrap:anywhere;flex:1}
+.blobbox{width:100%;font-family:var(--mono);font-size:10.5px;background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;padding:10px;min-height:90px;word-break:break-all}
+
+/* ---------- journal ---------- */
+.jentry{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:16px 17px;margin-bottom:12px}
+.jhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px}
+.jmood{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--accent)}
+.jtext{font-size:16px;line-height:1.55}
+.moodrow{display:flex;gap:8px;margin:6px 0 12px}
+.moodrow button{flex:1;font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:9px 4px;border:1px solid var(--line-strong);border-radius:2px;color:var(--muted)}
+.moodrow button.on{background:var(--accent);border-color:var(--accent);color:var(--white)}
+
+/* ---------- packing ---------- */
+.packgroup{margin-bottom:16px}
+.packitem{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:9px 2px;font-size:15px;border-bottom:1px solid var(--line)}
+.packitem .box{width:19px;height:19px;flex:none;border:1px solid var(--line-strong);border-radius:2px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.packitem.done .box{background:var(--accent);border-color:var(--accent);color:var(--white);font-size:12px}
+.packitem.done .pl{color:var(--faint);text-decoration:line-through}
+.addcustom{display:flex;gap:8px;margin-top:12px}
+.addcustom input{flex:1;background:var(--white);border:1px solid var(--line-strong);border-radius:2px;padding:10px 12px;font-family:var(--util);font-size:14px;outline:none}
+
+/* ---------- bottom nav ---------- */
+nav#nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(244,243,239,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--line-strong);
+}
+nav#nav .inner{display:flex;max-width:680px;margin:0 auto;padding-bottom:env(safe-area-inset-bottom)}
+nav#nav button{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:10px 2px 9px;color:var(--faint);border-top:2px solid transparent;margin-top:-1px;
+  transition:color .2s;
+}
+nav#nav button span{font-family:var(--util);font-size:9px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase}
+nav#nav button.on{color:var(--ink);border-top-color:var(--accent)}
+
+/* ---------- lock screen ---------- */
+#lock{
+  position:fixed;inset:0;z-index:200;background:var(--paper);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:30px 26px;text-align:center;
+}
+#lock .sun{width:64px;height:64px;border-radius:50%;background:var(--accent);position:relative;margin-bottom:26px}
+#lock .sun::after{content:"";position:absolute;inset:-13px;border:1px solid var(--accent-line);border-radius:50%}
+#lock h1{font-family:var(--display);font-size:clamp(34px,9vw,46px);font-weight:500;line-height:1.05;margin:12px 0 8px}
+#lock .lede{font-size:16px;color:var(--muted);max-width:34ch;margin-bottom:26px}
+#lock form{width:100%;max-width:320px}
+#lock input{
+  width:100%;text-align:center;background:var(--white);border:1px solid var(--line-strong);border-radius:2px;
+  padding:13px;font-family:var(--mono);font-size:16px;letter-spacing:.14em;outline:none;margin-bottom:10px;
+}
+#lock input:focus{border-color:var(--accent)}
+#lock .err{font-family:var(--util);font-size:12px;color:var(--warn);min-height:18px;margin:6px 0 2px}
+#lock .fine{font-family:var(--util);font-size:10.5px;color:var(--faint);letter-spacing:.04em;margin-top:26px;line-height:1.7}
+#lock.busy input,#lock.busy .btn{opacity:.5;pointer-events:none}
+
+/* ---------- taxi overlay ---------- */
+#taxioverlay{
+  position:fixed;inset:0;z-index:150;background:#fff;color:#111;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:28px;cursor:pointer;
+}
+#taxioverlay .tsmall{font-family:var(--util);font-size:13px;color:#777;margin-bottom:18px;letter-spacing:.06em;text-transform:uppercase}
+#taxioverlay .tbig{font-size:min(11vw,52px);font-weight:700;line-height:1.3;word-break:break-word;font-family:system-ui,sans-serif}
+#taxioverlay .ten{font-size:17px;color:#444;margin-top:16px}
+#taxioverlay .tclose{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom));font-family:var(--util);font-size:11px;color:#999;letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- sheet ---------- */
+#sheetback{position:fixed;inset:0;z-index:90;background:rgba(11,11,12,.35);animation:fadein .2s}
+@keyframes fadein{from{opacity:0}}
+#sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:95;max-width:680px;margin:0 auto;max-height:88vh;overflow-y:auto;
+  background:var(--paper);border:1px solid var(--line-strong);border-bottom:none;border-radius:6px 6px 0 0;
+  padding:12px 20px calc(24px + env(safe-area-inset-bottom));
+  box-shadow:0 -20px 60px rgba(11,11,12,.18);
+  animation:slideup .32s var(--ease);
+}
+@keyframes slideup{from{transform:translateY(55%)}}
+#sheet .grab{width:38px;height:3px;border-radius:2px;background:var(--line-strong);margin:0 auto 14px}
+#sheet h3.sh{font-family:var(--display);font-size:24px;font-weight:600;margin-bottom:14px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+#sheet h3.sh .xbtn{font-family:var(--util);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:5px 6px}
+.btnrow{display:flex;gap:10px;margin-top:14px}
+.btnrow .btn{flex:1}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.more-grid .qcard{min-height:86px}
+
+@media print{
+  header.site,nav#nav,#sheet,#sheetback,.credit,.addrow,.iconbtn{display:none!important}
+  body{background:#fff}
+  .view{display:none}.view.active{display:block}
+}
+</style>
+</head>
+<body>
+
+<div id="lock" hidden>
+  <div class="sun"></div>
+  <div class="overline">Private · Family only</div>
+  <h1>Thailand<br>MMXXVI</h1>
+  <p class="lede">This travel companion belongs to one family. Enter the passcode to come aboard.</p>
+  <form id="lockForm">
+    <input id="lockPass" type="password" autocomplete="current-password" placeholder="passcode" aria-label="Family passcode">
+    <div class="err" id="lockErr"></div>
+    <button class="btn" type="submit">Unlock</button>
+  </form>
+  <div class="fine">Everything personal in this app is encrypted.<br>Ask the trip organiser for the passcode.</div>
+</div>
+
+<header class="site" hidden id="siteHeader">
+  <div class="bar">
+    <div class="brand"><span class="word">Thailand</span><span class="sub">MMXXVI · Family</span></div>
+    <button class="hbtn" data-action="settings" aria-label="Settings">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.4" fill="#F4F3EF"/><circle cx="15" cy="12" r="2.4" fill="#F4F3EF"/><circle cx="7" cy="17" r="2.4" fill="#F4F3EF"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="app" hidden>
+  <section id="view-home" class="view"></section>
+  <section id="view-plan" class="view"></section>
+  <section id="view-money" class="view"></section>
+  <section id="view-speak" class="view"></section>
+  <section id="view-eat" class="view"></section>
+  <section id="view-guide" class="view"></section>
+  <section id="view-vault" class="view"></section>
+  <section id="view-journal" class="view"></section>
+</main>
+
+<nav id="nav" hidden>
+  <div class="inner">
+    <button data-action="nav" data-arg="home" class="on">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></button>
+    <button data-action="nav" data-arg="plan">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Plan</span></button>
+    <button data-action="nav" data-arg="money">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 8.5h3.6a2 2 0 0 1 0 4H9.5h4.1a2 2 0 0 1 0 4H9.5M11.5 6.5v11"/></svg><span>Baht</span></button>
+    <button data-action="nav" data-arg="speak">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Speak</span></button>
+    <button data-action="more" id="moreBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg><span>More</span></button>
+  </div>
+</nav>
+
+<div id="taxioverlay" hidden data-action="taxi-close"></div>
+<div id="sheetback" hidden data-action="sheet-close"></div>
+<div id="sheet" hidden></div>
+
+<script>
+'use strict';
+/* ============================================================
+   THAILAND MMXXVI — private family expedition
+   Single-origin app: offline-first, encrypted family vault,
+   no accounts, no tracking, no external services. By Claude.
+   ============================================================ */
+
+const KEY = 'thai-trip-v1';          // state (kept from v1 so family devices migrate)
+const KEYSLOT = 'thai-trip-key';     // derived unlock key (device-local)
+const $ = s => document.querySelector(s);
+const uid = () => Math.random().toString(36).slice(2, 9);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const todayStr = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); };
+
+/* ---------------- passcode / crypto ----------------
+   PBKDF2-SHA256 (310k) -> 64 bytes: [0..31] verifier, [32..63] AES-GCM key.
+   AUTH is generated at build time; the passcode itself never appears here. */
+const AUTH = { salt: 'UFL29YRVbGSDPCwkaeexzA==', iter: 310000, verify: 'B5/v9xtdJ6zu0JOKeIrQ6JwsJjB6JwpO6Vn7f3y3p7Y=' };
+const VAULT_SEED = null; /* encrypted family blob gets baked here */
+
+const subtle = (window.crypto && crypto.subtle) ? crypto.subtle : null;
+const b64 = buf => btoa(String.fromCharCode(...new Uint8Array(buf)));
+const unb64 = str => Uint8Array.from(atob(str), c => c.charCodeAt(0));
+
+async function derive(pass){
+  const km = await subtle.importKey('raw', new TextEncoder().encode(pass.trim().toLowerCase()), 'PBKDF2', false, ['deriveBits']);
+  const bits = await subtle.deriveBits({ name:'PBKDF2', hash:'SHA-256', salt: unb64(AUTH.salt), iterations: AUTH.iter }, km, 512);
+  return new Uint8Array(bits);
+}
+async function aesKey(raw){
+  return subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt','decrypt']);
+}
+async function encryptJSON(obj){
+  const raw = unb64(localStorage.getItem(KEYSLOT) || '');
+  if (!raw.length || !subtle) return null;
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await subtle.encrypt({ name:'AES-GCM', iv }, await aesKey(raw), new TextEncoder().encode(JSON.stringify(obj)));
+  return 'TT1.' + b64(iv) + '.' + b64(ct);
+}
+async function decryptBlob(blob){
+  try {
+    const raw = unb64(localStorage.getItem(KEYSLOT) || '');
+    if (!raw.length || !subtle || !blob) return null;
+    const [tag, ivb, ctb] = blob.split('.');
+    if (tag !== 'TT1') return null;
+    const pt = await subtle.decrypt({ name:'AES-GCM', iv: unb64(ivb) }, await aesKey(raw), unb64(ctb));
+    return JSON.parse(new TextDecoder().decode(pt));
+  } catch (e) { return null; }
+}
+
+/* ---------------- state ---------------- */
+function makeDefaults(){
+  return {
+    travelers: ['Traveler 1', 'Traveler 2', 'Traveler 3'],
+    depart: '2026-07-25',
+    ret:    '2026-08-08',
+    currency: 'EUR',
+    rates: { USD:35, EUR:39, GBP:45, SEK:3.3, NOK:3.2, DKK:5.2, AUD:23, CAD:25 },
+    itinerary: [
+      { id: uid(), title: 'Arrival', sub: 'Sample day — make it yours', items: [
+        { id: uid(), time: '15:40', text: 'Land in Bangkok (BKK) ✈️' },
+        { id: uid(), time: '18:30', text: 'Check in, shower, revive' },
+        { id: uid(), time: '20:00', text: 'First street-food dinner 🍜' },
+      ]},
+      { id: uid(), title: 'Temples & tuk-tuks', sub: 'Sample day — tap any line to edit', items: [
+        { id: uid(), time: '09:00', text: 'Grand Palace — cover shoulders & knees 🏯' },
+        { id: uid(), time: '13:00', text: 'Mango sticky rice hunt 🥭' },
+        { id: uid(), time: '17:30', text: 'Wat Arun at sunset 🌅' },
+      ]},
+      { id: uid(), title: 'Beach mode', sub: 'Sample day — replace with your plan', items: [
+        { id: uid(), time: '10:00', text: 'Longtail boat island tour 🏝️' },
+        { id: uid(), time: '19:00', text: 'Fire show on the beach 🔥' },
+      ]},
+    ],
+    packing: {},
+    packCustom: [],
+    taxiCustom: [],
+    expenses: [],          // {id, date, amt(THB), cat, who, note}
+    budget: null,          // total budget in THB, optional
+    journal: [],           // {id, date, mood, text}
+    vaultLocal: [],        // {id, sec, label, value}
+  };
+}
+function load(){
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) {
+      const s = JSON.parse(raw);
+      const d = makeDefaults();
+      for (const k of Object.keys(d)) if (s[k] === undefined) s[k] = d[k];
+      return s;
+    }
+  } catch (e) {}
+  return makeDefaults();
+}
+let S = load();
+const save = () => localStorage.setItem(KEY, JSON.stringify(S));
+
+/* ---------------- content ---------------- */
+const PHRASES = [
+  { cat:'Greetings & politeness', items:[
+    { en:'Hello', th:'สวัสดี', ph:'sa-wat-dee' },
+    { en:'Thank you', th:'ขอบคุณ', ph:'khop khun' },
+    { en:'How are you?', th:'สบายดีไหม', ph:'sa-bai-dee mai?' },
+    { en:"I'm fine!", th:'สบายดี', ph:'sa-bai-dee' },
+    { en:'Excuse me / sorry', th:'ขอโทษ', ph:'khor thot' },
+    { en:"No worries, it's OK", th:'ไม่เป็นไร', ph:'mai pen rai' },
+    { en:'Yes', th:'ใช่', ph:'chai' },
+    { en:'No', th:'ไม่ใช่', ph:'mai chai' },
+  ]},
+  { cat:'Food & ordering', items:[
+    { en:'Delicious!', th:'อร่อย', ph:'a-roi!' },
+    { en:'Not spicy, please', th:'ไม่เผ็ด', ph:'mai phet' },
+    { en:'Just a little spicy', th:'เผ็ดนิดหน่อย', ph:'phet nit noi' },
+    { en:'Water', th:'น้ำ', ph:'naam' },
+    { en:'The bill, please', th:'เช็คบิล', ph:'check bin' },
+    { en:"I'm vegetarian", th:'กินมังสวิรัติ', ph:'gin mang-sa-wi-rat' },
+    { en:'No sugar', th:'ไม่ใส่น้ำตาล', ph:'mai sai nam-taan' },
+    { en:"I'm allergic to…", th:'ฉันแพ้…', ph:'chan phae…' },
+    { en:'Chicken / pork / shrimp', th:'ไก่ / หมู / กุ้ง', ph:'gai / moo / goong' },
+    { en:'Rice', th:'ข้าว', ph:'khao' },
+  ]},
+  { cat:'Shopping & bargaining', items:[
+    { en:'How much?', th:'เท่าไหร่', ph:'thao-rai?' },
+    { en:'Too expensive!', th:'แพงไป', ph:'phaeng pai!' },
+    { en:'Can you lower the price?', th:'ลดได้ไหม', ph:'lot dai mai?' },
+    { en:'I want this one', th:'เอาอันนี้', ph:'ao an nee' },
+    { en:'Just looking, thanks', th:'ดูเฉยๆ', ph:'duu choei choei' },
+    { en:'Beautiful!', th:'สวย', ph:'suay!' },
+  ]},
+  { cat:'Getting around', items:[
+    { en:'Where is the toilet?', th:'ห้องน้ำอยู่ที่ไหน', ph:'hong naam yuu tee nai?' },
+    { en:'Please use the meter', th:'เปิดมิเตอร์ด้วย', ph:'poet mi-ter duay' },
+    { en:'Turn left', th:'เลี้ยวซ้าย', ph:'liao saai' },
+    { en:'Turn right', th:'เลี้ยวขวา', ph:'liao khwaa' },
+    { en:'Go straight', th:'ตรงไป', ph:'trong pai' },
+    { en:'Stop here', th:'จอดที่นี่', ph:'jot tee nee' },
+    { en:'Airport', th:'สนามบิน', ph:'sa-naam bin' },
+    { en:'Hotel', th:'โรงแรม', ph:'rong raem' },
+    { en:'Beach', th:'ชายหาด', ph:'chaai haat' },
+  ]},
+  { cat:'Emergencies', items:[
+    { en:'Help!', th:'ช่วยด้วย', ph:'chuay duay!' },
+    { en:'Call the police', th:'เรียกตำรวจ', ph:'riak tam-ruat' },
+    { en:'I need a doctor', th:'ต้องการหมอ', ph:'tong-gaan mor' },
+    { en:'Hospital', th:'โรงพยาบาล', ph:'rong pha-yaa-baan' },
+    { en:'Pharmacy', th:'ร้านขายยา', ph:'raan khaai yaa' },
+    { en:"I don't understand", th:'ไม่เข้าใจ', ph:'mai khao jai' },
+    { en:'Do you speak English?', th:'พูดภาษาอังกฤษได้ไหม', ph:'phuut paa-saa ang-grit dai mai?' },
+  ]},
+  { cat:'Numbers & fun', items:[
+    { en:'1 / 2 / 3', th:'หนึ่ง / สอง / สาม', ph:'neung / song / saam' },
+    { en:'10 / 100 / 1000', th:'สิบ / ร้อย / พัน', ph:'sip / roi / phan' },
+    { en:'Fun!', th:'สนุก', ph:'sa-nook!' },
+    { en:'Cheers!', th:'ชนแก้ว', ph:'chon kaew!' },
+    { en:"Foreigner (you'll hear it!)", th:'ฝรั่ง', ph:'fa-rang' },
+  ]},
+];
+const ALL_PHRASES = PHRASES.flatMap(c => c.items);
+
+const DISHES = [
+  { e:'🍜', n:'Pad Thai', th:'ผัดไทย', s:1, p:'50–90 ฿', d:'Stir-fried noodles, egg, crushed peanuts. The safe-but-amazing starter dish.', h:'Say "Pad Thai gai" for chicken' },
+  { e:'🌿', n:'Pad Krapow', th:'ผัดกะเพรา', s:2, p:'50–80 ฿', d:"Holy-basil stir-fry over rice — Thailand's everyday favourite.", h:'Add "kai dao" — crispy fried egg on top' },
+  { e:'🍤', n:'Tom Yum Goong', th:'ต้มยำกุ้ง', s:3, p:'80–150 ฿', d:'The famous hot-and-sour shrimp soup. Sour, spicy, unforgettable.', h:'Say "mai phet" if you fear the fire' },
+  { e:'🥭', n:'Mango Sticky Rice', th:'ข้าวเหนียวมะม่วง', s:0, p:'60–100 ฿', d:'Sweet coconut sticky rice with ripe mango. The dessert king of Thailand.', h:'Say "khao niao ma-muang"' },
+  { e:'🥗', n:'Som Tam', th:'ส้มตำ', s:3, p:'40–70 ฿', d:'Green papaya salad — fresh, punchy, and a proper spice dare.', h:'"Phet nit noi" keeps it mild-ish' },
+  { e:'🍛', n:'Massaman Curry', th:'มัสมั่น', s:1, p:'80–150 ฿', d:"Mild, rich peanut-and-potato curry. Repeatedly voted the world's tastiest dish.", h:'"Massaman gai" — with chicken' },
+  { e:'🫕', n:'Green Curry', th:'แกงเขียวหวาน', s:2, p:'70–140 ฿', d:'Creamy coconut curry with a real kick. A step up from massaman.', h:'Say "gaeng khiao waan"' },
+  { e:'🍢', n:'Moo Ping', th:'หมูปิ้ง', s:0, p:'10–20 ฿ each', d:'Grilled pork skewers from street stalls — breakfast of champions.', h:'Just point and hold up fingers' },
+  { e:'🍲', n:'Khao Soi', th:'ข้าวซอย', s:2, p:'60–100 ฿', d:"Chiang Mai's creamy curry noodles with crispy topping. A northern must-eat.", h:"Only in the north — don't miss it" },
+  { e:'🧋', n:'Thai Iced Tea', th:'ชาเย็น', s:0, p:'25–50 ฿', d:'Sweet, creamy, impossibly orange. Looks great, tastes better.', h:'Say "cha yen"' },
+  { e:'🥞', n:'Roti', th:'โรตี', s:0, p:'20–50 ฿', d:'Crispy street pancake with banana and condensed milk.', h:'"Roti gluay" — banana roti' },
+  { e:'🍗', n:'Gai Tod', th:'ไก่ทอด', s:0, p:'40–80 ฿', d:'Thai fried chicken with sticky rice. Zero risk, all reward.', h:'"Gai tod" + "khao niao" (sticky rice)' },
+];
+
+const ACTIVITIES = [
+  { r:'bkk', m:['culture'],           e:'🏯', t:'Grand Palace & Emerald Buddha', d:"Thailand's most dazzling landmark. Go early, dress temple-smart." },
+  { r:'bkk', m:['culture','chill'],   e:'🌅', t:'Wat Arun at sunset', d:'Cross the river on the cheap ferry and watch the temple glow.' },
+  { r:'bkk', m:['shopping'],          e:'🛍️', t:'Chatuchak Weekend Market', d:'15,000 stalls. Agree on a meeting point — you WILL lose each other.' },
+  { r:'bkk', m:['food'],              e:'🥢', t:'Chinatown (Yaowarat) food crawl', d:'Neon signs and some of the best street food in Asia after dark.' },
+  { r:'bkk', m:['chill'],             e:'⛴️', t:'Chao Phraya river-boat hop', d:'The cheapest "cruise" in the world — take the orange-flag boat.' },
+  { r:'bkk', m:['food','shopping'],   e:'🌃', t:'Jodd Fairs night market', d:'Trendy night market: food, vintage finds, live music.' },
+  { r:'bkk', m:['adventure'],         e:'🥊', t:'Muay Thai fight night', d:'Rajadamnern Stadium — electric atmosphere, family-friendly seats.' },
+  { r:'bkk', m:['adventure','culture'], e:'🚤', t:'Khlong (canal) longtail tour', d:"See Bangkok's wooden-house waterways from a roaring longtail boat." },
+  { r:'bkk', m:['chill'],             e:'🦎', t:'Lumpini Park pedal boats', d:'Swan pedal boats + wild monitor lizards like small dinosaurs.' },
+  { r:'bkk', m:['culture'],           e:'🏠', t:'Jim Thompson House', d:'Silk-trader mansion with a genuinely wild disappearance story.' },
+  { r:'cnx', m:['adventure'],         e:'🐘', t:'Ethical elephant sanctuary day', d:'Feed and bathe rescued elephants. "No riding" sanctuaries only.' },
+  { r:'cnx', m:['culture'],           e:'⛰️', t:'Doi Suthep temple', d:'Golden mountain temple with the best view over Chiang Mai.' },
+  { r:'cnx', m:['food'],              e:'👨‍🍳', t:'Thai cooking class', d:'Market tour + cook five dishes. The souvenir you can eat forever.' },
+  { r:'cnx', m:['shopping'],          e:'🏮', t:'Sunday Walking Street', d:'A kilometre of crafts, snacks and street musicians in the old city.' },
+  { r:'cnx', m:['adventure'],         e:'💦', t:'Sticky Waterfalls (Bua Tong)', d:'Climb UP a waterfall — the limestone grips like velcro. Unreal.' },
+  { r:'cnx', m:['adventure'],         e:'🌲', t:'Jungle zip-lining', d:'Fly through rainforest canopy in the hills north of the city.' },
+  { r:'cnx', m:['chill'],             e:'☕', t:'Nimman café hopping', d:"Chiang Mai's coffee scene is world-class — and costs pocket money." },
+  { r:'cnx', m:['food'],              e:'🍲', t:'Khao soi taste-test', d:'Try 2–3 khao soi spots in one day and crown a family champion.' },
+  { r:'isl', m:['adventure'],         e:'🏝️', t:'Island-hopping longtail tour', d:'4–5 islands, snorkel stops, hidden lagoons. Book the early boat.' },
+  { r:'isl', m:['adventure'],         e:'🤿', t:'Snorkeling trip', d:"Clownfish, parrotfish — maybe a sea turtle if you're lucky." },
+  { r:'isl', m:['chill'],             e:'🏖️', t:'All-day beach + hammock', d:'Zero plans. Coconut in hand. This is why you came.' },
+  { r:'isl', m:['adventure','chill'], e:'🌄', t:'Sunset viewpoint hike', d:'30 sweaty minutes for a postcard you took yourself.' },
+  { r:'isl', m:['chill'],             e:'🔥', t:'Beach fire show', d:'Evening fire jugglers — a free show with your fruit shake.' },
+  { r:'isl', m:['adventure'],         e:'🛶', t:'Kayak the lagoons', d:'Paddle into hidden hongs (sea caves) at your own pace.' },
+  { r:'isl', m:['food'],              e:'🦞', t:'Beach BBQ seafood dinner', d:'Pick your fish by the kilo, eat with sand between your toes.' },
+  { r:'isl', m:['chill'],             e:'💆', t:'Thai massage on the beach', d:"About 300 ฿ for an hour with a wave soundtrack." },
+  { r:'isl', m:['shopping'],          e:'🌙', t:'Walking-street night market', d:'Sarongs, snacks and gloriously questionable t-shirts.' },
+];
+
+const PACK = [
+  { cat:'Documents', items:['Passport (6+ months validity!)','Travel insurance details','Flights + hotel info saved offline','Photo of your passport on your phone'] },
+  { cat:'Clothing', items:['Light, breathable clothes','Temple outfit — covers shoulders & knees','Swimwear','Light rain jacket (July showers)','Comfy sandals + one pair of real shoes','Warm layer for icy AC & the plane'] },
+  { cat:'Health & sun', items:['Sunscreen SPF 50+','Mosquito repellent (DEET)','Basic meds + motion-sickness tablets','Hand sanitiser','Plasters / blister patches'] },
+  { cat:'Tech', items:['Power bank','Plug adapter (Thai sockets take EU & US 2-pin)','Offline maps downloaded','This app on your home screen'] },
+  { cat:'Extras', items:['Day backpack','Refillable water bottle','Dry bag for boat days','Small-bills wallet for markets'] },
+];
+
+const TAXI_PRESETS = [
+  { label:'Suvarnabhumi Airport (BKK)', th:'สนามบินสุวรรณภูมิ' },
+  { label:'Don Mueang Airport (DMK)', th:'สนามบินดอนเมือง' },
+  { label:'The nearest hospital, please', th:'โรงพยาบาลที่ใกล้ที่สุด' },
+  { label:'Please turn on the meter', th:'เปิดมิเตอร์ด้วยครับ/ค่ะ' },
+];
+
+const PRICES = [
+  { e:'🍜', n:'Street-food meal', b:60 },
+  { e:'💧', n:'Bottled water (7-Eleven)', b:10 },
+  { e:'🚕', n:'Bangkok taxi start (meter)', b:35 },
+  { e:'🛺', n:'Short tuk-tuk ride (haggle!)', b:80 },
+  { e:'🚇', n:'BTS Skytrain ride', b:40 },
+  { e:'💆', n:'1-hour Thai massage', b:300 },
+  { e:'🥤', n:'Fresh fruit shake', b:40 },
+  { e:'👕', n:'Market t-shirt (after haggling)', b:150 },
+  { e:'🛥️', n:'Island day-tour, per person', b:1500 },
+];
+
+const CURRENCIES = ['EUR','USD','GBP','SEK','NOK','DKK','AUD','CAD'];
+const CURR_SIGN = { EUR:'€', USD:'$', GBP:'£', SEK:'kr', NOK:'kr', DKK:'kr', AUD:'A$', CAD:'C$' };
+const EXP_CATS = ['Food','Transport','Stay','Fun','Shopping','Other'];
+const MOODS = ['Wonderful','Good','Mixed','Rough'];
+const VAULT_SECTIONS = ['Flights','Stays','Contacts','Notes'];
+
+/* ---------------- helpers ---------------- */
+const rate = () => S.rates[S.currency] || 1;
+const sign = () => CURR_SIGN[S.currency] || S.currency;
+function fmt(v){
+  if (!isFinite(v)) return '0';
+  return v >= 100 ? Math.round(v).toLocaleString('en-GB') : (Math.round(v * 100) / 100).toString();
+}
+function names(){ return S.travelers.filter(n => n && n.trim()); }
+function packTotals(){
+  const base = PACK.reduce((a, g) => a + g.items.length, 0) + S.packCustom.length;
+  const total = base * Math.max(names().length, 1);
+  let done = 0;
+  for (const k in S.packing) if (S.packing[k]) done++;
+  return { done: Math.min(done, total), total };
+}
+function niceDate(iso){
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long' });
+}
+
+/* ---------------- navigation ---------------- */
+const RENDER = {};
+const MORE_VIEWS = ['eat','guide','vault','journal'];
+function showView(name){
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('#nav button[data-arg]').forEach(b => b.classList.toggle('on', b.dataset.arg === name));
+  $('#moreBtn').classList.toggle('on', MORE_VIEWS.includes(name));
+  $('#view-' + name).classList.add('active');
+  if (RENDER[name]) RENDER[name]();
+  window.scrollTo({ top: 0 });
+}
+function crumbs(label){
+  return '<div class="crumbs"><button data-action="nav" data-arg="home">Home</button><span class="sep">/</span>' + esc(label) + '</div>';
+}
+
+/* ---------------- HOME ---------------- */
+RENDER.home = function(){
+  const nm = names();
+  const pt = packTotals();
+  const pct = pt.total ? Math.round(pt.done / pt.total * 100) : 0;
+  const w = ALL_PHRASES[Math.floor(Date.now() / 864e5) % ALL_PHRASES.length];
+  const spentTHB = S.expenses.reduce((a, e) => a + e.amt, 0);
+  $('#view-home').innerHTML = `
+    <div class="hero">
+      <div class="overline">Sawatdee · The family expedition</div>
+      <h1 id="heroTitle">Thailand is calling.</h1>
+      <div class="hero-line">${esc(nm.join(' · '))}</div>
+      <div class="epigraph" id="heroEpi">«From the plane, to the temples, to the sea.»</div>
+    </div>
+    <div class="stats-band" id="countBand">
+      <div class="stat"><div class="num" id="cd">–</div><div class="lbl">Days</div></div>
+      <div class="stat"><div class="num" id="ch">–</div><div class="lbl">Hours</div></div>
+      <div class="stat"><div class="num" id="cm">–</div><div class="lbl">Min</div></div>
+      <div class="stat"><div class="num" id="cs">–</div><div class="lbl">Sec</div></div>
+    </div>
+    <div class="wotd">
+      <div class="overline" style="min-width:64px">Word of<br>the day</div>
+      <div class="pt">
+        <div class="th" lang="th">${esc(w.th)}</div>
+        <div class="ph" style="font-style:italic;color:var(--accent);font-size:14px">${esc(w.ph)}</div>
+        <div class="en">${esc(w.en)}</div>
+      </div>
+      ${canSpeak ? `<button class="speakbtn" data-action="speak" data-arg="${esc(w.th)}" aria-label="Speak">${SVG_SPK}</button>` : ''}
+    </div>
+    <div class="card-grid">
+      <button class="qcard" data-action="packing"><span class="big-num">01</span><span class="sec-num">01</span>
+        <h3>Packing</h3><small>${pt.done} of ${pt.total} items packed</small>
+        <span class="progress"><span class="fill" style="width:${pct}%"></span></span></button>
+      <button class="qcard" data-action="nav" data-arg="speak"><span class="big-num">02</span><span class="sec-num">02</span>
+        <h3>Speak Thai</h3><small>45 phrases — your phone says them out loud</small></button>
+      <button class="qcard" data-action="nav" data-arg="money"><span class="big-num">03</span><span class="sec-num">03</span>
+        <h3>Baht</h3><small>100 ฿ ≈ ${fmt(100 / rate())} ${sign()} · ${S.expenses.length ? fmt(spentTHB) + ' ฿ spent so far' : 'expense book ready'}</small></button>
+      <button class="qcard" data-action="nav" data-arg="eat"><span class="big-num">04</span><span class="sec-num">04</span>
+        <h3>Eat & spin</h3><small>Must-try dishes and the adventure wheel</small></button>
+      <button class="qcard" data-action="nav" data-arg="vault"><span class="big-num">05</span><span class="sec-num">05</span>
+        <h3>Vault</h3><small>Flights, bookings & contacts — encrypted</small></button>
+      <button class="qcard" data-action="nav" data-arg="journal"><span class="big-num">06</span><span class="sec-num">06</span>
+        <h3>Journal</h3><small>${S.journal.length ? S.journal.length + ' entries and counting' : 'One line a day. Future you says thanks.'}</small></button>
+    </div>
+    <div class="credit">
+      <div class="tagline">«Built by Claude — for one family, for one great trip.»</div>
+      <div class="fine">PRIVATE FAMILY EDITION · WORKS OFFLINE · NO ACCOUNTS · NO TRACKING</div>
+    </div>
+  `;
+  tick();
+};
+
+function tick(){
+  const cd = $('#cd');
+  if (!cd || !$('#view-home').classList.contains('active')) return;
+  const now = new Date();
+  const dep = new Date(S.depart + 'T00:00:00');
+  const ret = new Date(S.ret + 'T23:59:59');
+  const band = $('#countBand'), title = $('#heroTitle'), epi = $('#heroEpi');
+  if (now < dep) {
+    const ms = dep - now;
+    cd.textContent = Math.floor(ms / 864e5);
+    $('#ch').textContent = Math.floor(ms % 864e5 / 36e5);
+    $('#cm').textContent = Math.floor(ms % 36e5 / 6e4);
+    $('#cs').textContent = Math.floor(ms % 6e4 / 1000);
+    title.textContent = 'Thailand is calling.';
+    epi.innerHTML = '«Wheels up ' + esc(niceDate(S.depart)) + '.»';
+  } else if (now <= ret) {
+    const dayN = Math.floor((now - dep) / 864e5) + 1;
+    const total = Math.max(1, Math.round((ret - dep) / 864e5) + 1);
+    band.innerHTML = `<div class="stat"><div class="num">${dayN}</div><div class="lbl">Day</div></div>
+      <div class="stat"><div class="num">${total}</div><div class="lbl">Of</div></div>
+      <div class="stat" style="flex:2"><div class="num" style="font-size:26px;padding-top:8px">ในเมืองไทย</div><div class="lbl">In Thailand</div></div>`;
+    title.textContent = 'You are in Thailand.';
+    epi.textContent = '«Go make a memory. Write it down tonight.»';
+  } else {
+    band.innerHTML = `<div class="stat"><div class="num">∎</div><div class="lbl">Trip complete</div></div>`;
+    title.textContent = 'The memories keep.';
+    epi.textContent = '«Khop khun, Thailand. Until next time.»';
+  }
+}
+setInterval(tick, 1000);
+
+/* ---------------- PLAN ---------------- */
+RENDER.plan = function(){
+  let html = `
+    <div class="section-head" style="margin-top:26px"><span class="sec-num">— 01</span><h2 class="display">The plan</h2></div>
+    <p class="lede">Day by day. Tap any line to rewrite it — everything saves on this phone.</p>
+    <div class="note-block">These are <b>sample days</b> to show the shape. Make them yours.</div>
+  `;
+  S.itinerary.forEach((day, i) => {
+    html += `<div class="daycard">
+      <div class="dayhead">
+        <div><div class="overline ov">Day ${String(i + 1).padStart(2, '0')}</div><h3>${esc(day.title)}</h3></div>
+        <button class="iconbtn" data-action="day-edit" data-arg="${day.id}" aria-label="Edit day">${SVG_PEN}</button>
+      </div>`;
+    for (const it of day.items) {
+      html += `<button class="itemrow" data-action="item-edit" data-arg="${day.id}:${it.id}">
+        <span class="t">${esc(it.time || '——')}</span><span class="x">${esc(it.text)}</span></button>`;
+    }
+    html += `<button class="addrow" data-action="item-add" data-arg="${day.id}">+ Add to this day</button></div>`;
+  });
+  html += `<button class="btn ghost" data-action="day-add" style="margin-top:6px">+ Add a day</button>`;
+  $('#view-plan').innerHTML = html;
+};
+
+/* ---------------- SPEAK ---------------- */
+const canSpeak = 'speechSynthesis' in window;
+let thaiVoice = null;
+function findThaiVoice(){
+  if (!canSpeak) return;
+  const v = speechSynthesis.getVoices().find(v => (v.lang || '').toLowerCase().startsWith('th'));
+  if (v) thaiVoice = v;
+}
+if (canSpeak) { findThaiVoice(); speechSynthesis.addEventListener('voiceschanged', findThaiVoice); }
+function speakThai(text, btn){
+  if (!canSpeak) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'th-TH'; u.rate = 0.82;
+    if (thaiVoice) u.voice = thaiVoice;
+    if (btn) { btn.classList.add('talking'); u.onend = u.onerror = () => btn.classList.remove('talking'); }
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+
+RENDER.speak = function(){
+  let html = `
+    <div class="section-head" style="margin-top:26px"><span class="sec-num">— 02</span><h2 class="display">Speak Thai</h2></div>
+    <p class="lede">${canSpeak ? 'Tap the speaker and your phone says it in Thai. Locals adore the attempt.' : 'Read the italic phonetics out loud — locals adore the attempt.'}</p>
+    <div class="expected-block"><b>Instant politeness:</b> end anything with <b>khrap</b> (ครับ) if you're male, <b>kha</b> (ค่ะ) if you're female.</div>
+  `;
+  for (const cat of PHRASES) {
+    html += `<div class="method-label"><span class="caps" style="color:var(--accent)">${esc(cat.cat)}</span></div>`;
+    for (const p of cat.items) {
+      html += `<div class="phrase">
+        <div class="pt">
+          <div class="en">${esc(p.en)}</div>
+          <div class="th" lang="th">${esc(p.th)}</div>
+          <div class="ph">${esc(p.ph)}</div>
+        </div>
+        ${canSpeak ? `<button class="speakbtn" data-action="speak" data-arg="${esc(p.th)}" aria-label="Speak">${SVG_SPK}</button>` : ''}
+      </div>`;
+    }
+  }
+  $('#view-speak').innerHTML = html;
+};
+
+/* ---------------- MONEY (converter + expenses) ---------------- */
+let moneyTab = 'conv';
+RENDER.money = function(){
+  const r = rate();
+  let inner = '';
+  if (moneyTab === 'conv') {
+    let priceRows = '';
+    for (const p of PRICES) {
+      priceRows += `<tr><td style="width:34px">${p.e}</td><td>${esc(p.n)}</td>
+        <td style="text-align:right"><span class="mono">${p.b} ฿</span><br><span class="caps" style="font-size:10px;color:var(--muted)">≈ ${fmt(p.b / r)} ${sign()}</span></td></tr>`;
+    }
+    let chips = '';
+    for (const b of [20, 50, 100, 500, 1000]) chips += `<div class="mchip"><b>${b} ฿</b><span>≈ ${fmt(b / r)} ${sign()}</span></div>`;
+    let opts = '';
+    for (const c of CURRENCIES) opts += `<option value="${c}" ${c === S.currency ? 'selected' : ''}>${c}</option>`;
+    inner = `
+      <div class="card">
+        <div class="convrow">
+          <div class="convbox"><label>Thai Baht ฿</label><input id="thbIn" type="number" inputmode="decimal" placeholder="100"></div>
+          <div class="swap">⇄</div>
+          <div class="convbox"><label>${S.currency} ${sign()}</label><input id="homeIn" type="number" inputmode="decimal" placeholder="${fmt(100 / r)}"></div>
+        </div>
+        <div class="raterow">Home <select id="currSel">${opts}</select> · 1 ${S.currency} = <input id="rateIn" type="number" inputmode="decimal" value="${r}"> ฿</div>
+        <div class="chipgrid">${chips}</div>
+      </div>
+      <div class="method-label"><span class="caps" style="color:var(--accent)">What things cost</span></div>
+      <table class="tbl"><tbody>${priceRows}</tbody></table>
+      <div class="method-label"><span class="caps" style="color:var(--accent)">Bargain like a pro</span></div>
+      <div class="card" style="font-size:15px;color:var(--muted)">
+        <p style="margin-bottom:8px"><b style="color:var(--ink)">Markets: yes. Malls & food: no.</b> Haggling is a market game, never for food stalls.</p>
+        <p style="margin-bottom:8px"><b style="color:var(--ink)">Smile and counter at ~60%.</b> It's a friendly sport. Meet in the middle.</p>
+        <p style="margin-bottom:8px"><b style="color:var(--ink)">The walk-away works.</b> Thank them, stroll — the real price often follows you.</p>
+        <p><b style="color:var(--ink)">Keep small bills.</b> Nobody has change for a 1000 ฿ note at a noodle cart.</p>
+      </div>`;
+  } else {
+    const total = S.expenses.reduce((a, e) => a + e.amt, 0);
+    const today = todayStr();
+    const todaySum = S.expenses.filter(e => e.date === today).reduce((a, e) => a + e.amt, 0);
+    const days = new Set(S.expenses.map(e => e.date)).size || 1;
+    let whoOpts = names().map(n => `<option>${esc(n)}</option>`).join('') + '<option>Together</option>';
+    let catOpts = EXP_CATS.map(c => `<option>${c}</option>`).join('');
+    // group by date desc
+    const byDate = {};
+    for (const e of S.expenses) (byDate[e.date] = byDate[e.date] || []).push(e);
+    const dates = Object.keys(byDate).sort().reverse();
+    let list = '';
+    for (const d of dates) {
+      const sum = byDate[d].reduce((a, e) => a + e.amt, 0);
+      list += `<div class="explist"><div class="expday"><span class="caps" style="font-size:10.5px;color:var(--muted)">${esc(niceDate(d))}</span><span class="mono" style="color:var(--accent)">${fmt(sum)} ฿</span></div>`;
+      for (const e of byDate[d]) {
+        list += `<button class="exprow" data-action="exp-del" data-arg="${e.id}">
+          <span class="amt">${fmt(e.amt)} ฿</span>
+          <span class="note">${esc(e.note || e.cat)} <span class="chip plain" style="margin-left:6px">${esc(e.cat)}</span></span>
+          <span class="who">${esc(e.who)}</span></button>`;
+      }
+      list += `</div>`;
+    }
+    const budgetPct = S.budget ? Math.min(100, Math.round(total / S.budget * 100)) : null;
+    inner = `
+      <div class="stats-band" style="border-top:1px solid var(--line)">
+        <div class="stat"><div class="num" style="font-size:24px;padding-top:6px">${fmt(total)} ฿</div><div class="lbl">Total · ${fmt(total / r)} ${sign()}</div></div>
+        <div class="stat"><div class="num" style="font-size:24px;padding-top:6px">${fmt(todaySum)} ฿</div><div class="lbl">Today</div></div>
+        <div class="stat"><div class="num" style="font-size:24px;padding-top:6px">${fmt(total / days)} ฿</div><div class="lbl">Per day</div></div>
+      </div>
+      ${S.budget ? `<div style="margin:12px 0"><div class="caps" style="font-size:10px;color:var(--muted);margin-bottom:6px">Budget · ${fmt(total)} of ${fmt(S.budget)} ฿ (${budgetPct}%)</div><div class="progress"><div class="fill" style="width:${budgetPct}%;${budgetPct > 90 ? 'background:var(--warn)' : ''}"></div></div></div>` : ''}
+      <div class="exp-form">
+        <div class="row2">
+          <div class="field"><label>Amount</label><input id="expAmt" type="number" inputmode="decimal" placeholder="120"></div>
+          <div class="field"><label>Currency</label><select id="expCur"><option value="thb" selected>฿ Baht</option><option value="home">${sign()} ${S.currency}</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Category</label><select id="expCat">${catOpts}</select></div>
+          <div class="field"><label>Paid by</label><select id="expWho">${whoOpts}</select></div>
+        </div>
+        <div class="field"><label>Note (optional)</label><input id="expNote" placeholder="Mango sticky rice ×4"></div>
+        <button class="btn" data-action="exp-add">Add expense</button>
+      </div>
+      ${list || '<p class="lede" style="margin-top:16px">No expenses yet. The first mango sticky rice is coming.</p>'}
+      ${S.expenses.length ? '<p class="lede" style="font-size:13px">Tap an expense to delete it.</p>' : ''}
+      <button class="btn ghost" data-action="exp-budget">${S.budget ? 'Change trip budget' : 'Set a trip budget'}</button>`;
+  }
+  $('#view-money').innerHTML = `
+    <div class="section-head" style="margin-top:26px"><span class="sec-num">— 03</span><h2 class="display">Baht</h2></div>
+    <div class="tabs">
+      <button class="${moneyTab === 'conv' ? 'on' : ''}" data-action="money-tab" data-arg="conv">Converter</button>
+      <button class="${moneyTab === 'exp' ? 'on' : ''}" data-action="money-tab" data-arg="exp">Expenses</button>
+    </div>${inner}`;
+  if (moneyTab === 'conv') {
+    const thb = $('#thbIn'), home = $('#homeIn');
+    thb.addEventListener('input', () => { home.value = thb.value === '' ? '' : fmt(parseFloat(thb.value || 0) / rate()); });
+    home.addEventListener('input', () => { thb.value = home.value === '' ? '' : fmt(parseFloat(home.value || 0) * rate()); });
+    $('#currSel').addEventListener('change', e => { S.currency = e.target.value; save(); RENDER.money(); });
+    $('#rateIn').addEventListener('change', e => { const v = parseFloat(e.target.value); if (v > 0) { S.rates[S.currency] = v; save(); RENDER.money(); } });
+  }
+};
+
+/* ---------------- EAT & SPIN ---------------- */
+let spinRegion = 'any', spinMood = 'any', spinTimer = null;
+RENDER.eat = function(){
+  let dishes = '';
+  for (const d of DISHES) {
+    const dots = [1,2,3].map(i => `<i class="${i <= d.s ? 'f' : ''}"></i>`).join('');
+    const lbl = ['No spice','Mild','Medium','Hot!'][d.s];
+    dishes += `<div class="dish">
+      <div class="de">${d.e}</div><h3>${esc(d.n)}</h3><div class="dth" lang="th">${esc(d.th)}</div>
+      <div class="dp">${esc(d.p)}</div>
+      <div class="spice">${dots}<span>${lbl}</span></div>
+      <p>${esc(d.d)}</p><div class="how">${esc(d.h)}</div>
+    </div>`;
+  }
+  const regions = [['any','Anywhere'],['bkk','Bangkok'],['cnx','Chiang Mai'],['isl','Islands']];
+  const moods = [['any','Any mood'],['chill','Chill'],['adventure','Adventure'],['culture','Culture'],['food','Food'],['shopping','Shopping']];
+  const chipHtml = (list, cur, act) => list.map(([v, l]) => `<button class="fchip ${cur === v ? 'on' : ''}" data-action="${act}" data-arg="${v}">${l}</button>`).join('');
+  $('#view-eat').innerHTML = `
+    ${crumbs('Eat & spin')}
+    <div class="section-head"><span class="sec-num">— 04</span><h2 class="display">Must-try food</h2></div>
+    <p class="lede">Swipe through — spice level marked so nobody gets ambushed.</p>
+    <div class="dishscroll">${dishes}</div>
+    <div class="section-head"><span class="sec-num">— 05</span><h2 class="display">Can't decide? Spin.</h2></div>
+    <p class="lede">For the unplanned days — set the vibe, spin, obey the wheel.</p>
+    <div class="chiprow">${chipHtml(regions, spinRegion, 'spin-region')}</div>
+    <div class="chiprow">${chipHtml(moods, spinMood, 'spin-mood')}</div>
+    <div class="spinstage" id="spinStage"><div class="se">🎡</div><h3>Ready when you are</h3><p>Pick your filters, hit spin, let fate plan today.</p></div>
+    <button class="btn" data-action="spin">Spin for an adventure</button>
+  `;
+};
+function doSpin(){
+  const pool = ACTIVITIES.filter(a => (spinRegion === 'any' || a.r === spinRegion) && (spinMood === 'any' || a.m.includes(spinMood)));
+  const stage = $('#spinStage');
+  if (!pool.length) { stage.className = 'spinstage'; stage.innerHTML = '<div class="se">∅</div><h3>Nothing matches</h3><p>Loosen a filter and spin again.</p>'; return; }
+  clearInterval(spinTimer);
+  stage.className = 'spinstage rolling';
+  let i = 0;
+  spinTimer = setInterval(() => {
+    const a = pool[Math.floor(Math.random() * pool.length)];
+    stage.innerHTML = `<div class="se">${a.e}</div><h3>${esc(a.t)}</h3>`;
+    if (++i >= 16) {
+      clearInterval(spinTimer);
+      const win = pool[Math.floor(Math.random() * pool.length)];
+      stage.className = 'spinstage landed';
+      stage.innerHTML = `<div class="se">${win.e}</div><h3>${esc(win.t)}</h3><p>${esc(win.d)}</p>`;
+    }
+  }, 75);
+}
+
+/* ---------------- GUIDE ---------------- */
+RENDER.guide = function(){
+  let taxiBtns = '';
+  TAXI_PRESETS.forEach((p, i) => {
+    taxiBtns += `<button class="taxibtn" data-action="taxi-show" data-arg="p${i}"><span class="tb-en">${esc(p.label)}</span><div class="tb-th" lang="th">${esc(p.th)}</div></button>`;
+  });
+  for (const c of S.taxiCustom) {
+    taxiBtns += `<button class="taxibtn" data-action="taxi-show" data-arg="c${c.id}"><span class="tb-en">${esc(c.label)}</span><div class="tb-th">Your card — tap to show the driver</div></button>`;
+  }
+  $('#view-guide').innerHTML = `
+    ${crumbs('Survival guide')}
+    <div class="section-head"><span class="sec-num">— 06</span><h2 class="display">Survival guide</h2></div>
+    <p class="lede">The details that make you look like you've been here before.</p>
+    <div class="caps" style="color:var(--warn);margin-top:4px">Emergencies — free from any phone</div>
+    <div class="sosband">
+      <div class="sositem"><b>1155</b><span>Tourist police · EN</span></div>
+      <div class="sositem"><b>191</b><span>Police</span></div>
+      <div class="sositem"><b>1669</b><span>Ambulance</span></div>
+      <div class="sositem"><b>199</b><span>Fire</span></div>
+    </div>
+    <details class="acc"><summary><span class="sec-num">01</span>Temple etiquette</summary><div class="accbody"><ul>
+      <li><b>Cover shoulders and knees</b> — everyone, or you'll rent a sarong at the gate.</li>
+      <li><b>Shoes off</b> before entering temple buildings. Socks are fine.</li>
+      <li><b>Never point your feet</b> at a Buddha image — sit with feet tucked behind.</li>
+      <li><b>Women don't touch monks</b> or hand things to them directly.</li>
+      <li>Photos usually fine — watch for signs, never climb on anything.</li>
+    </ul></div></details>
+    <details class="acc"><summary><span class="sec-num">02</span>Respect & customs</summary><div class="accbody"><ul>
+      <li><b>The royal family is deeply revered — and protected by law.</b> No jokes, ever. This one is serious.</li>
+      <li><b>Head sacred, feet lowly.</b> Don't touch heads; don't point with feet or step over people.</li>
+      <li><b>The wai</b> (small bow, palms together) is the greeting. Return it — instant smiles.</li>
+      <li><b>Keep your cool.</b> Raised voices lose face for everyone. A smile fixes 90% of problems.</li>
+      <li>If the royal anthem plays (cinemas, stations), stand — follow the locals.</li>
+    </ul></div></details>
+    <details class="acc"><summary><span class="sec-num">03</span>Taxis, tuk-tuks & scams</summary><div class="accbody"><ul>
+      <li><b>Taxis: meter or walk away.</b> "Meter, please" — or use the Grab app (Asia's Uber).</li>
+      <li><b>Tuk-tuks: agree the price BEFORE boarding.</b> A fun ride, not cheap transport.</li>
+      <li><b>"The palace is closed today"</b> — a friendly stranger's tuk-tuk tour to his friend's gem shop. It's never closed. Walk on, smiling.</li>
+      <li><b>Jet-ski / scooter damage scams:</b> photograph any rental from every angle first.</li>
+      <li>Anything feels off → <b>1155 tourist police</b>. English-speaking, on your side.</li>
+    </ul></div></details>
+    <details class="acc"><summary><span class="sec-num">04</span>Health, water & July weather</summary><div class="accbody"><ul>
+      <li><b>Bottled or filtered water only.</b> Restaurant ice is factory-made and fine.</li>
+      <li><b>Repellent at dawn and dusk</b> — dengue exists everywhere, including cities.</li>
+      <li><b>July is rainy season:</b> hot (32°C+) with short dramatic downpours. Wait them out under an awning with a fruit shake.</li>
+      <li><b>7-Eleven is everywhere</b> — water, sunscreen, snacks, SIMs, life-saving air-con.</li>
+      <li>Street food is safest where it's <b>busy and cooked fresh in front of you</b>.</li>
+    </ul></div></details>
+    <details class="acc"><summary><span class="sec-num">05</span>Money & practical</summary><div class="accbody"><ul>
+      <li><b>Cash is king</b> at markets and stalls. Cards work in malls and hotels.</li>
+      <li><b>ATMs charge ~220 ฿ per withdrawal</b> — larger amounts, fewer times.</li>
+      <li><b>Plugs:</b> Thai sockets take EU round-pin and US flat-pin (220 V).</li>
+      <li><b>Tipping:</b> not expected; rounding up for great service is appreciated.</li>
+      <li>Grab a <b>local eSIM at the airport</b> — fast data for pocket money. (This app needs none.)</li>
+    </ul></div></details>
+    <div class="method-label"><span class="caps" style="color:var(--accent)">Show-the-driver cards</span></div>
+    <p class="lede" style="margin-top:2px">Tap one — it fills the screen in Thai so any driver can read it.</p>
+    ${taxiBtns}
+    <button class="btn ghost" data-action="taxi-custom">+ Make your own card</button>
+  `;
+};
+
+/* ---------------- VAULT ---------------- */
+let vaultSeedEntries = null; // decrypted from VAULT_SEED once
+async function loadVaultSeed(){
+  if (vaultSeedEntries !== null) return vaultSeedEntries;
+  vaultSeedEntries = (await decryptBlob(VAULT_SEED)) || [];
+  return vaultSeedEntries;
+}
+RENDER.vault = function(){
+  const el = $('#view-vault');
+  el.innerHTML = crumbs('Vault') + '<div class="section-head"><span class="sec-num">— 07</span><h2 class="display">Family vault</h2></div><p class="lede">Loading…</p>';
+  loadVaultSeed().then(seed => {
+    const all = [...seed, ...S.vaultLocal];
+    let sections = '';
+    for (const sec of VAULT_SECTIONS) {
+      const rows = all.filter(e => e.sec === sec);
+      if (!rows.length) continue;
+      sections += `<div class="method-label vault-sec"><span class="caps" style="color:var(--accent)">${sec}</span></div>`;
+      for (const e of rows) {
+        const isLocal = S.vaultLocal.some(x => x.id === e.id);
+        sections += `<button class="ventry" data-action="${isLocal ? 'vault-edit' : 'noop'}" data-arg="${e.id}">
+          <span class="vl">${esc(e.label)}</span><span class="vv">${esc(e.value)}</span>
+          ${isLocal ? '' : '<span class="chip plain" style="font-size:9.5px">shared</span>'}</button>`;
+      }
+    }
+    el.innerHTML = `
+      ${crumbs('Vault')}
+      <div class="section-head"><span class="sec-num">— 07</span><h2 class="display">Family vault</h2></div>
+      <p class="lede">Booking refs, flight numbers, key contacts. Everything here stays on this phone — and anything published to the family link is <b>encrypted with the family passcode</b>.</p>
+      ${sections || '<div class="card" style="color:var(--muted);font-size:15px">Nothing stored yet. Add your flight numbers, hotel bookings and emergency contacts — then they\'re one tap away at the airport.</div>'}
+      <button class="btn" data-action="vault-add" style="margin-top:10px">+ Add an entry</button>
+      <div class="method-label"><span class="caps" style="color:var(--accent)">Share with the family</span></div>
+      <div class="card" style="font-size:14.5px;color:var(--muted)">
+        Entries you add live only on this phone. To put them on <b style="color:var(--ink)">everyone's</b> phones:
+        tap below to copy an <b style="color:var(--ink)">encrypted blob</b>, send it to the trip organiser, and it gets baked into the next update — still unreadable without the family passcode.
+      </div>
+      <button class="btn ghost" data-action="vault-export">Copy encrypted blob</button>
+      <div id="blobOut" hidden style="margin-top:10px"><textarea class="blobbox" id="blobText" readonly></textarea>
+      <p class="lede" style="font-size:13px;margin-top:6px">Copied to clipboard where possible — otherwise select and copy the text above.</p></div>
+    `;
+  });
+};
+
+/* ---------------- JOURNAL ---------------- */
+RENDER.journal = function(){
+  const entries = [...S.journal].sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
+  let list = '';
+  for (const j of entries) {
+    list += `<button class="jentry" style="display:block;width:100%;text-align:left" data-action="journal-edit" data-arg="${j.id}">
+      <div class="jhead"><span class="overline">${esc(niceDate(j.date))}</span><span class="jmood">${MOODS[j.mood] || ''}</span></div>
+      <div class="jtext">${esc(j.text)}</div></button>`;
+  }
+  $('#view-journal').innerHTML = `
+    ${crumbs('Journal')}
+    <div class="section-head"><span class="sec-num">— 08</span><h2 class="display">Trip journal</h2></div>
+    <p class="lede">One honest line a day. In ten years this is the part you'll reread.</p>
+    <button class="btn" data-action="journal-add">+ Write today's line</button>
+    <div style="height:16px"></div>
+    ${list || '<div class="card" style="color:var(--muted);font-size:15px">Empty for now. Day one writes itself — the smell of the airport, the first tuk-tuk, who cried at the mango sticky rice.</div>'}
+    ${entries.length ? '<button class="btn ghost" data-action="journal-export">Copy journal as text</button>' : ''}
+  `;
+};
+
+/* ---------------- taxi overlay ---------------- */
+function showTaxi(smallLabel, bigThai, english){
+  const o = $('#taxioverlay');
+  o.innerHTML = `<div class="tsmall">${esc(smallLabel)}</div><div class="tbig" lang="th">${bigThai}</div>
+    ${english ? `<div class="ten">${esc(english)}</div>` : ''}<div class="tclose">Tap anywhere to close</div>`;
+  o.hidden = false;
+}
+
+/* ---------------- sheet ---------------- */
+function openSheet(html){
+  $('#sheet').innerHTML = '<div class="grab"></div>' + html;
+  $('#sheet').hidden = false; $('#sheetback').hidden = false;
+  return $('#sheet');
+}
+function closeSheet(){
+  $('#sheet').hidden = true; $('#sheetback').hidden = true;
+  if ($('#view-home').classList.contains('active')) RENDER.home();
+}
+const sheetHead = t => `<h3 class="sh">${t} <button class="xbtn" data-action="sheet-close">Close ✕</button></h3>`;
+
+/* ---- more sheet ---- */
+function moreSheet(){
+  openSheet(`
+    ${sheetHead('More')}
+    <div class="more-grid">
+      <button class="qcard" data-action="go" data-arg="eat"><span class="sec-num">04</span><h3>Eat & spin</h3><small>Dishes + adventure wheel</small></button>
+      <button class="qcard" data-action="go" data-arg="guide"><span class="sec-num">06</span><h3>Guide</h3><small>Etiquette, scams, emergencies</small></button>
+      <button class="qcard" data-action="go" data-arg="vault"><span class="sec-num">07</span><h3>Vault</h3><small>Bookings & contacts, encrypted</small></button>
+      <button class="qcard" data-action="go" data-arg="journal"><span class="sec-num">08</span><h3>Journal</h3><small>One line a day</small></button>
+      <button class="qcard" data-action="packing-sheet"><span class="sec-num">09</span><h3>Packing</h3><small>Per-person checklists</small></button>
+      <button class="qcard" data-action="settings-sheet"><span class="sec-num">10</span><h3>Settings</h3><small>Names, dates, lock</small></button>
+    </div>
+  `);
+}
+
+/* ---- itinerary sheets ---- */
+function findDay(id){ return S.itinerary.find(d => d.id === id); }
+function editItemSheet(dayId, itemId){
+  const day = findDay(dayId); if (!day) return;
+  const isNew = !itemId;
+  const item = isNew ? { time:'', text:'' } : day.items.find(i => i.id === itemId);
+  if (!item) return;
+  const sh = openSheet(`
+    ${sheetHead(isNew ? 'Add to ' + esc(day.title) : 'Edit entry')}
+    <div class="field"><label>Time (optional)</label><input id="fTime" type="time" value="${esc(item.time)}"></div>
+    <div class="field"><label>What's happening?</label><input id="fText" placeholder="Elephant sanctuary day" value="${esc(item.text)}"></div>
+    <div class="btnrow">${isNew ? '' : '<button class="btn warn" id="fDel">Delete</button>'}<button class="btn" id="fSave">Save</button></div>
+  `);
+  sh.querySelector('#fSave').onclick = () => {
+    const text = sh.querySelector('#fText').value.trim(); if (!text) return;
+    const time = sh.querySelector('#fTime').value;
+    if (isNew) day.items.push({ id: uid(), time, text });
+    else { item.time = time; item.text = text; }
+    save(); closeSheet(); RENDER.plan();
+  };
+  const del = sh.querySelector('#fDel');
+  if (del) del.onclick = () => { day.items = day.items.filter(i => i.id !== itemId); save(); closeSheet(); RENDER.plan(); };
+  if (isNew) sh.querySelector('#fText').focus();
+}
+function editDaySheet(dayId){
+  const isNew = !dayId;
+  const day = isNew ? null : findDay(dayId);
+  if (!isNew && !day) return;
+  const sh = openSheet(`
+    ${sheetHead(isNew ? 'New day' : 'Edit day')}
+    <div class="field"><label>Day title</label><input id="fTitle" placeholder="Chiang Mai" value="${isNew ? '' : esc(day.title)}"></div>
+    <div class="btnrow">${isNew ? '' : '<button class="btn warn" id="fDel">Delete day</button>'}<button class="btn" id="fSave">Save</button></div>
+  `);
+  sh.querySelector('#fSave').onclick = () => {
+    const t = sh.querySelector('#fTitle').value.trim(); if (!t) return;
+    if (isNew) S.itinerary.push({ id: uid(), title: t, sub: '', items: [] });
+    else { day.title = t; day.sub = ''; }
+    save(); closeSheet(); RENDER.plan();
+  };
+  const del = sh.querySelector('#fDel');
+  if (del) del.onclick = () => { if (!confirm('Delete this whole day?')) return; S.itinerary = S.itinerary.filter(d => d.id !== dayId); save(); closeSheet(); RENDER.plan(); };
+  if (isNew) sh.querySelector('#fTitle').focus();
+}
+
+/* ---- packing ---- */
+let packTraveler = 0;
+function packingSheet(){
+  const nm = names();
+  if (packTraveler >= nm.length) packTraveler = 0;
+  const chips = nm.map((n, i) => `<button class="fchip ${i === packTraveler ? 'on' : ''}" data-action="pack-traveler" data-arg="${i}">${esc(n)}</button>`).join('');
+  let groups = '', done = 0, total = 0;
+  PACK.forEach((g, gi) => {
+    groups += `<div class="packgroup"><div class="method-label" style="margin:14px 0 4px"><span class="caps" style="color:var(--accent)">${esc(g.cat)}</span></div>`;
+    g.items.forEach((it, ii) => {
+      const k = packTraveler + ':' + gi + ':' + ii;
+      const on = !!S.packing[k]; total++; if (on) done++;
+      groups += `<button class="packitem ${on ? 'done' : ''}" data-action="pack-toggle" data-arg="${k}"><span class="box">${on ? '✓' : ''}</span><span class="pl">${esc(it)}</span></button>`;
+    });
+    groups += `</div>`;
+  });
+  if (S.packCustom.length) {
+    groups += `<div class="packgroup"><div class="method-label" style="margin:14px 0 4px"><span class="caps" style="color:var(--accent)">Your extras</span></div>`;
+    for (const c of S.packCustom) {
+      const k = packTraveler + ':custom:' + c.id;
+      const on = !!S.packing[k]; total++; if (on) done++;
+      groups += `<button class="packitem ${on ? 'done' : ''}" data-action="pack-toggle" data-arg="${k}"><span class="box">${on ? '✓' : ''}</span><span class="pl">${esc(c.label)}</span></button>`;
+    }
+    groups += `</div>`;
+  }
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const sh = openSheet(`
+    ${sheetHead('Packing')}
+    <div class="chiprow" style="margin-top:0">${chips}</div>
+    <div class="progress" style="margin-bottom:8px"><div class="fill" style="width:${pct}%"></div></div>
+    ${pct === 100 ? '<div class="expected-block"><b>Fully packed.</b> Thailand is not ready for you.</div>' : ''}
+    ${groups}
+    <div class="addcustom"><input id="packNew" placeholder="Add your own item…"><button class="btn slim" id="packAdd">Add</button></div>
+  `);
+  sh.querySelector('#packAdd').onclick = () => {
+    const v = sh.querySelector('#packNew').value.trim(); if (!v) return;
+    S.packCustom.push({ id: uid(), label: v }); save(); packingSheet();
+  };
+}
+
+/* ---- taxi custom ---- */
+function taxiCustomSheet(){
+  const sh = openSheet(`
+    ${sheetHead('Your own driver card')}
+    <p class="lede" style="margin-top:0">Type a place in English — hotel names work great, drivers know them. The card adds "please take us to" in Thai.</p>
+    <div class="field"><label>Destination</label><input id="fTaxi" placeholder="Baan Thai Resort, Karon Beach"></div>
+    <div class="btnrow"><button class="btn" id="fSave">Save card</button></div>
+  `);
+  sh.querySelector('#fSave').onclick = () => {
+    const v = sh.querySelector('#fTaxi').value.trim(); if (!v) return;
+    S.taxiCustom.push({ id: uid(), label: v }); save(); closeSheet(); showView('guide');
+  };
+  sh.querySelector('#fTaxi').focus();
+}
+
+/* ---- expenses ---- */
+function addExpense(){
+  const amt = parseFloat($('#expAmt').value);
+  if (!amt || amt <= 0) return;
+  const inHome = $('#expCur').value === 'home';
+  S.expenses.push({
+    id: uid(), date: todayStr(),
+    amt: Math.round(inHome ? amt * rate() : amt),
+    cat: $('#expCat').value, who: $('#expWho').value,
+    note: $('#expNote').value.trim(),
+  });
+  save(); RENDER.money();
+}
+function budgetSheet(){
+  const sh = openSheet(`
+    ${sheetHead('Trip budget')}
+    <div class="field"><label>Total budget in ฿ (leave empty to remove)</label><input id="fBud" type="number" inputmode="numeric" value="${S.budget || ''}" placeholder="60000"></div>
+    <div class="btnrow"><button class="btn" id="fSave">Save</button></div>
+  `);
+  sh.querySelector('#fSave').onclick = () => {
+    const v = parseFloat(sh.querySelector('#fBud').value);
+    S.budget = (v && v > 0) ? Math.round(v) : null;
+    save(); closeSheet(); RENDER.money();
+  };
+}
+
+/* ---- vault sheets ---- */
+function vaultEntrySheet(id){
+  const isNew = !id;
+  const e = isNew ? { sec:'Flights', label:'', value:'' } : S.vaultLocal.find(x => x.id === id);
+  if (!e) return;
+  const opts = VAULT_SECTIONS.map(s => `<option ${s === e.sec ? 'selected' : ''}>${s}</option>`).join('');
+  const sh = openSheet(`
+    ${sheetHead(isNew ? 'New vault entry' : 'Edit entry')}
+    <div class="field"><label>Section</label><select id="fSec">${opts}</select></div>
+    <div class="field"><label>Label</label><input id="fLab" placeholder="Flight out · TG 917" value="${esc(e.label)}"></div>
+    <div class="field"><label>Details</label><textarea id="fVal" placeholder="25 Jul · 12:30 CPH → BKK · Booking ref ABC123">${esc(e.value)}</textarea></div>
+    <div class="btnrow">${isNew ? '' : '<button class="btn warn" id="fDel">Delete</button>'}<button class="btn" id="fSave">Save</button></div>
+  `);
+  sh.querySelector('#fSave').onclick = () => {
+    const label = sh.querySelector('#fLab').value.trim();
+    const value = sh.querySelector('#fVal').value.trim();
+    if (!label || !value) return;
+    if (isNew) S.vaultLocal.push({ id: uid(), sec: sh.querySelector('#fSec').value, label, value });
+    else { e.sec = sh.querySelector('#fSec').value; e.label = label; e.value = value; }
+    save(); closeSheet(); RENDER.vault();
+  };
+  const del = sh.querySelector('#fDel');
+  if (del) del.onclick = () => { S.vaultLocal = S.vaultLocal.filter(x => x.id !== id); save(); closeSheet(); RENDER.vault(); };
+}
+async function vaultExport(){
+  const seed = await loadVaultSeed();
+  const blob = await encryptJSON([...seed, ...S.vaultLocal]);
+  if (!blob) return;
+  $('#blobOut').hidden = false;
+  $('#blobText').value = blob;
+  try { await navigator.clipboard.writeText(blob); } catch (e) {}
+}
+
+/* ---- journal sheets ---- */
+function journalSheet(id){
+  const isNew = !id;
+  const j = isNew ? { date: todayStr(), mood: 1, text: '' } : S.journal.find(x => x.id === id);
+  if (!j) return;
+  let mood = j.mood;
+  const moodBtns = () => MOODS.map((m, i) => `<button type="button" class="${i === mood ? 'on' : ''}" data-mood="${i}">${m}</button>`).join('');
+  const sh = openSheet(`
+    ${sheetHead(isNew ? "Today's line" : 'Edit entry')}
+    <div class="field"><label>Date</label><input id="fDate" type="date" value="${esc(j.date)}"></div>
+    <div class="field"><label>How was it?</label><div class="moodrow" id="moodRow">${moodBtns()}</div></div>
+    <div class="field"><label>What happened?</label><textarea id="fText" placeholder="The tuk-tuk driver sang the whole way.">${esc(j.text)}</textarea></div>
+    <div class="btnrow">${isNew ? '' : '<button class="btn warn" id="fDel">Delete</button>'}<button class="btn" id="fSave">Save</button></div>
+  `);
+  sh.querySelector('#moodRow').addEventListener('click', ev => {
+    const b = ev.target.closest('[data-mood]'); if (!b) return;
+    mood = +b.dataset.mood;
+    sh.querySelector('#moodRow').innerHTML = moodBtns();
+  });
+  sh.querySelector('#fSave').onclick = () => {
+    const text = sh.querySelector('#fText').value.trim(); if (!text) return;
+    const date = sh.querySelector('#fDate').value || todayStr();
+    if (isNew) S.journal.push({ id: uid(), date, mood, text });
+    else { j.date = date; j.mood = mood; j.text = text; }
+    save(); closeSheet(); RENDER.journal();
+  };
+  const del = sh.querySelector('#fDel');
+  if (del) del.onclick = () => { S.journal = S.journal.filter(x => x.id !== id); save(); closeSheet(); RENDER.journal(); };
+  if (isNew) sh.querySelector('#fText').focus();
+}
+async function journalExport(){
+  const txt = [...S.journal].sort((a, b) => a.date.localeCompare(b.date))
+    .map(j => niceDate(j.date) + ' — ' + (MOODS[j.mood] || '') + '\n' + j.text).join('\n\n');
+  try { await navigator.clipboard.writeText(txt); alert('Journal copied as text.'); }
+  catch (e) { prompt('Copy your journal:', txt); }
+}
+
+/* ---- settings ---- */
+function settingsSheet(){
+  const t = [0,1,2,3].map(i => `<div class="field"><label>Traveler ${i + 1}${i > 0 ? ' (optional)' : ''}</label><input class="tname" data-i="${i}" value="${esc(S.travelers[i] || '')}" placeholder="Name"></div>`).join('');
+  const sh = openSheet(`
+    ${sheetHead('Settings')}
+    <div class="field"><label>Departure date</label><input id="fDep" type="date" value="${esc(S.depart)}"></div>
+    <div class="field"><label>Return date</label><input id="fRet" type="date" value="${esc(S.ret)}"></div>
+    ${t}
+    <div class="btnrow"><button class="btn" id="fSave">Save</button></div>
+    <div class="method-label"><span class="caps" style="color:var(--accent)">Privacy</span></div>
+    <div class="btnrow"><button class="btn ghost" id="fLock">Lock this device</button></div>
+    <div class="btnrow"><button class="btn warn" id="fReset">Reset all app data</button></div>
+  `);
+  sh.querySelector('#fSave').onclick = () => {
+    const dep = sh.querySelector('#fDep').value, ret = sh.querySelector('#fRet').value;
+    if (dep) S.depart = dep;
+    if (ret) S.ret = ret;
+    S.travelers = [...sh.querySelectorAll('.tname')].map(i => i.value.trim());
+    if (!names().length) S.travelers = ['Traveler 1'];
+    save(); closeSheet(); showView('home');
+  };
+  sh.querySelector('#fLock').onclick = () => {
+    localStorage.removeItem(KEYSLOT); location.reload();
+  };
+  sh.querySelector('#fReset').onclick = () => {
+    if (!confirm('Wipe the itinerary, expenses, journal, vault and settings on this phone?')) return;
+    localStorage.removeItem(KEY); localStorage.removeItem(KEYSLOT); location.reload();
+  };
+}
+
+/* ---------------- svg fragments ---------------- */
+const SVG_SPK = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10v4h3l4.5 4V6L7 10z" fill="currentColor" stroke="none"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>';
+const SVG_PEN = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z"/></svg>';
+
+/* ---------------- actions ---------------- */
+const ACTIONS = {
+  'nav':          (el, arg) => showView(arg),
+  'go':           (el, arg) => { closeSheet(); showView(arg); },
+  'more':         () => moreSheet(),
+  'settings':     () => settingsSheet(),
+  'settings-sheet': () => settingsSheet(),
+  'sheet-close':  () => closeSheet(),
+  'speak':        (el, arg) => speakThai(arg, el),
+  'day-add':      () => editDaySheet(null),
+  'day-edit':     (el, arg) => editDaySheet(arg),
+  'item-add':     (el, arg) => editItemSheet(arg, null),
+  'item-edit':    (el, arg) => { const [d, i] = arg.split(':'); editItemSheet(d, i); },
+  'packing':      () => packingSheet(),
+  'packing-sheet':() => { closeSheet(); packingSheet(); },
+  'pack-traveler':(el, arg) => { packTraveler = +arg; packingSheet(); },
+  'pack-toggle':  (el, arg) => { S.packing[arg] = !S.packing[arg]; save(); packingSheet(); },
+  'money-tab':    (el, arg) => { moneyTab = arg; RENDER.money(); },
+  'exp-add':      () => addExpense(),
+  'exp-del':      (el, arg) => { if (confirm('Delete this expense?')) { S.expenses = S.expenses.filter(e => e.id !== arg); save(); RENDER.money(); } },
+  'exp-budget':   () => budgetSheet(),
+  'spin':         () => doSpin(),
+  'spin-region':  (el, arg) => { spinRegion = arg; RENDER.eat(); },
+  'spin-mood':    (el, arg) => { spinMood = arg; RENDER.eat(); },
+  'taxi-custom':  () => taxiCustomSheet(),
+  'taxi-close':   () => { $('#taxioverlay').hidden = true; },
+  'taxi-show':    (el, arg) => {
+    if (arg[0] === 'p') { const p = TAXI_PRESETS[+arg.slice(1)]; if (p) showTaxi('Please take us to · กรุณาพาเราไปที่', esc(p.th), p.label); }
+    else { const c = S.taxiCustom.find(x => x.id === arg.slice(1)); if (c) showTaxi('กรุณาพาเราไปที่ · Please take us to', esc(c.label), ''); }
+  },
+  'vault-add':    () => vaultEntrySheet(null),
+  'vault-edit':   (el, arg) => vaultEntrySheet(arg),
+  'vault-export': () => vaultExport(),
+  'journal-add':  () => journalSheet(null),
+  'journal-edit': (el, arg) => journalSheet(arg),
+  'journal-export': () => journalExport(),
+  'noop':         () => {},
+};
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const fn = ACTIONS[el.dataset.action];
+  if (fn) fn(el, el.dataset.arg, e);
+});
+
+/* ---------------- boot / lock flow ---------------- */
+function bootApp(){
+  $('#lock').hidden = true;
+  $('#siteHeader').hidden = false;
+  $('#app').hidden = false;
+  $('#nav').hidden = false;
+  showView('home');
+}
+function showLock(){
+  $('#lock').hidden = false;
+  const form = $('#lockForm');
+  form.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const pass = $('#lockPass').value;
+    if (!pass) return;
+    $('#lock').classList.add('busy');
+    $('#lockErr').textContent = '';
+    try {
+      const bits = await derive(pass);
+      if (b64(bits.slice(0, 32)) === AUTH.verify) {
+        localStorage.setItem(KEYSLOT, b64(bits.slice(32)));
+        bootApp();
+      } else {
+        $('#lockErr').textContent = 'That\'s not it — ask the trip organiser.';
+        $('#lockPass').value = '';
+      }
+    } catch (e) {
+      $('#lockErr').textContent = 'Unlock failed on this device.';
+    }
+    $('#lock').classList.remove('busy');
+  });
+}
+(function init(){
+  if (!subtle || AUTH.salt.indexOf('__') === 0) {
+    // No WebCrypto (plain file:// copy) or unbuilt auth — open without the lock.
+    bootApp();
+    return;
+  }
+  if (localStorage.getItem(KEYSLOT)) bootApp();
+  else showLock();
+})();
+
+/* Offline support when hosted (no-op as a plain file) */
+if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
