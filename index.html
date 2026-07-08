@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Private, offline-first travel companion for one family's Thailand expedition — itinerary, phrasebook, baht converter, city guides and more, behind a family passcode.">
 <meta name="theme-color" content="#F4F3EF">
 <title>Thailand MMXXVI · Family Expedition</title>
 <!-- PWA — active when served from the family link; harmless as a plain file -->
@@ -13,7 +14,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Thailand 26">
-<meta name="tt-build" content="2026-07-02.2">
+<meta name="tt-build" content="2026-07-08.1">
 <style>
 /* ============================================================
    THAILAND MMXXVI — private family expedition
@@ -35,7 +36,7 @@
 :root{
   --ink:#0B0B0C; --charcoal:#232327; --paper:#F4F3EF; --white:#FCFBF9;
   --line:rgba(11,11,12,.13); --line-strong:rgba(11,11,12,.32);
-  --accent:#B08D57; --accent-soft:rgba(176,141,87,.14); --accent-line:rgba(176,141,87,.34);
+  --accent:#B08D57; --accent-ink:#7E602F; --accent-soft:rgba(176,141,87,.14); --accent-line:rgba(176,141,87,.34);
   --ok:#3E6B4F; --ok-soft:rgba(62,107,79,.09);
   --warn:#8A4B2D; --warn-soft:rgba(138,75,45,.09);
   --muted:rgba(11,11,12,.62); --faint:rgba(11,11,12,.45);
@@ -60,12 +61,12 @@ svg{display:block}
 ::selection{background:var(--accent-soft)}
 
 /* ---------- type utilities ---------- */
-.overline{font-family:var(--util);font-size:10.5px;font-weight:600;letter-spacing:var(--ls-over);text-transform:uppercase;color:var(--accent)}
+.overline{font-family:var(--util);font-size:10.5px;font-weight:600;letter-spacing:var(--ls-over);text-transform:uppercase;color:var(--accent-ink)}
 .caps{font-family:var(--util);font-size:11.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase}
 .display{font-family:var(--display);font-weight:500;line-height:1.08}
 .mono{font-family:var(--mono);font-size:.85em}
 .muted{color:var(--muted)}
-.sec-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em}
+.sec-num{font-family:var(--mono);font-size:11px;color:var(--accent-ink);letter-spacing:.1em}
 
 /* ---------- header ---------- */
 header.site{
@@ -80,7 +81,7 @@ header.site .bar{
 }
 .brand{display:flex;align-items:baseline;gap:9px;white-space:nowrap}
 .brand .word{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:.02em}
-.brand .sub{font-family:var(--util);font-size:9px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--accent)}
+.brand .sub{font-family:var(--util);font-size:9px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--accent-ink)}
 .hbtn{padding:8px;border:1px solid transparent;border-radius:2px;color:var(--charcoal)}
 .hbtn:active{border-color:var(--line-strong)}
 
@@ -115,7 +116,7 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 .wotd .th{font-size:22px;line-height:1.2}
 .wotd .pt{flex:1}
 .wotd .en{font-family:var(--util);font-size:12.5px;font-weight:500;color:var(--muted);margin-top:1px}
-.wotd .ph{font-family:var(--body);font-style:italic;font-size:14px;color:var(--accent)}
+.wotd .ph{font-family:var(--body);font-style:italic;font-size:14px;color:var(--accent-ink)}
 
 /* ---------- cards ---------- */
 .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
@@ -138,7 +139,7 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 
 .credit{text-align:center;padding:30px 10px 8px}
 .credit .tagline{font-family:var(--display);font-style:italic;font-size:18px}
-.credit .fine{font-family:var(--util);font-size:10.5px;color:var(--faint);letter-spacing:.04em;margin-top:8px;line-height:1.7}
+.credit .fine{font-family:var(--util);font-size:10.5px;color:var(--muted);letter-spacing:.04em;margin-top:8px;line-height:1.7}
 
 /* ---------- buttons / chips / tabs ---------- */
 .btn{
@@ -181,7 +182,7 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 .tbl th{text-align:left;font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted);padding:10px 13px;border-bottom:1px solid var(--line-strong);background:var(--paper)}
 .tbl td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
 .tbl tr:last-child td{border-bottom:0}
-.tbl .mono{color:var(--accent)}
+.tbl .mono{color:var(--accent-ink)}
 
 /* ---------- itinerary ---------- */
 .daycard{background:var(--white);border:1px solid var(--line);border-radius:3px;margin:14px 0;overflow:hidden}
@@ -190,9 +191,9 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 .dayhead .ov{margin-bottom:3px}
 .itemrow{display:flex;gap:14px;align-items:baseline;width:100%;text-align:left;padding:11px 16px;border-bottom:1px solid var(--line)}
 .itemrow:last-of-type{border-bottom:none}
-.itemrow .t{font-family:var(--mono);font-size:11.5px;color:var(--accent);min-width:44px;font-variant-numeric:tabular-nums}
+.itemrow .t{font-family:var(--mono);font-size:11.5px;color:var(--accent-ink);min-width:44px;font-variant-numeric:tabular-nums}
 .itemrow .x{font-size:15.5px;flex:1;line-height:1.4}
-.addrow{width:100%;text-align:left;padding:11px 16px;font-family:var(--util);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border-top:1px solid var(--line)}
+.addrow{width:100%;text-align:left;padding:11px 16px;font-family:var(--util);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);border-top:1px solid var(--line)}
 .iconbtn{padding:7px;border:1px solid var(--line);border-radius:2px;color:var(--charcoal);background:var(--white)}
 .iconbtn:active{border-color:var(--accent-line)}
 
@@ -201,7 +202,7 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 .phrase .pt{flex:1;min-width:0}
 .phrase .en{font-family:var(--util);font-size:13.5px;font-weight:500}
 .phrase .th{font-size:18px;margin:2px 0 1px;line-height:1.35}
-.phrase .ph{font-family:var(--body);font-style:italic;font-size:13.5px;color:var(--accent)}
+.phrase .ph{font-family:var(--body);font-style:italic;font-size:13.5px;color:var(--accent-ink)}
 .speakbtn{width:40px;height:40px;flex:none;border:1px solid var(--accent-line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);background:var(--accent-soft);transition:transform .15s}
 .speakbtn:active{transform:scale(.88)}
 .speakbtn.talking{background:var(--accent);color:var(--white);animation:pulse 1s infinite}
@@ -218,7 +219,7 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 .raterow input{width:76px;text-align:center}
 .chipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
 .mchip{background:var(--white);border:1px solid var(--line);border-radius:2px;padding:9px 6px;text-align:center}
-.mchip b{display:block;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.mchip b{display:block;font-family:var(--mono);font-size:13px;color:var(--accent-ink)}
 .mchip span{font-family:var(--util);font-size:11px;color:var(--muted)}
 
 /* expenses */
@@ -241,30 +242,20 @@ p.lede{font-size:16.5px;color:var(--muted);margin:6px 0 18px;max-width:56ch}
 .explist{border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:14px}
 .expday{padding:9px 14px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
 
-/* ---------- dishes / spinner ---------- */
+/* ---------- dishes ---------- */
 .dishscroll{display:flex;gap:12px;overflow-x:auto;padding:6px 20px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -20px}
 .dishscroll::-webkit-scrollbar{display:none}
 .dish{flex:0 0 74%;max-width:300px;scroll-snap-align:center;background:var(--white);border:1px solid var(--line);border-radius:3px;padding:18px 16px}
 .dish .de{font-size:34px;line-height:1}
 .dish h3{font-family:var(--display);font-size:22px;font-weight:600;margin:9px 0 1px}
 .dish .dth{font-size:14px;color:var(--muted);margin-bottom:7px}
-.dish .dp{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin-bottom:7px}
+.dish .dp{font-family:var(--mono);font-size:11.5px;color:var(--accent-ink);margin-bottom:7px}
 .dish .spice{display:flex;align-items:center;gap:7px;margin-bottom:9px}
 .dish .spice i{width:8px;height:8px;border-radius:50%;border:1px solid var(--accent);display:inline-block}
 .dish .spice i.f{background:var(--accent)}
 .dish .spice span{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--muted)}
 .dish p{font-size:14px;color:var(--muted);margin-bottom:9px;line-height:1.45}
 .dish .how{font-size:13px;background:var(--ok-soft);border:1px solid rgba(62,107,79,.22);border-radius:2px;padding:8px 11px;color:var(--ok)}
-.spinstage{
-  min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  padding:20px 16px;border:1px dashed var(--line-strong);border-radius:3px;margin:12px 0;
-  background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(11,11,12,.015) 12px,rgba(11,11,12,.015) 24px);
-}
-.spinstage .se{font-size:34px;margin-bottom:8px}
-.spinstage h3{font-family:var(--display);font-size:23px;font-weight:600;line-height:1.15}
-.spinstage p{font-size:14px;color:var(--muted);margin-top:5px;max-width:38ch}
-.spinstage.rolling h3{color:var(--faint)}
-.spinstage.landed{border-style:solid;border-color:var(--accent-line);background:var(--white);animation:pop .4s cubic-bezier(.2,1.6,.4,1) both}
 @keyframes pop{from{transform:scale(.9);opacity:.4}to{transform:scale(1);opacity:1}}
 
 /* ---------- guide ---------- */
@@ -281,9 +272,14 @@ details.acc[open] summary::after{transform:rotate(90deg)}
 details.acc .accbody{padding:2px 18px 16px;font-size:15px;color:var(--muted)}
 details.acc .accbody li{margin:0 0 9px 17px}
 details.acc .accbody b{color:var(--ink)}
-.taxibtn{display:block;width:100%;text-align:left;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:12px 15px;margin-bottom:8px}
-.taxibtn .tb-en{font-family:var(--util);font-size:13.5px;font-weight:500}
-.taxibtn .tb-th{font-size:13.5px;color:var(--accent);margin-top:2px}
+.taxi-citylabel{display:flex;align-items:center;gap:4px;margin:18px 0 8px}
+.taxi-citylabel .caps{color:var(--accent-ink)}
+.taxirow{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white);margin-bottom:8px}
+.taximain{flex:1;text-align:left;padding:12px 15px;background:transparent;min-width:0}
+.taximain .tb-en{font-family:var(--util);font-size:13.5px;font-weight:500}
+.taximain .tb-th{font-size:13.5px;color:var(--accent-ink);margin-top:2px}
+.taxix{flex:none;width:46px;border-left:1px solid var(--line);color:var(--faint);font-size:17px;display:flex;align-items:center;justify-content:center;background:transparent}
+.taxix:active{color:var(--warn);background:var(--warn-soft)}
 
 /* ---------- vault ---------- */
 .vault-sec{margin-bottom:6px}
@@ -295,17 +291,17 @@ details.acc .accbody b{color:var(--ink)}
 /* ---------- journal ---------- */
 .jentry{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:16px 17px;margin-bottom:12px}
 .jhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px}
-.jmood{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--accent)}
+.jmood{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--accent-ink)}
 .jtext{font-size:16px;line-height:1.55}
 .moodrow{display:flex;gap:8px;margin:6px 0 12px}
 .moodrow button{flex:1;font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:9px 4px;border:1px solid var(--line-strong);border-radius:2px;color:var(--muted)}
-.moodrow button.on{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.moodrow button.on{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--white)}
 
 /* ---------- packing ---------- */
 .packgroup{margin-bottom:16px}
 .packitem{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:9px 2px;font-size:15px;border-bottom:1px solid var(--line)}
 .packitem .box{width:19px;height:19px;flex:none;border:1px solid var(--line-strong);border-radius:2px;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.packitem.done .box{background:var(--accent);border-color:var(--accent);color:var(--white);font-size:12px}
+.packitem.done .box{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--white);font-size:12px}
 .packitem.done .pl{color:var(--faint);text-decoration:line-through}
 .addcustom{display:flex;gap:8px;margin-top:12px}
 .addcustom input{flex:1;background:var(--white);border:1px solid var(--line-strong);border-radius:2px;padding:10px 12px;font-family:var(--util);font-size:14px;outline:none}
@@ -342,7 +338,7 @@ nav#nav button.on{color:var(--ink);border-top-color:var(--accent)}
 }
 #lock input:focus{border-color:var(--accent)}
 #lock .err{font-family:var(--util);font-size:12px;color:var(--warn);min-height:18px;margin:6px 0 2px}
-#lock .fine{font-family:var(--util);font-size:10.5px;color:var(--faint);letter-spacing:.04em;margin-top:26px;line-height:1.7}
+#lock .fine{font-family:var(--util);font-size:10.5px;color:var(--muted);letter-spacing:.04em;margin-top:26px;line-height:1.7}
 #lock.busy input,#lock.busy .btn{opacity:.5;pointer-events:none}
 
 /* ---------- taxi overlay ---------- */
@@ -386,6 +382,111 @@ nav#nav button.on{color:var(--ink);border-top-color:var(--accent)}
 @keyframes slidedown{from{transform:translateY(-100%)}}
 #updateBar span{color:var(--accent);margin-left:8px}
 
+/* ---------- home quick strip ---------- */
+.quickstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 2px}
+.qbtn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  background:var(--white);color:var(--ink);border:1px solid var(--line-strong);border-radius:3px;
+  padding:13px 4px 11px;text-align:center;min-height:74px;
+  transition:border-color .2s var(--ease),transform .2s var(--ease);
+}
+.qbtn:active{border-color:var(--accent-line);transform:translateY(-2px)}
+.qbtn svg{color:var(--accent)}
+.qbtn span{font-family:var(--util);font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;line-height:1.15}
+
+/* ---------- phrasebook jump row ---------- */
+.jumprow{
+  position:sticky;z-index:30;top:calc(62px + env(safe-area-inset-top));
+  display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  background:var(--paper);padding:11px 20px;margin:8px -20px 6px;border-bottom:1px solid var(--line);
+  scrollbar-width:none;
+}
+.jumprow::-webkit-scrollbar{display:none}
+.jumpchip{
+  flex:none;font-family:var(--util);font-size:11px;font-weight:600;letter-spacing:.04em;
+  padding:7px 12px;border:1px solid var(--line-strong);border-radius:2px;color:var(--charcoal);background:var(--white);white-space:nowrap;
+}
+.jumpchip:active{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- cities: sights gallery ---------- */
+.sightgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 4px}
+.sightcard{background:var(--white);border:1px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.sightimg{display:block;width:100%;padding:0;border:none;background:var(--paper);line-height:0;aspect-ratio:3/2;overflow:hidden}
+.sightimg img{width:100%;height:100%;object-fit:cover;display:block}
+.sightbody{padding:12px 13px 14px;display:flex;flex-direction:column;gap:5px}
+.sightbody h3{font-family:var(--display);font-size:18px;font-weight:600;line-height:1.14}
+.sightbody p{font-size:13.5px;color:var(--muted);line-height:1.42}
+.sighttip{font-size:12.5px;background:var(--ok-soft);border:1px solid rgba(62,107,79,.22);border-radius:2px;padding:7px 9px;color:var(--ok);line-height:1.4}
+
+/* ---------- cities: venues ---------- */
+.venuecard{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:15px 16px;margin-bottom:10px}
+.venuecard .vtop{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.venuecard h3{font-family:var(--display);font-size:20px;font-weight:600;line-height:1.15}
+.vtier{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:var(--ls-caps);text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;flex:none}
+.vtier.lux{background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--accent-ink)}
+.vtier.local{background:var(--ok-soft);border:1px solid rgba(62,107,79,.28);color:var(--ok)}
+.venuecard .vmeta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:7px 0 8px}
+.venuecard .vrating{font-family:var(--mono);font-size:12px;color:var(--accent-ink)}
+.venuecard .vprice{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.venuecard .vblurb{font-size:14.5px;color:var(--muted);line-height:1.45;margin-bottom:8px}
+.venuecard .vaddr{font-size:12.5px;color:var(--faint);margin-bottom:10px;font-family:var(--util);line-height:1.4}
+.vadult{font-family:var(--util);font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--warn);border:1px solid rgba(138,75,45,.45);border-radius:2px;padding:3px 7px}
+.maplink{display:inline-flex;align-items:center;gap:7px;font-family:var(--util);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line-strong);border-radius:2px;padding:9px 13px;text-decoration:none}
+.maplink:active{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- lightbox ---------- */
+#lightbox{position:fixed;inset:0;z-index:160;background:rgba(11,11,12,.92);display:flex;align-items:center;justify-content:center;padding:20px;cursor:pointer}
+#lightbox img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:3px}
+#lightbox .lbcap{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:#eee;font-family:var(--util);font-size:12px;letter-spacing:.04em;padding:0 20px}
+#lightbox .lbclose{position:absolute;top:calc(14px + env(safe-area-inset-top));right:18px;color:#fff;font-size:24px;font-family:var(--util);padding:6px 10px}
+
+/* ---------- settle-up ---------- */
+.settlerow{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.settlerow:last-of-type{border-bottom:none}
+.settlerow .sname{font-family:var(--util);font-size:13px;font-weight:600;min-width:66px}
+.settlerow .spaid{font-size:12px;color:var(--muted);flex:1}
+.settlerow .sbal{font-family:var(--util);font-size:12px;font-weight:600}
+.txrow{font-size:14.5px;padding:6px 0}
+.txrow .mono{color:var(--accent-ink)}
+
+/* ---------- quiz ---------- */
+.quizbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 4px}
+.qprog{font-size:12px;color:var(--muted)}
+.quizscore{font-size:11px;color:var(--accent-ink);margin-bottom:12px}
+.quizq{font-family:var(--display);font-size:clamp(21px,5.5vw,26px);font-weight:600;line-height:1.2;margin-bottom:16px}
+.quizopts{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.quizopt{
+  text-align:left;background:var(--white);border:1px solid var(--line-strong);border-radius:3px;
+  padding:14px 16px;font-family:var(--util);font-size:15px;font-weight:500;transition:border-color .15s var(--ease);
+}
+.quizopt:active{border-color:var(--accent)}
+.quizopt.correct{background:var(--ok-soft);border-color:var(--ok);color:var(--ok);font-weight:600}
+.quizopt.wrong{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+.quizopt.dim{opacity:.5}
+.quizfact{border-radius:3px;padding:12px 15px;margin-bottom:14px;font-size:14.5px;line-height:1.5}
+.quizfact.right{background:var(--ok-soft);border:1px solid rgba(62,107,79,.28)}
+.quizfact.notright{background:var(--warn-soft);border:1px solid rgba(138,75,45,.28)}
+.handoff{text-align:center;padding:30px 16px;border:1px dashed var(--line-strong);border-radius:4px;margin:16px 0}
+.handicon{font-size:38px;margin-bottom:6px}
+.handoff h3{font-size:22px;font-weight:600}
+.handname{font-family:var(--display);font-size:34px;font-weight:600;color:var(--accent-ink);margin:4px 0 10px}
+.quizend{text-align:center;padding:20px 10px}
+.bigscore{font-size:64px;font-weight:600;line-height:1;margin:6px 0}
+.bigscore span{font-size:24px;color:var(--muted);margin-left:6px}
+.podium{margin:16px 0}
+.podrow{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:3px;margin-bottom:8px;background:var(--white)}
+.podrow.win{border-color:var(--accent-line);background:var(--accent-soft)}
+.pod-m{font-size:22px;min-width:30px}
+.pod-n{flex:1;text-align:left;font-family:var(--display);font-size:20px;font-weight:600}
+.pod-s{color:var(--accent-ink)}
+
+/* ---------- photo credits ---------- */
+.credits-acc{margin-top:16px;max-width:540px;margin-left:auto;margin-right:auto}
+.credits-acc summary{font-family:var(--util);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);cursor:pointer;text-align:center;list-style:none}
+.credits-acc summary::-webkit-details-marker{display:none}
+.credits-list{font-family:var(--util);font-size:10px;color:var(--faint);line-height:1.7;margin-top:10px;letter-spacing:.02em;text-align:left}
+.credits-list div{margin-bottom:3px}
+
 @media print{
   header.site,nav#nav,#sheet,#sheetback,.credit,.addrow,.iconbtn{display:none!important}
   body{background:#fff}
@@ -423,6 +524,7 @@ nav#nav button.on{color:var(--ink);border-top-color:var(--accent)}
   <section id="view-money" class="view"></section>
   <section id="view-speak" class="view"></section>
   <section id="view-eat" class="view"></section>
+  <section id="view-quiz" class="view"></section>
   <section id="view-guide" class="view"></section>
   <section id="view-vault" class="view"></section>
   <section id="view-journal" class="view"></section>
@@ -444,6 +546,7 @@ nav#nav button.on{color:var(--ink);border-top-color:var(--accent)}
 </nav>
 
 <div id="taxioverlay" hidden data-action="taxi-close"></div>
+<div id="lightbox" hidden data-action="lightbox-close"></div>
 <div id="sheetback" hidden data-action="sheet-close"></div>
 <div id="sheet" hidden></div>
 
@@ -457,6 +560,7 @@ nav#nav button.on{color:var(--ink);border-top-color:var(--accent)}
 
 const KEY = 'thai-trip-v1';          // state (kept from v1 so family devices migrate)
 const KEYSLOT = 'thai-trip-key';     // derived unlock key (device-local)
+const KIDSLOT = 'thai-trip-kid';     // key-generation id (additive; drives stale-key re-lock)
 const $ = s => document.querySelector(s);
 const uid = () => Math.random().toString(36).slice(2, 9);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -465,7 +569,7 @@ const todayStr = () => { const d = new Date(); return d.getFullYear() + '-' + St
 /* ---------------- passcode / crypto ----------------
    PBKDF2-SHA256 (310k) -> 64 bytes: [0..31] verifier, [32..63] AES-GCM key.
    AUTH is generated at build time; the passcode itself never appears here. */
-const AUTH = { salt: 'UFL29YRVbGSDPCwkaeexzA==', iter: 310000, verify: 'B5/v9xtdJ6zu0JOKeIrQ6JwsJjB6JwpO6Vn7f3y3p7Y=' };
+const AUTH = { salt: 'Gm6wL/SDIqsWoG2jHqr4PA==', iter: 310000, verify: 's7KZzMK1lIoJy+HmbHySir5ijQChAuCXtOyWNoU8GPc=', kid: 'k2' };
 const VAULT_SEED = null; /* encrypted family blob gets baked here */
 
 const subtle = (window.crypto && crypto.subtle) ? crypto.subtle : null;
@@ -501,41 +605,43 @@ async function decryptBlob(blob){
 /* ---------------- state ---------------- */
 function makeDefaults(){
   return {
-    travelers: ['Traveler 1', 'Traveler 2', 'Traveler 3'],
-    depart: '2026-07-25',
-    ret:    '2026-08-08',
+    v: 2,                  // state schema version — drives one-time migration in load()
+    travelers: ['Joseph', 'Sia', 'Isa', 'Alexia', 'Nicola'],
+    depart: '2026-07-23',
+    ret:    '2026-08-05',
     currency: 'EUR',
     rates: { USD:35, EUR:39, GBP:45, SEK:3.3, NOK:3.2, DKK:5.2, AUD:23, CAD:25 },
-    itinerary: [
-      { id: uid(), title: 'Arrival', sub: 'Sample day — make it yours', items: [
-        { id: uid(), time: '15:40', text: 'Land in Bangkok (BKK) ✈️' },
-        { id: uid(), time: '18:30', text: 'Check in, shower, revive' },
-        { id: uid(), time: '20:00', text: 'First street-food dinner 🍜' },
-      ]},
-      { id: uid(), title: 'Temples & tuk-tuks', sub: 'Sample day — tap any line to edit', items: [
-        { id: uid(), time: '09:00', text: 'Grand Palace — cover shoulders & knees 🏯' },
-        { id: uid(), time: '13:00', text: 'Mango sticky rice hunt 🥭' },
-        { id: uid(), time: '17:30', text: 'Wat Arun at sunset 🌅' },
-      ]},
-      { id: uid(), title: 'Beach mode', sub: 'Sample day — replace with your plan', items: [
-        { id: uid(), time: '10:00', text: 'Longtail boat island tour 🏝️' },
-        { id: uid(), time: '19:00', text: 'Fire show on the beach 🔥' },
-      ]},
-    ],
+    itinerary: [],         // starts empty — the family builds their own plan
     packing: {},
     packCustom: [],
     taxiCustom: [],
+    taxiHidden: [],        // preset ids the user has hidden from the taxi cards
     expenses: [],          // {id, date, amt(THB), cat, who, note}
     budget: null,          // total budget in THB, optional
     journal: [],           // {id, date, mood, text}
     vaultLocal: [],        // {id, sec, label, value}
+    quizScores: {},        // { [name]: { best, rounds } } — device-local leaderboard
   };
+}
+/* One-time v2 migration: swap the old placeholder shape for the real trip,
+   without ever touching data the family has personalised. */
+function migrateV2(s){
+  const OLD = ['Traveler 1', 'Traveler 2', 'Traveler 3'];
+  if (Array.isArray(s.travelers) && s.travelers.length === 3 && s.travelers.every((n, i) => n === OLD[i])) {
+    s.travelers = ['Joseph', 'Sia', 'Isa', 'Alexia', 'Nicola'];
+  }
+  if (s.depart === '2026-07-25') s.depart = '2026-07-23';
+  if (s.ret === '2026-08-08') s.ret = '2026-08-05';
+  if (Array.isArray(s.itinerary)) {
+    s.itinerary = s.itinerary.filter(d => !(d && typeof d.sub === 'string' && d.sub.indexOf('Sample day') === 0));
+  }
 }
 function load(){
   try {
     const raw = localStorage.getItem(KEY);
     if (raw) {
       const s = JSON.parse(raw);
+      if (s.v !== 2) { migrateV2(s); s.v = 2; }
       const d = makeDefaults();
       for (const k of Object.keys(d)) if (s[k] === undefined) s[k] = d[k];
       return s;
@@ -557,6 +663,7 @@ const PHRASES = [
     { en:"No worries, it's OK", th:'ไม่เป็นไร', ph:'mai pen rai' },
     { en:'Yes', th:'ใช่', ph:'chai' },
     { en:'No', th:'ไม่ใช่', ph:'mai chai' },
+    { en:'Nice to meet you', th:'ยินดีที่ได้รู้จัก', ph:'yin-dee tee dai ruu-jak' },
   ]},
   { cat:'Food & ordering', items:[
     { en:'Delicious!', th:'อร่อย', ph:'a-roi!' },
@@ -569,6 +676,7 @@ const PHRASES = [
     { en:"I'm allergic to…", th:'ฉันแพ้…', ph:'chan phae…' },
     { en:'Chicken / pork / shrimp', th:'ไก่ / หมู / กุ้ง', ph:'gai / moo / goong' },
     { en:'Rice', th:'ข้าว', ph:'khao' },
+    { en:'To take away', th:'ใส่ถุงด้วย', ph:'sai thung duay' },
   ]},
   { cat:'Shopping & bargaining', items:[
     { en:'How much?', th:'เท่าไหร่', ph:'thao-rai?' },
@@ -577,6 +685,8 @@ const PHRASES = [
     { en:'I want this one', th:'เอาอันนี้', ph:'ao an nee' },
     { en:'Just looking, thanks', th:'ดูเฉยๆ', ph:'duu choei choei' },
     { en:'Beautiful!', th:'สวย', ph:'suay!' },
+    { en:'Do you accept card?', th:'รับบัตรไหม', ph:'rap bat mai?' },
+    { en:'Receipt, please', th:'ขอใบเสร็จ', ph:'khor bai set' },
   ]},
   { cat:'Getting around', items:[
     { en:'Where is the toilet?', th:'ห้องน้ำอยู่ที่ไหน', ph:'hong naam yuu tee nai?' },
@@ -588,6 +698,10 @@ const PHRASES = [
     { en:'Airport', th:'สนามบิน', ph:'sa-naam bin' },
     { en:'Hotel', th:'โรงแรม', ph:'rong raem' },
     { en:'Beach', th:'ชายหาด', ph:'chaai haat' },
+    { en:'How long does it take?', th:'ใช้เวลานานแค่ไหน', ph:'chai we-laa naan kae nai?' },
+    { en:'Please take me to…', th:'ไปส่งที่…', ph:'pai song tee…' },
+    { en:'Bus', th:'รถเมล์', ph:'rot mair' },
+    { en:'Skytrain / BTS station', th:'สถานีรถไฟฟ้า', ph:'sa-thaa-nee rot fai faa' },
   ]},
   { cat:'Emergencies', items:[
     { en:'Help!', th:'ช่วยด้วย', ph:'chuay duay!' },
@@ -597,13 +711,66 @@ const PHRASES = [
     { en:'Pharmacy', th:'ร้านขายยา', ph:'raan khaai yaa' },
     { en:"I don't understand", th:'ไม่เข้าใจ', ph:'mai khao jai' },
     { en:'Do you speak English?', th:'พูดภาษาอังกฤษได้ไหม', ph:'phuut paa-saa ang-grit dai mai?' },
+    { en:'I lost my passport', th:'ทำพาสปอร์ตหาย', ph:'tam pass-port haai' },
+    { en:"I've been robbed", th:'โดนขโมย', ph:'doen kha-moi' },
   ]},
-  { cat:'Numbers & fun', items:[
-    { en:'1 / 2 / 3', th:'หนึ่ง / สอง / สาม', ph:'neung / song / saam' },
-    { en:'10 / 100 / 1000', th:'สิบ / ร้อย / พัน', ph:'sip / roi / phan' },
+  { cat:'Numbers & counting', items:[
+    { en:'One', th:'หนึ่ง', ph:'neung' },
+    { en:'Two', th:'สอง', ph:'song' },
+    { en:'Three', th:'สาม', ph:'saam' },
+    { en:'Four', th:'สี่', ph:'see' },
+    { en:'Five', th:'ห้า', ph:'haa' },
+    { en:'Six', th:'หก', ph:'hok' },
+    { en:'Seven', th:'เจ็ด', ph:'jet' },
+    { en:'Eight', th:'แปด', ph:'paet' },
+    { en:'Nine', th:'เก้า', ph:'gao' },
+    { en:'Ten', th:'สิบ', ph:'sip' },
+    { en:'Twenty', th:'ยี่สิบ', ph:'yee-sip' },
+    { en:'Fifty', th:'ห้าสิบ', ph:'haa-sip' },
+    { en:'One hundred', th:'ร้อย', ph:'roi' },
+    { en:'Five hundred', th:'ห้าร้อย', ph:'haa-roi' },
+    { en:'One thousand', th:'พัน', ph:'phan' },
+    { en:'How much is this? (pointing)', th:'อันนี้เท่าไหร่', ph:'an-nee thao-rai?' },
+  ]},
+  { cat:'Fun & cheers', items:[
     { en:'Fun!', th:'สนุก', ph:'sa-nook!' },
     { en:'Cheers!', th:'ชนแก้ว', ph:'chon kaew!' },
     { en:"Foreigner (you'll hear it!)", th:'ฝรั่ง', ph:'fa-rang' },
+  ]},
+  { cat:'At the hotel', items:[
+    { en:'Do you have a room available?', th:'มีห้องว่างไหม', ph:'mee hong wang mai?' },
+    { en:'What time is breakfast?', th:'อาหารเช้ากี่โมง', ph:'aa-haan chao gee mong?' },
+    { en:'Wifi password, please', th:'ขอรหัสไวไฟหน่อย', ph:'khor ra-hat wai-fai noi' },
+    { en:'Can I get a late checkout?', th:'เช็คเอาท์สายได้ไหม', ph:'check-out saai dai mai?' },
+    { en:'Please clean the room', th:'ทำความสะอาดห้องด้วย', ph:'tam khwaam sa-aat hong duay' },
+    { en:'Is there a swimming pool?', th:'มีสระว่ายน้ำไหม', ph:'mee sa waai naam mai?' },
+  ]},
+  { cat:'Health & pharmacy', items:[
+    { en:'I have a headache', th:'ปวดหัว', ph:'puat hua' },
+    { en:'I have a stomach ache', th:'ปวดท้อง', ph:'puat thong' },
+    { en:'I have a fever', th:'เป็นไข้', ph:'pen khai' },
+    { en:'I feel nauseous', th:'คลื่นไส้', ph:'khluen sai' },
+    { en:'Do you have painkillers?', th:'มียาแก้ปวดไหม', ph:'mee yaa gae puat mai?' },
+    { en:'Motion sickness tablets', th:'ยาแก้เมารถ', ph:'yaa gae mao rot' },
+    { en:'Band-aid / plaster', th:'พลาสเตอร์', ph:'plaas-ter' },
+  ]},
+  { cat:'Beach & boat', items:[
+    { en:'Is it safe to swim here?', th:'ว่ายน้ำที่นี่ปลอดภัยไหม', ph:'waai naam tee nee plort-phai mai?' },
+    { en:'Life jacket', th:'เสื้อชูชีพ', ph:'seua choo cheep' },
+    { en:'What time does the boat leave?', th:'เรือออกกี่โมง', ph:'reua ork gee mong?' },
+    { en:'I feel seasick', th:'เมาเรือ', ph:'mao reua' },
+    { en:'Can we rent snorkel gear?', th:'ขอเช่าอุปกรณ์ดำน้ำได้ไหม', ph:'khor chao up-pa-gorn dum naam dai mai?' },
+    { en:'Jellyfish', th:'แมงกะพรุน', ph:'maeng-ga-phrun' },
+    { en:'Sunscreen', th:'ครีมกันแดด', ph:'kreem gan daet' },
+    { en:'How deep is the water?', th:'น้ำลึกแค่ไหน', ph:'naam luek kae nai?' },
+  ]},
+  { cat:'Small talk & compliments', items:[
+    { en:'Where are you from?', th:'มาจากไหน', ph:'maa jaak nai?' },
+    { en:'I love Thailand', th:'ฉันรักเมืองไทย', ph:'chan rak mueang thai' },
+    { en:'Beautiful view!', th:'วิวสวย', ph:'wiw suay!' },
+    { en:'Can we take a photo together?', th:'ถ่ายรูปด้วยกันได้ไหม', ph:'thaai roop duay gan dai mai?' },
+    { en:"You're very kind", th:'คุณใจดีมาก', ph:'khun jai dee maak' },
+    { en:'Safe travels!', th:'เดินทางปลอดภัย', ph:'dern thaang plort-phai!' },
   ]},
 ];
 const ALL_PHRASES = PHRASES.flatMap(c => c.items);
@@ -623,34 +790,223 @@ const DISHES = [
   { e:'🍗', n:'Gai Tod', th:'ไก่ทอด', s:0, p:'40–80 ฿', d:'Thai fried chicken with sticky rice. Zero risk, all reward.', h:'"Gai tod" + "khao niao" (sticky rice)' },
 ];
 
-const ACTIVITIES = [
-  { r:'bkk', m:['culture'],           e:'🏯', t:'Grand Palace & Emerald Buddha', d:"Thailand's most dazzling landmark. Go early, dress temple-smart." },
-  { r:'bkk', m:['culture','chill'],   e:'🌅', t:'Wat Arun at sunset', d:'Cross the river on the cheap ferry and watch the temple glow.' },
-  { r:'bkk', m:['shopping'],          e:'🛍️', t:'Chatuchak Weekend Market', d:'15,000 stalls. Agree on a meeting point — you WILL lose each other.' },
-  { r:'bkk', m:['food'],              e:'🥢', t:'Chinatown (Yaowarat) food crawl', d:'Neon signs and some of the best street food in Asia after dark.' },
-  { r:'bkk', m:['chill'],             e:'⛴️', t:'Chao Phraya river-boat hop', d:'The cheapest "cruise" in the world — take the orange-flag boat.' },
-  { r:'bkk', m:['food','shopping'],   e:'🌃', t:'Jodd Fairs night market', d:'Trendy night market: food, vintage finds, live music.' },
-  { r:'bkk', m:['adventure'],         e:'🥊', t:'Muay Thai fight night', d:'Rajadamnern Stadium — electric atmosphere, family-friendly seats.' },
-  { r:'bkk', m:['adventure','culture'], e:'🚤', t:'Khlong (canal) longtail tour', d:"See Bangkok's wooden-house waterways from a roaring longtail boat." },
-  { r:'bkk', m:['chill'],             e:'🦎', t:'Lumpini Park pedal boats', d:'Swan pedal boats + wild monitor lizards like small dinosaurs.' },
-  { r:'bkk', m:['culture'],           e:'🏠', t:'Jim Thompson House', d:'Silk-trader mansion with a genuinely wild disappearance story.' },
-  { r:'cnx', m:['adventure'],         e:'🐘', t:'Ethical elephant sanctuary day', d:'Feed and bathe rescued elephants. "No riding" sanctuaries only.' },
-  { r:'cnx', m:['culture'],           e:'⛰️', t:'Doi Suthep temple', d:'Golden mountain temple with the best view over Chiang Mai.' },
-  { r:'cnx', m:['food'],              e:'👨‍🍳', t:'Thai cooking class', d:'Market tour + cook five dishes. The souvenir you can eat forever.' },
-  { r:'cnx', m:['shopping'],          e:'🏮', t:'Sunday Walking Street', d:'A kilometre of crafts, snacks and street musicians in the old city.' },
-  { r:'cnx', m:['adventure'],         e:'💦', t:'Sticky Waterfalls (Bua Tong)', d:'Climb UP a waterfall — the limestone grips like velcro. Unreal.' },
-  { r:'cnx', m:['adventure'],         e:'🌲', t:'Jungle zip-lining', d:'Fly through rainforest canopy in the hills north of the city.' },
-  { r:'cnx', m:['chill'],             e:'☕', t:'Nimman café hopping', d:"Chiang Mai's coffee scene is world-class — and costs pocket money." },
-  { r:'cnx', m:['food'],              e:'🍲', t:'Khao soi taste-test', d:'Try 2–3 khao soi spots in one day and crown a family champion.' },
-  { r:'isl', m:['adventure'],         e:'🏝️', t:'Island-hopping longtail tour', d:'4–5 islands, snorkel stops, hidden lagoons. Book the early boat.' },
-  { r:'isl', m:['adventure'],         e:'🤿', t:'Snorkeling trip', d:"Clownfish, parrotfish — maybe a sea turtle if you're lucky." },
-  { r:'isl', m:['chill'],             e:'🏖️', t:'All-day beach + hammock', d:'Zero plans. Coconut in hand. This is why you came.' },
-  { r:'isl', m:['adventure','chill'], e:'🌄', t:'Sunset viewpoint hike', d:'30 sweaty minutes for a postcard you took yourself.' },
-  { r:'isl', m:['chill'],             e:'🔥', t:'Beach fire show', d:'Evening fire jugglers — a free show with your fruit shake.' },
-  { r:'isl', m:['adventure'],         e:'🛶', t:'Kayak the lagoons', d:'Paddle into hidden hongs (sea caves) at your own pace.' },
-  { r:'isl', m:['food'],              e:'🦞', t:'Beach BBQ seafood dinner', d:'Pick your fish by the kilo, eat with sand between your toes.' },
-  { r:'isl', m:['chill'],             e:'💆', t:'Thai massage on the beach', d:"About 300 ฿ for an hour with a wave soundtrack." },
-  { r:'isl', m:['shopping'],          e:'🌙', t:'Walking-street night market', d:'Sarongs, snacks and gloriously questionable t-shirts.' },
+/* ---------------- cities ---------------- */
+const CITY_SPANS = [
+  { city:'bkk', start:'2026-07-23', end:'2026-07-27' },
+  { city:'cnx', start:'2026-07-27', end:'2026-07-30' },
+  { city:'hkt', start:'2026-07-30', end:'2026-08-05' },
+];
+const CITY_NAMES = { bkk:'Bangkok', cnx:'Chiang Mai', hkt:'Phuket' };
+const CITY_ORDER = ['bkk', 'cnx', 'hkt'];
+function currentCity(){
+  const t = todayStr();
+  for (let i = 0; i < CITY_SPANS.length; i++){
+    const s = CITY_SPANS[i], last = i === CITY_SPANS.length - 1;
+    if (t >= s.start && (last ? t <= s.end : t < s.end)) return s.city;
+  }
+  return 'bkk'; // pre-trip and post-trip both default to Bangkok
+}
+
+/* Venues — every entry independently clears Google ★4.7 with 1,000+ reviews
+   as of Jul 2026. Ratings sourced from Google-Maps aggregators; see research notes. */
+const VENUES = [
+  // BANGKOK — restaurants
+  { city:'bkk', kind:'rest', tier:'lux', name:'Kodtalay The Riverfront Seafood Buffet', area:'Riverside', rating:4.9, reviews:50300, price:'฿฿฿', blurb:'Catch your own river prawns from live tanks and grill them tableside, river breeze included.', addr:'Riverside, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Kodtalay+The+Riverfront+Seafood+Buffet+Bangkok', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'The Island Bangkok', area:'Old City (Khao San)', rating:4.9, reviews:14000, price:'฿฿', blurb:'Three floors of swing seats and jungle decor two minutes from the Grand Palace — chaos-proof for tired families.', addr:'49 Soi Samsen 4, Phra Nakhon, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=The+Island+Bangkok+Thai+Restaurant+Khao+San', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'Here Duan (Banthat Thong)', area:'Pathum Wan (near Old City/Siam)', rating:4.9, reviews:9100, price:'฿฿฿', blurb:'The crab omelette rice that started Banthat Thong\'s food-street fame — go hungry, go early.', addr:'1982 Banthat Thong Rd, Pathum Wan, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Here+Duan+Banthat+Thong+Bangkok', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'Taweechok Mookata Bantadthong', area:'Pathum Wan (near Old City)', rating:4.9, reviews:4300, price:'฿฿', blurb:'DIY Thai BBQ-hotpot on a charcoal grill — a genuinely fun table sport for teenagers.', addr:'Banthat Thong Rd, Pathum Wan, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Taweechok+Mookata+Bantadthong+Bangkok', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'HAGOW Yaowarat', area:'Chinatown', rating:4.7, reviews:3071, price:'฿฿', blurb:'Open-kitchen Hong Kong-style dim sum on the main Yaowarat drag, with a lively upstairs room.', addr:'387 Yaowarat Rd, Samphanthawong, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=HAGOW+Yaowarat+Bangkok', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'Moom Muum Park Soi 11', area:'Sukhumvit', rating:4.8, reviews:2554, price:'฿฿', blurb:'Open-air Sukhumvit courtyard doing bold Thai classics with a live band most nights.', addr:'20 Sukhumvit 11 Alley, Watthana, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Moom+Muum+Park+Soi+11+Bangkok', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'Absorn Thai Bistro', area:'Old City (Phra Nakhon)', rating:4.9, reviews:2500, price:'฿฿', blurb:'Old-school Bangkok home cooking near the Grand Palace, running since 1977.', addr:'232 Maha Chai Rd, Samran Rat, Phra Nakhon, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Absorn+Thai+Bistro+Bangkok', family:true },
+  { city:'bkk', kind:'rest', tier:'local', name:'Baan Ice Restaurant @ ICONSIAM', area:'Riverside', rating:4.9, reviews:2000, price:'฿฿', blurb:'Famous tom yum kung noodles with a river-view mall setting — an easy win after ICONSIAM shopping.', addr:'ICONSIAM, Charoen Nakhon Rd, Khlong San, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Baan+Ice+Restaurant+ICONSIAM+Bangkok', family:true },
+  // BANGKOK — bars
+  { city:'bkk', kind:'bar', tier:'local', name:'Bangkok Jazz BBQ and Bar', area:'Old City (Rambuttri/Khao San)', rating:5.0, reviews:1200, price:'฿฿', blurb:'Open-air live-jazz courtyard just off Khao San — casual enough for the whole family early evening.', addr:'Soi Rambuttri, Phra Nakhon, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Bangkok+Jazz+BBQ+and+Bar+Rambuttri', family:true },
+  { city:'bkk', kind:'bar', tier:'lux', name:'Sato San Rooftop Bar', area:'Ratchaprasong', rating:5.0, reviews:1800, price:'฿฿฿', blurb:'32nd-floor DJ-and-skyline bar above CentralWorld — Isaan-Japanese small plates, big view.', addr:'Moxy Bangkok Ratchaprasong, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Sato+San+Rooftop+Bar+Bangkok', family:false },
+  { city:'bkk', kind:'bar', tier:'lux', name:'The Speakeasy Rooftop Bar', area:'Lumphini/Ploenchit', rating:4.7, reviews:2990, price:'฿฿฿฿', blurb:'Prohibition-themed 24th-floor bar at Hotel Muse — sharp cocktails, strict dress code.', addr:'Hotel Muse Bangkok, 55 Lang Suan Rd, Lumphini, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=The+Speakeasy+Rooftop+Bar+Hotel+Muse+Bangkok', family:false },
+  { city:'bkk', kind:'bar', tier:'lux', name:'Cul de Sac - Thonglor Rooftop Bar', area:'Sukhumvit (Thonglor)', rating:4.9, reviews:2000, price:'฿฿฿', blurb:'Pool, giant outdoor movie screen and retro cocktails on top of The Quartier hotel — lively after dark.', addr:'The Quartier Hotel, 413 Sukhumvit 39, Watthana, Bangkok', maps:'https://www.google.com/maps/search/?api=1&query=Cul+de+Sac+Thonglor+Rooftop+Bar+Bangkok', family:false },
+  // CHIANG MAI — restaurants
+  { city:'cnx', kind:'rest', tier:'local', name:'Khao-Sō-i', area:'Night Bazaar (Chang Moi)', rating:4.8, reviews:9400, price:'฿฿', blurb:'The dressed-up cult version of khao soi, including a giant-prawn take — expect a queue.', addr:'430/4 Charoen Prathet Rd, Chang Moi, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=Khao+So+i+Chiang+Mai+Charoen+Prathet', family:true },
+  { city:'cnx', kind:'rest', tier:'local', name:'Khoei Chiang Mai', area:'Chang Phueak (Old City edge)', rating:4.8, reviews:6300, price:'฿฿', blurb:'Cosy Northern-Thai home cooking — grilled pork neck and crab roe dip, generous portions, fair prices.', addr:'14 Thanon Santitham, Chang Phueak, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=Khoei+Chiang+Mai+Northern+Food+Santitham', family:true },
+  { city:'cnx', kind:'rest', tier:'local', name:'Mee An Ja Kin Cafe & Restaurant', area:'Ping riverside (Pa Daet)', rating:4.8, reviews:5900, price:'฿฿', blurb:'Riverside Lanna-fusion plates with a European twist, right on the Ping.', addr:'1/3 Chiang Klang Rd, Pa Daet, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=Mee+An+Ja+Kin+Cafe+Restaurant+Chiang+Mai', family:true },
+  { city:'cnx', kind:'rest', tier:'lux', name:'B Samcook Home16', area:'Hai Ya (near Night Bazaar/Old City)', rating:4.9, reviews:1973, price:'฿฿฿', blurb:'Fixed-menu Northern-Thai tasting dinner in a family home turned restaurant — Chiang Mai\'s quiet special-occasion pick.', addr:'5 Kampangdin Rd Soi 3, Hai Ya, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=B+Samcook+Home16+Chiang+Mai', family:true },
+  { city:'cnx', kind:'rest', tier:'local', name:'SoLao', area:'Suthep (near Old City)', rating:4.9, reviews:2000, price:'฿฿', blurb:'Isaan comfort food — som tam, laab, grilled chicken — with live music some evenings.', addr:'43 Siri Mungkalacharn Rd, Suthep, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=SoLao+Restaurant+Chiang+Mai', family:true },
+  { city:'cnx', kind:'rest', tier:'local', name:'Garden to Table Chiangmai', area:'Old City', rating:4.9, reviews:1800, price:'฿฿', blurb:'MSG-free Northern Thai from their own farm, khao soi in beef or vegetarian — inside the moat.', addr:'136/4 Ratchapakhinai Rd, Old City, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=Garden+to+Table+Chiangmai', family:true },
+  { city:'cnx', kind:'rest', tier:'local', name:'WHYs Nimman Cafe & Restaurant', area:'Nimman', rating:4.9, reviews:1000, price:'฿฿', blurb:'Calm, plant-filled cafe for a slow lunch when Nimman\'s crowds get overwhelming.', addr:'27 Nimmanahaeminda Rd, Suthep, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=WHYs+Nimman+Cafe+Restaurant+Chiang+Mai', family:true },
+  { city:'cnx', kind:'rest', tier:'local', name:'Longhua (Mala Tang)', area:'Suthep (near CMU)', rating:4.9, reviews:4800, price:'฿฿', blurb:'Pick-your-own DIY mala hotpot skewers, weighed and charged by the gram — a student-town favourite.', addr:'84/8 Moo 4, Suthep, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=Longhua+Mala+Tang+Suthep+Chiang+Mai', family:true },
+  // CHIANG MAI — bars
+  { city:'cnx', kind:'bar', tier:'local', name:'MAI The Sky Bar', area:'Night Bazaar (Chang Khlan)', rating:4.9, reviews:1700, price:'฿฿฿', blurb:'Chiang Mai\'s tallest rooftop, 63m up — walkable from the Night Bazaar for sunset over the Ping.', addr:'Meliá Chiang Mai, Charoen Prathet Rd, Chang Khlan, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=MAI+The+Sky+Bar+Chiang+Mai', family:true },
+  { city:'cnx', kind:'bar', tier:'local', name:'The North Gate Jazz Co-Op', area:'Old City (near Chang Phuak Gate)', rating:4.7, reviews:5257, price:'฿', blurb:'Chiang Mai\'s beloved streetside jazz bar since 2006 — outdoor tables, gigs from 7:30pm.', addr:'91/1-2 Sri Poom Rd, Si Phum, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=North+Gate+Jazz+Co-Op+Chiang+Mai', family:false },
+  { city:'cnx', kind:'bar', tier:'lux', name:'Spacetime Bar', area:'Nimman (Soi 9)', rating:5.0, reviews:2200, price:'฿฿฿', blurb:'Sci-fi/cyberpunk cocktail den in Nimman — inventive electronic-style drinks, DJ nights.', addr:'Nimmanahaeminda Soi 9, Suthep, Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=Spacetime+Bar+Nimman+Chiang+Mai', family:false },
+  { city:'cnx', kind:'bar', tier:'lux', name:'BlackLight CNX', area:'Chiang Mai', rating:4.9, reviews:1600, price:'฿฿฿', blurb:'A proper late-night club — DJs and dancing, best treated as a parents-only night out.', addr:'Chiang Mai', maps:'https://www.google.com/maps/search/?api=1&query=BlackLight+CNX+Chiang+Mai', family:false },
+  // PHUKET — restaurants
+  { city:'hkt', kind:'rest', tier:'lux', name:'Su Va Na', area:'Wichit (Central Phuket)', rating:4.8, reviews:2000, price:'฿฿฿฿', blurb:'A 13-course tasting menu inside an aquarium tunnel with 25,000 fish swimming past — kids will not stop talking about it.', addr:'Central Phuket Floresta, Wichit, Mueang Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Su+Va+Na+Phuket+Central+Floresta', family:true },
+  { city:'hkt', kind:'rest', tier:'lux', name:'L\'Arôme by the Sea', area:'Patong', rating:4.7, reviews:1212, price:'฿฿฿฿', blurb:'Michelin Guide-listed French-Thai fine dining right on Patong\'s beachfront, with a sunset deck bar.', addr:'247/5 Phrabaramee Rd, Patong, Kathu, Phuket', maps:'https://www.google.com/maps/search/?api=1&query=L%27Arome+by+the+Sea+Patong+Phuket', family:true },
+  { city:'hkt', kind:'rest', tier:'local', name:'GlowBloom', area:'Patong', rating:4.8, reviews:2200, price:'฿฿', blurb:'Thai-Japanese-European fusion a few streets back from the beach — reliable tom yum and mango sticky rice.', addr:'87 Sainamyen Rd, Patong, Kathu, Phuket', maps:'https://www.google.com/maps/search/?api=1&query=GlowBloom+Restaurant+Patong+Phuket', family:true },
+  { city:'hkt', kind:'rest', tier:'local', name:'Baan Thai Seafood Restaurant', area:'Patong', rating:4.8, reviews:3600, price:'฿฿', blurb:'No-nonsense Thai seafood a short walk off the beach road — big portions, honest prices.', addr:'40 Rat-U-Thit Rd, Patong, Kathu, Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Baan+Thai+Seafood+Restaurant+Patong+Phuket', family:true },
+  { city:'hkt', kind:'rest', tier:'local', name:'WANLAMUN & EGG E EGG', area:'Phuket Old Town', rating:4.9, reviews:3100, price:'฿', blurb:'Old Town dessert institution — go for the coconut and Thai custard sweets between temple-hopping.', addr:'Phuket Old Town, Mueang Phuket', maps:'https://www.google.com/maps/search/?api=1&query=WANLAMUN+EGG+E+EGG+Phuket+Old+Town', family:true },
+  { city:'hkt', kind:'rest', tier:'local', name:'1000009 Thai Noodle Restaurant', area:'Phuket Old Town (Talat Yai)', rating:4.8, reviews:2200, price:'฿', blurb:'Build-your-own boat noodle soup for street-food prices with an upstairs air-con room.', addr:'Talat Yai, Phuket Old Town, Mueang Phuket', maps:'https://www.google.com/maps/search/?api=1&query=1000009+Thai+Noodle+Restaurant+Phuket', family:true },
+  { city:'hkt', kind:'rest', tier:'local', name:'Egg E Egg Chicken Rice', area:'Phuket Old Town (Talat Yai)', rating:4.9, reviews:2800, price:'฿', blurb:'Hainanese chicken rice done properly in the Sino-Portuguese old town — quick, cheap, dependable.', addr:'93/4 Phuket Rd, Talat Yai, Mueang Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Egg+E+Egg+Chicken+Rice+Phuket', family:true },
+  { city:'hkt', kind:'rest', tier:'local', name:'Beerfest Restaurant and Brewery', area:'Wichit (near Central Phuket)', rating:4.8, reviews:1100, price:'฿฿', blurb:'On-site craft brewery with a proper kids\' playroom next to the dining room — parents get a real beer list too.', addr:'46/6 Mu 5, Wichit, Mueang Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Beerfest+Restaurant+and+Brewery+Phuket', family:true },
+  // PHUKET — bars
+  { city:'hkt', kind:'bar', tier:'lux', name:'Malika Sky Bar', area:'Kalim (near Patong)', rating:4.9, reviews:2071, price:'฿฿฿', blurb:'180-degree Andaman sunset from the Kalima Resort rooftop — explicitly set up for families as well as couples.', addr:'Kalima Resort & Spa, Kalim, Kathu, Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Malika+Sky+Bar+Kalima+Resort+Phuket', family:true },
+  { city:'hkt', kind:'bar', tier:'local', name:'Pasha Rooftop Bar & Restaurant', area:'Patong', rating:4.9, reviews:1000, price:'฿฿', blurb:'9th-floor halal-friendly Turkish/Thai rooftop with an infinity pool view over Bangla Road and the sea.', addr:'171/21 Soi Sansabai, Rat-U-Thit Rd, Patong, Kathu, Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Pasha+Rooftop+Bar+Restaurant+Patong+Phuket', family:true },
+  { city:'hkt', kind:'bar', tier:'lux', name:'Beach Restaurant by The Surin (Sea Surin)', area:'Surin (Cherng Talay, north of Patong)', rating:4.8, reviews:1000, price:'฿฿฿฿', blurb:'Toes-in-the-sand sunset dinner at a quiet resort beach — worth the drive north for calmer water.', addr:'The Surin Phuket, Pansea Beach, Cherng Talay, Phuket', maps:'https://www.google.com/maps/search/?api=1&query=Beach+Restaurant+by+The+Surin+Phuket', family:true },
+];
+
+const REGIONAL_DISHES = [
+  // BANGKOK
+  { city:'bkk', e:'🍜', n:'Boat Noodles', th:'ก๋วยเตี๋ยวเรือ', s:1, p:'15–40 ฿/bowl', d:'Small, intensely dark, spiced bowls of pork or beef noodle soup — order five and lose count.', h:'Sold by the bowl, not the portion; stalls expect you to order multiple rounds. Iconic strip: Victory Monument.' },
+  { city:'bkk', e:'🍝', n:'Pad See Ew', th:'ผัดซีอิ๊ว', s:0, p:'40–70 ฿', d:'Wide rice noodles wok-charred with dark soy, egg and Chinese broccoli.', h:'A safe, mild pick for fussy eaters — ask for "mai phet" if it still comes with chilli on the side.' },
+  { city:'bkk', e:'🥟', n:'Kuay Jab', th:'ก๋วยจั๊บ', s:1, p:'40–80 ฿', d:'Rolled rice-noodle sheets in a peppery broth with crispy pork belly and offal.', h:'Yaowarat (Chinatown) has the famous late-night stalls; ask for "no offal" if that\'s not your thing.' },
+  { city:'bkk', e:'🍗', n:'Khao Man Gai', th:'ข้าวมันไก่', s:0, p:'40–60 ฿', d:'Hainanese-style poached chicken over rice cooked in chicken fat, with a ginger-chilli dip on the side.', h:'The single easiest "everyone will eat this" order in Bangkok — dip is optional for kids.' },
+  // CHIANG MAI
+  { city:'cnx', e:'🌭', n:'Sai Ua', th:'ไส้อั่ว', s:2, p:'40–80 ฿', d:'Grilled Northern herb sausage packed with lemongrass, galangal and chilli paste.', h:'Best straight off a market grill with sticky rice; a good half-portion for spice-shy teens.' },
+  { city:'cnx', e:'🍛', n:'Gaeng Hang Lay', th:'แกงฮังเล', s:1, p:'50–100 ฿', d:'A Burmese-influenced pork belly curry, sweet-sour and slow-cooked with ginger and tamarind.', h:'Milder than most Thai curries — good gateway dish. Common at Northern-set (khantoke) dinners.' },
+  { city:'cnx', e:'🍖', n:'Khao Kha Moo', th:'ข้าวขาหมู', s:0, p:'40–60 ฿', d:'Slow-braised pork leg over rice with a soft-boiled egg and pickled greens.', h:'Comfort food, zero spice — order "extra crackling" (nangmoo) if anyone wants crunch.' },
+  { city:'cnx', e:'🌶️', n:'Nam Prik Noom', th:'น้ำพริกหนุ่ม', s:2, p:'30–60 ฿', d:'Smoky roasted green chilli dip, pounded with garlic and shallots, eaten with sticky rice and crunchy veg.', h:'Always shared as a starter — scoop with sticky rice or the pork crackling, not a spoon.' },
+  // PHUKET
+  { city:'hkt', e:'🥩', n:'Moo Hong', th:'หมูฮ้อง', s:0, p:'80–150 ฿', d:'Phuket\'s Hokkien-Chinese braised pork belly, sweet with dark soy, garlic and black pepper.', h:'A mild, kid-friendly dish — pairs with plain rice. Found on nearly every Phuket Thai menu.' },
+  { city:'hkt', e:'🍧', n:'O-Aew', th:'โอ้เอ๋ว', s:0, p:'30–50 ฿', d:'A Phuket shaved-ice dessert with banana-flour jelly, red syrup and stewed red beans.', h:'A great hot-afternoon cooldown in Phuket Old Town — order it before, not after, a big lunch.' },
+  { city:'hkt', e:'🍜', n:'Hokkien Mee (Mee Hokkien)', th:'หมี่ฮกเกี้ยน', s:1, p:'60–100 ฿', d:'Thick yellow noodles fried with pork, prawn and squid in a rich, dark, wok-charred sauce.', h:'Different from Singapore\'s version — this is Phuket\'s own Chinese-immigrant recipe. Best in Phuket Old Town.' },
+  { city:'hkt', e:'🍲', n:'Kanom Jeen Nam Ya (Phuket-style)', th:'ขนมจีนน้ำยา', s:2, p:'40–70 ฿', d:'Fermented rice noodles doused in a spicy fish or crab curry, piled with pickled veg.', h:'Load your own bowl from the side veg tray — go light on chilli for younger tastebuds.' },
+];
+
+const SIGHTS = [
+  // BANGKOK
+  { city:'bkk', id:'grand-palace', name:'Grand Palace & Wat Phra Kaew', blurb:'Thailand\'s dazzling royal complex and the country\'s most sacred temple, home to the Emerald Buddha.', tip:'Open 08:30–16:30, ฿500/adult, under-12s free. Shoulders and knees covered, closed-toe shoes — free sarongs at the gate if you\'re caught out. Go right at opening to beat both heat and crowds.', area:'Old City' },
+  { city:'bkk', id:'wat-arun', name:'Wat Arun (Temple of Dawn)', blurb:'A porcelain-studded riverside spire that looks best from a boat at sunset.', tip:'Cross by the ฿4 river ferry from Tha Tien pier; steep steps to the top platform, mind younger kids.', area:'Riverside (Thonburi side)' },
+  { city:'bkk', id:'wat-pho', name:'Wat Pho (Reclining Buddha)', blurb:'A 46-metre gold-leafed reclining Buddha, plus the birthplace of traditional Thai massage.', tip:'Combine with the Grand Palace next door — same dress code applies. Book a foot massage on-site to recover.', area:'Old City' },
+  { city:'bkk', id:'chatuchak', name:'Chatuchak Weekend Market', blurb:'15,000-plus stalls of clothes, crafts, food and pure sensory overload.', tip:'Saturday–Sunday 09:00–18:00 only. Go early morning to dodge both heat and the worst crowds; agree a meeting point in case anyone gets separated.', area:'Northern Bangkok (near Mo Chit BTS)' },
+  { city:'bkk', id:'yaowarat', name:'Yaowarat (Chinatown)', blurb:'Neon-lit street food strip that comes alive after dark — Bangkok\'s best grazing dinner.', tip:'Arrive hungry around 18:00–19:00; cash only at most stalls, and it gets very crowded by 21:00.', area:'Chinatown' },
+  { city:'bkk', id:'chao-phraya', name:'Chao Phraya River / Khlong boat ride', blurb:'The river and canal network that built Bangkok — temples, stilt houses and city skyline from the water.', tip:'The orange-flag public boat is cheapest; a private longtail lets you detour into the Thonburi khlongs.', area:'Riverside' },
+  { city:'bkk', id:'lumphini', name:'Lumphini Park', blurb:'Central Bangkok\'s big green lung — monitor lizards, paddle boats and shade after temple-hopping.', tip:'Best before 09:00 or after 16:00 when it\'s cooler; paddle boat rental is cheap and easy with kids.', area:'Silom/Pathum Wan' },
+  { city:'bkk', id:'tuktuk-street', name:'Tuk-tuk ride through Old City', blurb:'A short, noisy, grinning-inducing way to cover Old City ground between temples.', tip:'Agree the price before getting in — always negotiate, never take the first quote.', area:'Old City' },
+  // CHIANG MAI
+  { city:'cnx', id:'doi-suthep', name:'Wat Phra That Doi Suthep', blurb:'The mountaintop temple that watches over the whole city, reached by a 309-step naga staircase.', tip:'฿30 entry (cable car +฿20 round trip). Shoulders/knees covered, shoes off inside. Go by 09:00 to beat both heat and tour buses.', area:'Doi Suthep (edge of city)' },
+  { city:'cnx', id:'chedi-luang', name:'Wat Chedi Luang', blurb:'A huge partially-ruined 14th-century chedi right in the Old City, atmospheric even half-collapsed.', tip:'Free/small donation entry. "Monk Chat" sessions let teens ask novice monks questions in English.', area:'Old City' },
+  { city:'cnx', id:'tha-phae-gate', name:'Tha Phae Gate', blurb:'The Old City\'s main gate and everyone\'s meeting point — pigeons, street performers, market spillover.', tip:'Good landmark for splitting up and regrouping; the Sunday Walking Street market starts right here.', area:'Old City' },
+  { city:'cnx', id:'sunday-market', name:'Sunday Walking Street', blurb:'Tha Phae Gate to the old city\'s length turns into a market of crafts, food and live music every Sunday evening.', tip:'Sundays only, roughly 16:00–24:00. Bring small notes; wear comfortable shoes, it\'s a long walk.', area:'Old City' },
+  { city:'cnx', id:'elephant-sanctuary', name:'Elephant Nature Park (or similar ethical sanctuary)', blurb:'Feed, walk with and observe rescued elephants — no riding, no shows, hands-off bathing.', tip:'Book ahead (they fill up); full day roughly ฿2,800–4,500/adult. Confirm "no riding, no chains" before booking any operator.', area:'Mae Taeng (out of town, transfer included)' },
+  { city:'cnx', id:'sticky-waterfalls', name:'Bua Tong Sticky Waterfalls', blurb:'Limestone-coated falls you can climb barefoot without slipping — a genuine novelty for teenagers.', tip:'Free entry. Go barefoot or in grippy sandals; bring a dry change of clothes for the ride back.', area:'Sri Lanna National Park (about 1hr from city)' },
+  { city:'cnx', id:'wat-phra-singh', name:'Wat Phra Singh', blurb:'The Old City\'s most revered temple, famous for its Lanna-style viharn and gold Buddha image.', tip:'Free entry, modest dress required. Quieter than Chedi Luang — good for a calmer visit.', area:'Old City' },
+  { city:'cnx', id:'cnx-oldcity', name:'Old City moat walk', blurb:'The square moat and remaining brick walls that mark out Chiang Mai\'s original 700-year-old city grid.', tip:'Rent bikes for an easy, flat loop around the moat — cooler in early morning or after 16:00.', area:'Old City' },
+  // PHUKET
+  { city:'hkt', id:'big-buddha', name:'Big Buddha Phuket', blurb:'A 45-metre white marble Buddha on a hilltop with panoramic island views.', tip:'Free entry (donations welcome), open roughly 06:00–19:30. Cover shoulders/knees; go early to beat both heat and haze.', area:'Chalong (central hills)' },
+  { city:'hkt', id:'phuket-oldtown', name:'Phuket Old Town', blurb:'Pastel Sino-Portuguese shophouses, street art and the best dessert stalls on the island.', tip:'Sunday Walking Street market in the evening; otherwise visit morning before the heat, wear sun cover.', area:'Phuket Town' },
+  { city:'hkt', id:'patong-beach', name:'Patong Beach', blurb:'The island\'s liveliest beach — watersports, sunset over the Andaman, Bangla Road nightlife nearby.', tip:'Sunbeds are pay-per-use; swim within the flagged areas, currents pick up in monsoon season.', area:'Patong' },
+  { city:'hkt', id:'karon-viewpoint', name:'Karon Viewpoint (Three Beaches Viewpoint)', blurb:'One photo, three beaches — Kata Noi, Kata and Karon laid out below a roadside lookout.', tip:'Best light in late afternoon; there\'s a small parking area and a few drink vendors, no shade.', area:'Karon/Kata' },
+  { city:'hkt', id:'promthep-cape', name:'Promthep Cape', blurb:'Phuket\'s most famous sunset point, at the island\'s southern tip.', tip:'Arrive 45 minutes before sunset for a parking spot; gets crowded but it\'s worth it.', area:'Rawai' },
+  { city:'hkt', id:'phang-nga-bay', name:'Phang Nga Bay', blurb:'Limestone karsts rising out of jade water, including the James Bond Island of "The Man with the Golden Gun".', tip:'Full-day boat trip from Phuket, roughly ฿1,500–2,500/adult; sea canoeing through the karst caves is the highlight.', area:'Day trip (Phang Nga province)' },
+  { city:'hkt', id:'phi-phi', name:'Phi Phi Islands', blurb:'Maya Bay\'s turquoise cliffs and Monkey Beach in one speedboat day trip.', tip:'Book a smaller boat if you can — big tour groups swamp Maya Bay by midday. Roughly ฿1,900–3,000/adult, ~45 min each way.', area:'Day trip (Krabi province)' },
+  { city:'hkt', id:'longtail-boats', name:'Longtail boat trip', blurb:'The classic Thai wooden longtail, hired for an afternoon of hopping between quiet coves.', tip:'Negotiate the price and route before boarding; Rawai and Ao Yon piers are the easiest places to charter one.', area:'Rawai/Ao Yon' },
+];
+
+/* Image metadata — width/height/credits baked from img-manifest.json. */
+const IMG = {
+  'grand-palace':{w:1200,h:795,subject:'Grand Palace / Wat Phra Kaew',author:'Jakub Hałun',license:'CC BY-SA 4.0'},
+  'wat-arun':{w:1200,h:800,subject:'Wat Arun at golden hour',author:'Trip.with.taste',license:'CC BY-SA 4.0'},
+  'wat-pho':{w:1200,h:801,subject:'Wat Pho reclining Buddha',author:'Nawit science',license:'CC BY-SA 4.0'},
+  'chatuchak':{w:1200,h:900,subject:'Chatuchak Weekend Market',author:'Christophe95',license:'CC BY-SA 4.0'},
+  'yaowarat':{w:1200,h:900,subject:'Yaowarat Chinatown at night',author:'Christophe95',license:'CC BY-SA 4.0'},
+  'chao-phraya':{w:1200,h:800,subject:'Chao Phraya river with boats',author:'TomaszSwatowski',license:'CC BY-SA 4.0'},
+  'lumphini':{w:1200,h:900,subject:'Lumphini Park with skyline',author:'Chainwit.',license:'CC BY 4.0'},
+  'tuktuk-street':{w:1100,h:675,subject:'Tuk-tuk street scene',author:'Ossewa',license:'CC BY-SA 4.0'},
+  'doi-suthep':{w:1200,h:798,subject:'Doi Suthep golden chedi',author:'Philip Nalangan',license:'CC BY 4.0'},
+  'chedi-luang':{w:1200,h:800,subject:'Wat Chedi Luang ruined chedi',author:'Vyacheslav Argenberg',license:'CC BY 4.0'},
+  'tha-phae-gate':{w:1200,h:636,subject:'Tha Phae Gate',author:'Jakub Hałun',license:'CC BY-SA 4.0'},
+  'sunday-market':{w:1200,h:799,subject:'Sunday walking street market',author:'LannaPhoto',license:'CC BY-SA 4.0'},
+  'elephant-sanctuary':{w:900,h:600,subject:'Elephant sanctuary, Chiang Mai (no riding)',author:'Nina R from Africa',license:'CC BY 2.0'},
+  'sticky-waterfalls':{w:650,h:975,subject:'Bua Tong Sticky Waterfalls',author:'Random username 083794703875938',license:'CC0'},
+  'wat-phra-singh':{w:1200,h:901,subject:'Wat Phra Singh',author:'กสิณธร ราชโอรส',license:'CC BY-SA 4.0'},
+  'cnx-oldcity':{w:1100,h:733,subject:'Old city wall / moat',author:'Stefan Fussan',license:'CC BY-SA 3.0'},
+  'big-buddha':{w:1200,h:798,subject:'Big Buddha Phuket',author:'Subhrajyoti07',license:'CC BY-SA 4.0'},
+  'phuket-oldtown':{w:1200,h:800,subject:'Sino-Portuguese shophouses',author:'Mussi Katz from Israel',license:'CC0'},
+  'patong-beach':{w:1100,h:825,subject:'Patong Beach (aerial)',author:'Roma Neus',license:'CC BY 3.0'},
+  'karon-viewpoint':{w:1200,h:798,subject:'Three-beach viewpoint (Karon)',author:'Oberpepe',license:'CC BY-SA 3.0'},
+  'promthep-cape':{w:1200,h:800,subject:'Promthep Cape sunset',author:'Phuket@photographer.net',license:'CC BY 2.0'},
+  'phang-nga-bay':{w:1200,h:800,subject:'Phang Nga Bay / Koh Tapu (James Bond Island)',author:'Vyacheslav Argenberg',license:'CC BY 4.0'},
+  'phi-phi':{w:1200,h:800,subject:'Maya Bay, Phi Phi',author:'Diego Delso',license:'CC BY-SA 3.0'},
+  'longtail-boats':{w:1200,h:801,subject:'Longtail boats, turquoise water',author:'Brandon Minieri',license:'CC BY-SA 4.0'},
+};
+const revFmt = n => n >= 1000 ? ((n/1000 >= 10 ? Math.round(n/1000) : Math.round(n/100)/10) + 'K') : String(n);
+
+/* ---------------- quiz bank (Thai Master) ---------------- */
+const QUIZ = [
+  // ---- History (14) ----
+  { cat:'History', q:'Which kingdom, founded around 1238, is traditionally considered the first Thai kingdom?', c:['Sukhothai','Ayutthaya','Lanna','Rattanakosin'], a:0, fact:'Sukhothai’s King Ramkhamhaeng is credited with creating the Thai script around 1283.' },
+  { cat:'History', q:'In what year did the great city of Ayutthaya fall to Burmese forces after a long siege?', c:['1687','1767','1857','1932'], a:1, fact:'Ayutthaya had been the capital for 417 years and was one of the richest cities in Asia before it fell.' },
+  { cat:'History', q:'Who founded Bangkok as the new capital in 1782, starting the current royal dynasty?', c:['King Taksin','Rama I','Rama V','Rama IX'], a:1, fact:'Rama I founded the Chakri Dynasty, which still reigns in Thailand today.' },
+  { cat:'History', q:'What is the name of the royal dynasty founded in 1782 that still reigns in Thailand?', c:['Chakri','Sukhothai','Lanna','Rattanakosin'], a:0, fact:'The dynasty is named after its founder, Chao Phraya Chakri, who became Rama I.' },
+  { cat:'History', q:'In what year did the country officially change its name from Siam to Thailand?', c:['1932','1939','1945','1949'], a:1, fact:'“Thailand” was chosen to mean roughly “land of the free” — the country has never been colonised.' },
+  { cat:'History', q:'Which Southeast Asian country was never colonised by a European power?', c:['Vietnam','Philippines','Thailand','Indonesia'], a:2, fact:'Thailand (then Siam) stayed independent by skilful diplomacy, acting as a buffer between British and French territory.' },
+  { cat:'History', q:'Which Thai king is widely credited with abolishing slavery and modernising the country in the late 1800s?', c:['Rama III','Rama IV','Rama V','Rama IX'], a:2, fact:'King Chulalongkorn (Rama V) is one of Thailand’s most revered monarchs for his reforms.' },
+  { cat:'History', q:'Which king had the longest reign in Thai history, at just over 70 years?', c:['Rama V','Rama VIII','Rama IX','Rama X'], a:2, fact:'King Bhumibol Adulyadej reigned from 1946 to 2016 — one of the longest reigns of any monarch in world history.' },
+  { cat:'History', q:'Chiang Mai was founded in 1296 as the capital of which northern kingdom?', c:['Lanna','Sukhothai','Ayutthaya','Rattanakosin'], a:0, fact:'“Lanna” means “kingdom of a million rice fields.”' },
+  { cat:'History', q:'What form of government does Thailand have today?', c:['Absolute monarchy','Constitutional monarchy','Republic','One-party state'], a:1, fact:'Thailand became a constitutional monarchy in 1932, ending centuries of absolute royal rule.' },
+  { cat:'History', q:'In what year did Thailand shift from absolute monarchy to constitutional monarchy?', c:['1917','1932','1939','1946'], a:1, fact:'This peaceful revolution was led by a group of military officers and civil servants known as Khana Ratsadon.' },
+  { cat:'History', q:'What short, everyday name do Thai people actually use for Bangkok?', c:['Krung Thep','Siam','Rattanakosin','Ayutthaya'], a:0, fact:'“Krung Thep” means “City of Angels” — the full ceremonial name has 168 letters.' },
+  { cat:'History', q:'What does Bangkok hold a Guinness World Record for?', c:['Tallest building','Longest official place name','Oldest airport','Largest palace'], a:1, fact:'Bangkok’s full ceremonial name has held the record for the world’s longest place name since 1967.' },
+  { cat:'History', q:'On the Thai flag, adopted in 1917, what does the wide blue centre stripe represent?', c:['The sea','The monarchy','The army','The sky'], a:1, fact:'The five stripes read red-white-blue-white-red: red for the nation, white for religion, blue for the king.' },
+  // ---- Culture & etiquette (14) ----
+  { cat:'Culture & etiquette', q:'What is the traditional Thai greeting gesture called, where you press your palms together and bow slightly?', c:['Wai','Namaste','Krap','Sawasdee'], a:0, fact:'“Sawasdee” is the word you say; the “wai” is the gesture that goes with it.' },
+  { cat:'Culture & etiquette', q:'Generally, the higher you hold your wai, the more ___ it shows.', c:['Respect','Anger','Hunger','Hurry'], a:0, fact:'A wai to a monk or elder is held higher than one to a friend your own age.' },
+  { cat:'Culture & etiquette', q:'Which part of the body is considered the most sacred in Thai culture and should never be touched, even playfully?', c:['The hand','The head','The shoulder','The back'], a:1, fact:'Even ruffling a child’s hair affectionately is best avoided in Thailand.' },
+  { cat:'Culture & etiquette', q:'Which part of the body is considered the “lowest” and should never point at people or Buddha images?', c:['Elbows','Knees','Feet','Wrists'], a:2, fact:'Avoid propping your feet up on tables or pointing your soles at anyone, especially monks.' },
+  { cat:'Culture & etiquette', q:'What should you do before entering most Thai homes and temples?', c:['Bow three times','Remove your shoes','Clap your hands','Remove your hat'], a:1, fact:'Look for a pile of shoes at the entrance — that’s your cue.' },
+  { cat:'Culture & etiquette', q:'What is the expected dress code when visiting a Buddhist temple?', c:['Cover shoulders and knees','Wear all white','Wear a hat indoors','No restrictions'], a:0, fact:'Big temples like the Grand Palace can lend sarongs at the gate if you forget.' },
+  { cat:'Culture & etiquette', q:'What does the word “farang” most commonly refer to?', c:['A spicy dish','A Western/white foreigner','A royal title','A type of boat'], a:1, fact:'Confusingly, “farang” is also the Thai word for guava — the fruit was named after the foreigners who brought it.' },
+  { cat:'Culture & etiquette', q:'What is Songkran?', c:['A spicy curry','The Thai New Year water festival','A boxing style','A royal ceremony'], a:1, fact:'Splashing water symbolises washing away bad luck from the old year.' },
+  { cat:'Culture & etiquette', q:'In which month does Songkran usually take place?', c:['January','April','August','December'], a:1, fact:'Songkran runs April 13–15 — also the hottest time of year, which is why the water fights help!' },
+  { cat:'Culture & etiquette', q:'What is Loy Krathong?', c:['A festival where people float decorated baskets on water','A sporting tournament','A royal coronation','A type of dessert'], a:0, fact:'The floating “krathong” is a way of giving thanks to and apologising to the water spirits.' },
+  { cat:'Culture & etiquette', q:'What are the small decorated houses seen outside many Thai homes and shops, believed to shelter spirits?', c:['Spirit houses','Guest houses','Tea houses','Rice houses'], a:0, fact:'Thai families often leave small offerings of food, flowers or drinks at their spirit house daily.' },
+  { cat:'Culture & etiquette', q:'Losing your temper or raising your voice in public in Thailand is generally seen as:', c:['Assertive and respected','A loss of face and poor manners','Perfectly normal','A sign of honesty'], a:1, fact:'Thais value “jai yen” (a cool heart) — staying calm under pressure is a genuine virtue.' },
+  { cat:'Culture & etiquette', q:'What does the very common phrase “mai pen rai” roughly mean?', c:['No worries, it’s OK','I am hungry','Turn left','Very expensive'], a:0, fact:'You’ll hear this constantly — it sums up a lot of the easygoing Thai attitude to small problems.' },
+  { cat:'Culture & etiquette', q:'When haggling at a market, what usually works best?', c:['Getting visibly angry','Smiling and negotiating politely','Refusing to name a price','Only offering coins'], a:1, fact:'A friendly smile and a bit of humour will get you a better price than a hard stare ever will.' },
+  // ---- Food (14) ----
+  { cat:'Food', q:'What is the name of Thailand’s most famous stir-fried noodle dish?', c:['Pad Thai','Tom Yum','Som Tam','Massaman'], a:0, fact:'Pad Thai was actively promoted as a national dish by the government in the 1930s–40s.' },
+  { cat:'Food', q:'Tom Yum Goong is what kind of dish?', c:['A hot-and-sour shrimp soup','A fried rice dish','A dessert','A type of bread'], a:0, fact:'The sour kick comes from lemongrass, lime and kaffir lime leaves.' },
+  { cat:'Food', q:'What fruit is nicknamed the “king of fruits” in Thailand, despite (or because of) its powerful smell?', c:['Durian','Mango','Mangosteen','Rambutan'], a:0, fact:'Durian is banned from many hotels and all BTS trains because of its smell.' },
+  { cat:'Food', q:'Massaman curry, repeatedly voted one of the world’s tastiest dishes, is best described as:', c:['A mild, rich curry with peanuts','An extremely spicy chili curry','A sweet dessert curry','A raw, uncooked dish'], a:0, fact:'Massaman shows Persian and Muslim-Thai influence — it’s the gentlest curry on most Thai menus.' },
+  { cat:'Food', q:'Som Tam, a spicy salad, is made primarily from which unripe fruit?', c:['Green papaya','Green mango','Green banana','Cucumber'], a:0, fact:'It’s pounded in a mortar and pestle with chili, lime, fish sauce and palm sugar.' },
+  { cat:'Food', q:'If you tell a vendor “mai phet,” what are you asking for?', c:['Not spicy, please','Extra spicy, please','No meat, please','To go, please'], a:0, fact:'Thai “mild” can still be spicier than you expect — ask for “mai phet leuy” for truly no chili at all.' },
+  { cat:'Food', q:'Khao Soi, a creamy curry noodle soup, is a specialty of which region?', c:['Chiang Mai / the north','Phuket / the south','Bangkok','The far northeast'], a:0, fact:'Khao Soi shows influence from nearby Myanmar and Yunnan, China.' },
+  { cat:'Food', q:'What is Thailand’s most-used savoury seasoning liquid, made from fermented fish?', c:['Fish sauce (nam pla)','Soy sauce','Oyster sauce','Rice vinegar'], a:0, fact:'Nam pla is the salty backbone of most Thai savoury cooking.' },
+  { cat:'Food', q:'Sticky rice with fresh mango and coconut cream is a classic Thai:', c:['Dessert','Breakfast soup','Spicy salad','Curry'], a:0, fact:'It’s at its best in April–June, mango season.' },
+  { cat:'Food', q:'Which phrase tells a restaurant you’re vegetarian?', c:['"Gin mang-sa-wi-rat"','"Chuay duay!"','"Khor thot"','"Chai"'], a:0, fact:'Note that Thai vegetarian dishes can still contain fish sauce unless you specify further.' },
+  { cat:'Food', q:'Roughly how much does a typical street-food meal cost in Thailand?', c:['40–90 baht','400–900 baht','4–9 baht','4,000–9,000 baht'], a:0, fact:'That’s well under €3 for a full plate — street food is one of Thailand’s best value experiences.' },
+  { cat:'Food', q:'Which two popular Thai curries are simply named after their colour?', c:['Green curry and red curry','Blue curry and black curry','White curry and gold curry','Orange curry and pink curry'], a:0, fact:'Green curry gets its colour from fresh green chilies, red curry from dried red ones.' },
+  { cat:'Food', q:'What tropical drink is famously bright orange, sweet and creamy?', c:['Thai iced tea','Thai iced coffee','Coconut water','Lime soda'], a:0, fact:'The orange colour traditionally comes from ground tamarind seed or food colouring, not the tea itself.' },
+  { cat:'Food', q:'When ordering, what does “phet nit noi” mean?', c:['A little spicy','Extremely spicy','Not spicy at all','Very sweet'], a:0, fact:'Useful middle ground if “mai phet” feels too bland but full-spice feels risky.' },
+  // ---- Language (14) ----
+  { cat:'Language', q:'What does “sawatdee” mean?', c:['Hello','Thank you','Please','Sorry'], a:0, fact:'Handy bonus: Thais also use “sawatdee” when saying goodbye.' },
+  { cat:'Language', q:'Thai is what type of language, where the pitch you use changes a word’s meaning?', c:['A tonal language','A tenseless language','A sign language','A click language'], a:0, fact:'The same syllable said with a different tone can mean completely different things.' },
+  { cat:'Language', q:'How many tones does standard Thai have?', c:['3','5','7','9'], a:1, fact:'The five tones are mid, low, falling, high and rising.' },
+  { cat:'Language', q:'Male speakers politely end many sentences with which word?', c:['Krap','Ka','Duay','Mai'], a:0, fact:'Adding “krap” (men) or “ka” (women) to the end of a sentence instantly makes it more polite.' },
+  { cat:'Language', q:'Female speakers politely end many sentences with which word?', c:['Krap','Ka','Duay','Mai'], a:1, fact:'You’ll hear “ka” constantly from shopkeepers, servers and hotel staff.' },
+  { cat:'Language', q:'What does “khop khun” mean?', c:['Thank you','Excuse me','Hello','Water'], a:0, fact:'Add “krap/ka” to the end — “khop khun krap/ka” — for the fully polite version.' },
+  { cat:'Language', q:'What does “khor thot” mean?', c:['Excuse me / sorry','Thank you','Cheers','Goodbye'], a:0, fact:'Useful both for squeezing past someone and for a genuine apology.' },
+  { cat:'Language', q:'The Thai script was traditionally said to be created around 1283 during the reign of which king?', c:['King Ramkhamhaeng','King Mangrai','Rama I','King Taksin'], a:0, fact:'The Ram Khamhaeng Inscription is regarded as the earliest known example of Thai writing.' },
+  { cat:'Language', q:'The Thai alphabet is believed to have been adapted from which older script?', c:['Khmer script','Chinese script','Arabic script','Latin script'], a:0, fact:'Sukhothai-era scribes simplified and adjusted Khmer letters to fit the sounds of Thai.' },
+  { cat:'Language', q:'What does “mai pen rai” convey in everyday conversation?', c:['No worries, it’s fine','I’m sorry','I don’t understand','Please help'], a:0, fact:'It’s arguably the most-used phrase in daily Thai life.' },
+  { cat:'Language', q:'Adding “…mai?” to the end of a Thai sentence usually turns it into what?', c:['A yes/no question','A command','A past-tense statement','An insult'], a:0, fact:'It works like adding “…right?” or “…isn’t it?” to the end of an English sentence.' },
+  { cat:'Language', q:'What is the phrase “thao-rai?” used to ask?', c:['How much?','Where is it?','What time is it?','Who are you?'], a:0, fact:'Essential for every market stall and taxi negotiation.' },
+  { cat:'Language', q:'If someone doesn’t follow what you’re saying, which phrase should you say?', c:['"Mai khao jai" (I don’t understand)','"A-roi" (delicious)','"Sa-nook" (fun)','"Suay" (beautiful)'], a:0, fact:'Pointing at your phrasebook (or this app!) usually helps too.' },
+  { cat:'Language', q:'Which of these common Thai phrases is actually a borrowed English word?', c:['"Check bin" (the bill)','"Khop khun" (thank you)','"Sawatdee" (hello)','"A-roi" (delicious)'], a:0, fact:'"Check bin" comes straight from English "check, please" — you’ll hear it in every restaurant.' },
+  // ---- Geography & islands (14) ----
+  { cat:'Geography & islands', q:'What is the capital and largest city of Thailand?', c:['Bangkok','Chiang Mai','Phuket','Pattaya'], a:0, fact:'Bangkok is home to over 10 million people in its metro area — more than a tenth of the whole country.' },
+  { cat:'Geography & islands', q:'Roughly how many islands does Thailand have?', c:['About 12','About 140','About 1,400','About 14,000'], a:2, fact:'Estimates put the number around 1,430, ranging from tiny uninhabited islets to Phuket itself.' },
+  { cat:'Geography & islands', q:'Which is Thailand’s largest island?', c:['Phuket','Koh Samui','Koh Phi Phi','Koh Tao'], a:0, fact:'Phuket is connected to the mainland by bridge, so you can actually drive there.' },
+  { cat:'Geography & islands', q:'Phuket sits on which body of water?', c:['The Andaman Sea','The Gulf of Thailand','The South China Sea','The Bay of Bengal'], a:0, fact:'The Andaman Sea side of Thailand tends to have clearer water than the Gulf side.' },
+  { cat:'Geography & islands', q:'Which four countries share a land border with Thailand?', c:['Myanmar, Laos, Cambodia, Malaysia','Vietnam, China, India, Bangladesh','Indonesia, Singapore, Brunei, Philippines','Nepal, Bhutan, Sri Lanka, Pakistan'], a:0, fact:'Thailand sits right at the crossroads of mainland Southeast Asia.' },
+  { cat:'Geography & islands', q:'What major river flows through the heart of Bangkok?', c:['Chao Phraya','Mekong','Ganges','Irrawaddy'], a:0, fact:'“Chao Phraya” roughly translates to “river of kings.”' },
+  { cat:'Geography & islands', q:'The Chao Phraya River is formed by the meeting of which two rivers at Nakhon Sawan?', c:['The Ping and the Nan','The Mekong and the Salween','The Kwai and the Chao','The Yom and the Wang'], a:0, fact:'From that meeting point, it’s about a 372km journey south to the Gulf of Thailand.' },
+  { cat:'Geography & islands', q:'Which northern city is nicknamed the “Rose of the North”?', c:['Chiang Mai','Chiang Rai','Sukhothai','Pai'], a:0, fact:'Chiang Mai’s cooler climate and mountain scenery earned it the nickname.' },
+  { cat:'Geography & islands', q:'Chiang Mai sits near which sacred mountain, home to a famous golden temple overlooking the city?', c:['Doi Suthep','Doi Inthanon','Doi Chiang Dao','Doi Pui'], a:0, fact:'The temple, Wat Phra That Doi Suthep, is said to hold a relic of the Buddha.' },
+  { cat:'Geography & islands', q:'What is Thailand’s highest mountain, also located in Chiang Mai province?', c:['Doi Inthanon','Doi Suthep','Khao Luang','Phu Kradueng'], a:0, fact:'Doi Inthanon rises to about 2,565 metres and is sometimes called “the roof of Thailand.”' },
+  { cat:'Geography & islands', q:'Thailand is often said to look like an elephant’s head on a map — what part is the “trunk”?', c:['The southern peninsula','Bangkok','The eastern seaboard','The northern hills'], a:0, fact:'The long thin southern strip stretching down towards Malaysia forms the “trunk.”' },
+  { cat:'Geography & islands', q:'Which island is famous for its monthly “Full Moon Party”?', c:['Koh Phangan','Koh Lanta','Koh Chang','Koh Kood'], a:0, fact:'Tens of thousands of people can show up on the busiest full moon nights.' },
+  { cat:'Geography & islands', q:'Which limestone rock in Phang Nga Bay is nicknamed “James Bond Island” after a 1974 film?', c:['Khao Phing Kan','Doi Suthep','Krabi Rock','Similan Rock'], a:0, fact:'It appeared in “The Man with the Golden Gun,” which is how it got its nickname.' },
+  { cat:'Geography & islands', q:'What time zone does Thailand use, year-round, with no daylight saving?', c:['UTC+7','UTC+8','UTC+9','UTC+5:30'], a:0, fact:'Thailand has kept the same time zone since 1920.' },
 ];
 
 const PACK = [
@@ -661,12 +1017,42 @@ const PACK = [
   { cat:'Extras', items:['Day backpack','Refillable water bottle','Dry bag for boat days','Small-bills wallet for markets'] },
 ];
 
-const TAXI_PRESETS = [
-  { label:'Suvarnabhumi Airport (BKK)', th:'สนามบินสุวรรณภูมิ' },
-  { label:'Don Mueang Airport (DMK)', th:'สนามบินดอนเมือง' },
-  { label:'The nearest hospital, please', th:'โรงพยาบาลที่ใกล้ที่สุด' },
-  { label:'Please turn on the meter', th:'เปิดมิเตอร์ด้วยครับ/ค่ะ' },
-];
+const TAXI_PRESETS = {
+  bkk: [
+    { id:'bkk-svb', label:'Suvarnabhumi Airport (BKK)', th:'สนามบินสุวรรณภูมิ' },
+    { id:'bkk-dmk', label:'Don Mueang Airport (DMK)', th:'สนามบินดอนเมือง' },
+    { id:'bkk-hospital-near', label:'The nearest hospital, please', th:'โรงพยาบาลที่ใกล้ที่สุด' },
+    { id:'bkk-bumrungrad', label:'Bumrungrad Hospital', th:'โรงพยาบาลบำรุงราษฎร์' },
+    { id:'bkk-meter', label:'Please turn on the meter', th:'เปิดมิเตอร์ด้วยครับ/ค่ะ' },
+    { id:'bkk-palace', label:'Grand Palace', th:'พระบรมมหาราชวัง' },
+    { id:'bkk-chatuchak', label:'Chatuchak Weekend Market', th:'ตลาดนัดจตุจักร' },
+    { id:'bkk-yaowarat', label:'Yaowarat (Chinatown)', th:'เยาวราช' },
+    { id:'bkk-khaosan', label:'Khao San Road', th:'ถนนข้าวสาร' },
+    { id:'bkk-siamparagon', label:'Siam Paragon', th:'สยามพารากอน' },
+  ],
+  cnx: [
+    { id:'cnx-airport', label:'Chiang Mai Airport (CNX)', th:'สนามบินเชียงใหม่' },
+    { id:'cnx-hospital-near', label:'The nearest hospital, please', th:'โรงพยาบาลที่ใกล้ที่สุด' },
+    { id:'cnx-ram', label:'Chiang Mai Ram Hospital', th:'โรงพยาบาลเชียงใหม่ราม' },
+    { id:'cnx-thaphae', label:'Tha Phae Gate / Old City', th:'ประตูท่าแพ' },
+    { id:'cnx-nightbazaar', label:'Night Bazaar', th:'ไนท์บาซาร์' },
+    { id:'cnx-doisuthep', label:'Doi Suthep Temple', th:'วัดพระธาตุดอยสุเทพ' },
+    { id:'cnx-nimman', label:'Nimman', th:'นิมมานเหมินท์' },
+    { id:'cnx-walkingstreet', label:'Sunday Walking Street', th:'ถนนคนเดินท่าแพ' },
+  ],
+  hkt: [
+    { id:'hkt-airport', label:'Phuket Airport (HKT)', th:'สนามบินภูเก็ต' },
+    { id:'hkt-hospital-near', label:'The nearest hospital, please', th:'โรงพยาบาลที่ใกล้ที่สุด' },
+    { id:'hkt-bkkhospital', label:'Bangkok Hospital Phuket', th:'โรงพยาบาลกรุงเทพภูเก็ต' },
+    { id:'hkt-patong', label:'Patong Beach', th:'หาดป่าตอง' },
+    { id:'hkt-oldtown', label:'Phuket Old Town', th:'เมืองเก่าภูเก็ต' },
+    { id:'hkt-kata', label:'Kata Beach', th:'หาดกะตะ' },
+    { id:'hkt-karon', label:'Karon Beach', th:'หาดกะรน' },
+    { id:'hkt-rawai', label:'Rawai & Promthep Cape', th:'หาดราไวย์ / แหลมพรหมเทพ' },
+    { id:'hkt-bigbuddha', label:'Big Buddha', th:'พระใหญ่ภูเก็ต' },
+  ],
+};
+const ALL_PRESETS = [].concat(TAXI_PRESETS.bkk, TAXI_PRESETS.cnx, TAXI_PRESETS.hkt);
 
 const PRICES = [
   { e:'🍜', n:'Street-food meal', b:60 },
@@ -708,7 +1094,7 @@ function niceDate(iso){
 
 /* ---------------- navigation ---------------- */
 const RENDER = {};
-const MORE_VIEWS = ['eat','guide','vault','journal'];
+const MORE_VIEWS = ['eat','quiz','guide','vault','journal'];
 function showView(name){
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelectorAll('#nav button[data-arg]').forEach(b => b.classList.toggle('on', b.dataset.arg === name));
@@ -735,6 +1121,20 @@ RENDER.home = function(){
       <div class="hero-line">${esc(nm.join(' · '))}</div>
       <div class="epigraph" id="heroEpi">«From the plane, to the temples, to the sea.»</div>
     </div>
+    <div class="quickstrip">
+      <button class="qbtn" data-action="quick-taxi" aria-label="Show a taxi card for the driver">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 11l1.4-4.2A2 2 0 0 1 8.3 5.4h7.4a2 2 0 0 1 1.9 1.4L19 11M4 11h16v6H4zM7 17v2M17 17v2"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg>
+        <span>Taxi card</span></button>
+      <button class="qbtn" data-action="quick-sos" aria-label="Emergency numbers">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a6 6 0 0 0-6 6c0 4-1.4 5.6-2 6.6h16c-.6-1-2-2.6-2-6.6a6 6 0 0 0-6-6z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+        <span>Emergency</span></button>
+      <button class="qbtn" data-action="quick-expense" aria-label="Add an expense">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+        <span>Add expense</span></button>
+      <button class="qbtn" data-action="nav" data-arg="speak" aria-label="Thai phrases">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4z"/></svg>
+        <span>Phrases</span></button>
+    </div>
     <div class="stats-band" id="countBand">
       <div class="stat"><div class="num" id="cd">–</div><div class="lbl">Days</div></div>
       <div class="stat"><div class="num" id="ch">–</div><div class="lbl">Hours</div></div>
@@ -745,7 +1145,7 @@ RENDER.home = function(){
       <div class="overline" style="min-width:64px">Word of<br>the day</div>
       <div class="pt">
         <div class="th" lang="th">${esc(w.th)}</div>
-        <div class="ph" style="font-style:italic;color:var(--accent);font-size:14px">${esc(w.ph)}</div>
+        <div class="ph" style="font-style:italic;color:var(--accent-ink);font-size:14px">${esc(w.ph)}</div>
         <div class="en">${esc(w.en)}</div>
       </div>
       ${canSpeak ? `<button class="speakbtn" data-action="speak" data-arg="${esc(w.th)}" aria-label="Speak">${SVG_SPK}</button>` : ''}
@@ -755,23 +1155,35 @@ RENDER.home = function(){
         <h3>Packing</h3><small>${pt.done} of ${pt.total} items packed</small>
         <span class="progress"><span class="fill" style="width:${pct}%"></span></span></button>
       <button class="qcard" data-action="nav" data-arg="speak"><span class="big-num">02</span><span class="sec-num">02</span>
-        <h3>Speak Thai</h3><small>45 phrases — your phone says them out loud</small></button>
+        <h3>Speak Thai</h3><small>${ALL_PHRASES.length} phrases — your phone says them out loud</small></button>
       <button class="qcard" data-action="nav" data-arg="money"><span class="big-num">03</span><span class="sec-num">03</span>
         <h3>Baht</h3><small>100 ฿ ≈ ${fmt(100 / rate())} ${sign()} · ${S.expenses.length ? fmt(spentTHB) + ' ฿ spent so far' : 'expense book ready'}</small></button>
       <button class="qcard" data-action="nav" data-arg="eat"><span class="big-num">04</span><span class="sec-num">04</span>
-        <h3>Eat & spin</h3><small>Must-try dishes and the adventure wheel</small></button>
-      <button class="qcard" data-action="nav" data-arg="vault"><span class="big-num">05</span><span class="sec-num">05</span>
+        <h3>Cities &amp; food</h3><small>Bangkok, Chiang Mai &amp; Phuket — sights, dishes, top-rated tables</small></button>
+      <button class="qcard" data-action="nav" data-arg="quiz"><span class="big-num">05</span><span class="sec-num">05</span>
+        <h3>Thai Master</h3><small>The family quiz — solo or championship</small></button>
+      <button class="qcard" data-action="nav" data-arg="vault"><span class="big-num">06</span><span class="sec-num">06</span>
         <h3>Vault</h3><small>Flights, bookings & contacts — encrypted</small></button>
-      <button class="qcard" data-action="nav" data-arg="journal"><span class="big-num">06</span><span class="sec-num">06</span>
+      <button class="qcard" data-action="nav" data-arg="journal"><span class="big-num">07</span><span class="sec-num">07</span>
         <h3>Journal</h3><small>${S.journal.length ? S.journal.length + ' entries and counting' : 'One line a day. Future you says thanks.'}</small></button>
     </div>
     <div class="credit">
       <div class="tagline">«Built by Claude — for one family, for one great trip.»</div>
       <div class="fine">PRIVATE FAMILY EDITION · WORKS OFFLINE · NO ACCOUNTS · NO TRACKING</div>
+      <details class="credits-acc">
+        <summary>Photo credits</summary>
+        <div class="credits-list">${photoCreditsHTML()}</div>
+      </details>
     </div>
   `;
   tick();
 };
+function photoCreditsHTML(){
+  return Object.keys(IMG).map(id => {
+    const m = IMG[id];
+    return `<div>${esc(m.subject)}: ${esc(m.author)} (${esc(m.license)}), Wikimedia Commons</div>`;
+  }).join('');
+}
 
 function tick(){
   const cd = $('#cd');
@@ -791,9 +1203,10 @@ function tick(){
   } else if (now <= ret) {
     const dayN = Math.floor((now - dep) / 864e5) + 1;
     const total = Math.max(1, Math.round((ret - dep) / 864e5) + 1);
+    const cityNm = CITY_NAMES[currentCity()];
     band.innerHTML = `<div class="stat"><div class="num">${dayN}</div><div class="lbl">Day</div></div>
       <div class="stat"><div class="num">${total}</div><div class="lbl">Of</div></div>
-      <div class="stat" style="flex:2"><div class="num" style="font-size:26px;padding-top:8px">ในเมืองไทย</div><div class="lbl">In Thailand</div></div>`;
+      <div class="stat" style="flex:2"><div class="num" style="font-size:26px;padding-top:8px">${esc(cityNm)}</div><div class="lbl">Day ${dayN} · where you are</div></div>`;
     title.textContent = 'You are in Thailand.';
     epi.textContent = '«Go make a memory. Write it down tonight.»';
   } else {
@@ -808,9 +1221,11 @@ setInterval(tick, 1000);
 RENDER.plan = function(){
   let html = `
     <div class="section-head" style="margin-top:26px"><span class="sec-num">— 01</span><h2 class="display">The plan</h2></div>
-    <p class="lede">Day by day. Tap any line to rewrite it — everything saves on this phone.</p>
-    <div class="note-block">These are <b>sample days</b> to show the shape. Make them yours.</div>
+    <p class="lede">Your trip, day by day. Start with a blank page — add days and tap any line to rewrite it. Everything saves on this phone.</p>
   `;
+  if (!S.itinerary.length) {
+    html += `<div class="card" style="color:var(--muted);font-size:15px">No days yet. Tap <b style="color:var(--ink)">+ Add a day</b> below to start building — arrival, temples, islands, whatever shape your trip takes.</div>`;
+  }
   S.itinerary.forEach((day, i) => {
     html += `<div class="daycard">
       <div class="dayhead">
@@ -849,13 +1264,15 @@ function speakThai(text, btn){
 }
 
 RENDER.speak = function(){
+  const jump = PHRASES.map((c, i) => `<button class="jumpchip" data-action="phrase-jump" data-arg="pcat-${i}">${esc(c.cat)}</button>`).join('');
   let html = `
     <div class="section-head" style="margin-top:26px"><span class="sec-num">— 02</span><h2 class="display">Speak Thai</h2></div>
     <p class="lede">${canSpeak ? 'Tap the speaker and your phone says it in Thai. Locals adore the attempt.' : 'Read the italic phonetics out loud — locals adore the attempt.'}</p>
+    <div class="jumprow" role="navigation" aria-label="Jump to phrase category">${jump}</div>
     <div class="expected-block"><b>Instant politeness:</b> end anything with <b>khrap</b> (ครับ) if you're male, <b>kha</b> (ค่ะ) if you're female.</div>
   `;
-  for (const cat of PHRASES) {
-    html += `<div class="method-label"><span class="caps" style="color:var(--accent)">${esc(cat.cat)}</span></div>`;
+  PHRASES.forEach((cat, i) => {
+    html += `<div class="method-label" id="pcat-${i}" style="scroll-margin-top:118px"><span class="caps" style="color:var(--accent-ink)">${esc(cat.cat)}</span></div>`;
     for (const p of cat.items) {
       html += `<div class="phrase">
         <div class="pt">
@@ -866,11 +1283,62 @@ RENDER.speak = function(){
         ${canSpeak ? `<button class="speakbtn" data-action="speak" data-arg="${esc(p.th)}" aria-label="Speak">${SVG_SPK}</button>` : ''}
       </div>`;
     }
-  }
+  });
   $('#view-speak').innerHTML = html;
 };
 
 /* ---------------- MONEY (converter + expenses) ---------------- */
+/* Settle-up: every expense splits equally across current travelers. A
+   'Together' payer is shared money — it counts toward nobody's personal
+   "paid" total, so only personally-paid amounts create debts. Balancing on
+   the personal-paid pool always nets to zero. */
+function settleUp(){
+  const nm = names();
+  const N = nm.length;
+  if (N < 2 || !S.expenses.length) return null;
+  const total = S.expenses.reduce((a, e) => a + e.amt, 0);
+  const paid = {};
+  nm.forEach(n => paid[n] = 0);
+  for (const e of S.expenses) if (e.who !== 'Together' && paid[e.who] !== undefined) paid[e.who] += e.amt;
+  const P = nm.reduce((a, n) => a + paid[n], 0);           // personally-paid pool
+  const shared = total - P;                                 // 'Together' + any orphaned payer
+  const bal = {};
+  nm.forEach(n => bal[n] = Math.round(paid[n] - P / N));    // nets to zero
+  const creditors = nm.filter(n => bal[n] > 0).map(n => ({ n, v: bal[n] })).sort((a, b) => b.v - a.v);
+  const debtors   = nm.filter(n => bal[n] < 0).map(n => ({ n, v: -bal[n] })).sort((a, b) => b.v - a.v);
+  const transfers = [];
+  let ci = 0, di = 0;
+  while (ci < creditors.length && di < debtors.length) {
+    const c = creditors[ci], d = debtors[di], amt = Math.min(c.v, d.v);
+    if (amt > 0) transfers.push({ from: d.n, to: c.n, amt });
+    c.v -= amt; d.v -= amt;
+    if (c.v <= 0) ci++;
+    if (d.v <= 0) di++;
+  }
+  return { total, shared, fairShare: Math.round(total / N), paid, bal, transfers };
+}
+function settleHTML(){
+  const s = settleUp();
+  if (!s) return '';
+  const rows = names().map(n => {
+    const b = s.bal[n];
+    const tag = b > 0 ? `<span style="color:var(--ok)">gets back ${fmt(b)} ฿</span>`
+              : b < 0 ? `<span style="color:var(--warn)">owes ${fmt(-b)} ฿</span>`
+              : '<span class="muted">even</span>';
+    return `<div class="settlerow"><span class="sname">${esc(n)}</span><span class="spaid mono">paid ${fmt(s.paid[n])} ฿</span><span class="sbal">${tag}</span></div>`;
+  }).join('');
+  const tx = s.transfers.length
+    ? s.transfers.map(t => `<div class="txrow"><span class="mono">${esc(t.from)}</span> owes <span class="mono">${esc(t.to)}</span> <b>${fmt(t.amt)} ฿</b></div>`).join('')
+    : '<div class="txrow muted">All square — nobody owes anyone.</div>';
+  return `
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">Settle up</span></div>
+    <div class="card" style="padding:14px 16px">
+      <div class="caps" style="font-size:10px;color:var(--muted);margin-bottom:10px">Fair share · ${fmt(s.fairShare)} ฿ each${s.shared ? ' · incl. ' + fmt(s.shared) + ' ฿ shared (splits evenly)' : ''}</div>
+      ${rows}
+      <div class="method-label" style="margin:16px 0 8px"><span class="caps" style="color:var(--accent-ink);font-size:10px">Who pays whom</span></div>
+      ${tx}
+    </div>`;
+}
 let moneyTab = 'conv';
 RENDER.money = function(){
   const r = rate();
@@ -895,9 +1363,9 @@ RENDER.money = function(){
         <div class="raterow">Home <select id="currSel">${opts}</select> · 1 ${S.currency} = <input id="rateIn" type="number" inputmode="decimal" value="${r}"> ฿</div>
         <div class="chipgrid">${chips}</div>
       </div>
-      <div class="method-label"><span class="caps" style="color:var(--accent)">What things cost</span></div>
+      <div class="method-label"><span class="caps" style="color:var(--accent-ink)">What things cost</span></div>
       <table class="tbl"><tbody>${priceRows}</tbody></table>
-      <div class="method-label"><span class="caps" style="color:var(--accent)">Bargain like a pro</span></div>
+      <div class="method-label"><span class="caps" style="color:var(--accent-ink)">Bargain like a pro</span></div>
       <div class="card" style="font-size:15px;color:var(--muted)">
         <p style="margin-bottom:8px"><b style="color:var(--ink)">Markets: yes. Malls & food: no.</b> Haggling is a market game, never for food stalls.</p>
         <p style="margin-bottom:8px"><b style="color:var(--ink)">Smile and counter at ~60%.</b> It's a friendly sport. Meet in the middle.</p>
@@ -918,7 +1386,7 @@ RENDER.money = function(){
     let list = '';
     for (const d of dates) {
       const sum = byDate[d].reduce((a, e) => a + e.amt, 0);
-      list += `<div class="explist"><div class="expday"><span class="caps" style="font-size:10.5px;color:var(--muted)">${esc(niceDate(d))}</span><span class="mono" style="color:var(--accent)">${fmt(sum)} ฿</span></div>`;
+      list += `<div class="explist"><div class="expday"><span class="caps" style="font-size:10.5px;color:var(--muted)">${esc(niceDate(d))}</span><span class="mono" style="color:var(--accent-ink)">${fmt(sum)} ฿</span></div>`;
       for (const e of byDate[d]) {
         list += `<button class="exprow" data-action="exp-del" data-arg="${e.id}">
           <span class="amt">${fmt(e.amt)} ฿</span>
@@ -935,6 +1403,7 @@ RENDER.money = function(){
         <div class="stat"><div class="num" style="font-size:24px;padding-top:6px">${fmt(total / days)} ฿</div><div class="lbl">Per day</div></div>
       </div>
       ${S.budget ? `<div style="margin:12px 0"><div class="caps" style="font-size:10px;color:var(--muted);margin-bottom:6px">Budget · ${fmt(total)} of ${fmt(S.budget)} ฿ (${budgetPct}%)</div><div class="progress"><div class="fill" style="width:${budgetPct}%;${budgetPct > 90 ? 'background:var(--warn)' : ''}"></div></div></div>` : ''}
+      ${settleHTML()}
       <div class="exp-form">
         <div class="row2">
           <div class="field"><label>Amount</label><input id="expAmt" type="number" inputmode="decimal" placeholder="120"></div>
@@ -966,64 +1435,245 @@ RENDER.money = function(){
   }
 };
 
-/* ---------------- EAT & SPIN ---------------- */
-let spinRegion = 'any', spinMood = 'any', spinTimer = null;
+/* ---------------- CITIES & FOOD ---------------- */
+function dishCardHTML(d){
+  const dots = [1,2,3].map(i => `<i class="${i <= d.s ? 'f' : ''}"></i>`).join('');
+  const lbl = ['No spice','Mild','Medium','Hot!'][d.s];
+  return `<div class="dish">
+    <div class="de">${d.e}</div><h3>${esc(d.n)}</h3><div class="dth" lang="th">${esc(d.th)}</div>
+    <div class="dp">${esc(d.p)}</div>
+    <div class="spice">${dots}<span>${lbl}</span></div>
+    <p>${esc(d.d)}</p><div class="how">${esc(d.h)}</div>
+  </div>`;
+}
+function venueCardHTML(v){
+  const tier = v.tier === 'lux'
+    ? '<span class="vtier lux">Luxury</span>'
+    : '<span class="vtier local">Local</span>';
+  const adult = v.family === false ? '<span class="vadult">Adults only</span>' : '';
+  return `<div class="venuecard">
+    <div class="vtop"><h3>${esc(v.name)}</h3>${tier}</div>
+    <div class="vmeta">
+      <span class="chip plain">${esc(v.area)}</span>
+      <span class="vrating">★ ${v.rating.toFixed(1)} · ${revFmt(v.reviews)} reviews</span>
+      <span class="vprice">${esc(v.price)}</span>${adult}
+    </div>
+    <div class="vblurb">${esc(v.blurb)}</div>
+    <div class="vaddr">${esc(v.addr)}</div>
+    <a class="maplink" href="${esc(v.maps)}" target="_blank" rel="noopener">${SVG_PIN} Open in Google Maps</a>
+  </div>`;
+}
+let eatCity = null;
 RENDER.eat = function(){
-  let dishes = '';
-  for (const d of DISHES) {
-    const dots = [1,2,3].map(i => `<i class="${i <= d.s ? 'f' : ''}"></i>`).join('');
-    const lbl = ['No spice','Mild','Medium','Hot!'][d.s];
-    dishes += `<div class="dish">
-      <div class="de">${d.e}</div><h3>${esc(d.n)}</h3><div class="dth" lang="th">${esc(d.th)}</div>
-      <div class="dp">${esc(d.p)}</div>
-      <div class="spice">${dots}<span>${lbl}</span></div>
-      <p>${esc(d.d)}</p><div class="how">${esc(d.h)}</div>
-    </div>`;
-  }
-  const regions = [['any','Anywhere'],['bkk','Bangkok'],['cnx','Chiang Mai'],['isl','Islands']];
-  const moods = [['any','Any mood'],['chill','Chill'],['adventure','Adventure'],['culture','Culture'],['food','Food'],['shopping','Shopping']];
-  const chipHtml = (list, cur, act) => list.map(([v, l]) => `<button class="fchip ${cur === v ? 'on' : ''}" data-action="${act}" data-arg="${v}">${l}</button>`).join('');
+  if (!eatCity) eatCity = currentCity();
+  const city = eatCity, cname = CITY_NAMES[city];
+  const dishes = DISHES.map(dishCardHTML).join('');
+  const tabs = CITY_ORDER.map(c => `<button class="fchip ${c === city ? 'on' : ''}" data-action="eat-city" data-arg="${c}">${esc(CITY_NAMES[c])}</button>`).join('');
+  const sightCards = SIGHTS.filter(s => s.city === city).map(s => {
+    const img = IMG[s.id];
+    const imgHtml = img
+      ? `<button class="sightimg" data-action="lightbox" data-arg="${esc(s.id)}" aria-label="View photo: ${esc(s.name)}"><img src="img/${esc(s.id)}.webp" width="${img.w}" height="${img.h}" loading="lazy" alt="${esc(s.name)}, ${esc(cname)}"></button>`
+      : '';
+    return `<div class="sightcard">${imgHtml}<div class="sightbody">
+      <div class="overline">${esc(s.area)}</div>
+      <h3>${esc(s.name)}</h3>
+      <p>${esc(s.blurb)}</p>
+      <div class="sighttip">${esc(s.tip)}</div>
+    </div></div>`;
+  }).join('');
+  const regCards = REGIONAL_DISHES.filter(d => d.city === city).map(dishCardHTML).join('');
+  const rests = VENUES.filter(v => v.city === city && v.kind === 'rest').map(venueCardHTML).join('');
+  const bars  = VENUES.filter(v => v.city === city && v.kind === 'bar').map(venueCardHTML).join('');
   $('#view-eat').innerHTML = `
-    ${crumbs('Eat & spin')}
-    <div class="section-head"><span class="sec-num">— 04</span><h2 class="display">Must-try food</h2></div>
-    <p class="lede">Swipe through — spice level marked so nobody gets ambushed.</p>
+    ${crumbs('Cities & food')}
+    <div class="section-head"><span class="sec-num">— 04</span><h2 class="display">Cities & food</h2></div>
+    <p class="lede">Three cities, three kitchens. Photo highlights, regional dishes, and the best-rated tables in each.</p>
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">Must-try across Thailand</span></div>
+    <p class="lede" style="font-size:14px;margin-top:0">Swipe through — spice level marked so nobody gets ambushed.</p>
     <div class="dishscroll">${dishes}</div>
-    <div class="section-head"><span class="sec-num">— 05</span><h2 class="display">Can't decide? Spin.</h2></div>
-    <p class="lede">For the unplanned days — set the vibe, spin, obey the wheel.</p>
-    <div class="chiprow">${chipHtml(regions, spinRegion, 'spin-region')}</div>
-    <div class="chiprow">${chipHtml(moods, spinMood, 'spin-mood')}</div>
-    <div class="spinstage" id="spinStage"><div class="se">🎡</div><h3>Ready when you are</h3><p>Pick your filters, hit spin, let fate plan today.</p></div>
-    <button class="btn" data-action="spin">Spin for an adventure</button>
+    <div class="chiprow" style="margin-top:20px">${tabs}</div>
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">${esc(cname)} · photo highlights</span></div>
+    <p class="lede" style="font-size:14px;margin-top:0">Tap any photo to see it full-screen.</p>
+    <div class="sightgrid">${sightCards}</div>
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">${esc(cname)} · regional dishes</span></div>
+    <div class="dishscroll">${regCards}</div>
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">${esc(cname)} · where to eat</span></div>
+    <p class="lede" style="font-size:13.5px;margin-bottom:12px">Every spot here independently clears ★4.7 with 1,000+ Google reviews (as of July 2026) — which is why a few famous names you might expect aren't on the list.</p>
+    ${rests}
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">${esc(cname)} · bars & rooftops</span></div>
+    ${bars}
   `;
 };
-function doSpin(){
-  const pool = ACTIVITIES.filter(a => (spinRegion === 'any' || a.r === spinRegion) && (spinMood === 'any' || a.m.includes(spinMood)));
-  const stage = $('#spinStage');
-  if (!pool.length) { stage.className = 'spinstage'; stage.innerHTML = '<div class="se">∅</div><h3>Nothing matches</h3><p>Loosen a filter and spin again.</p>'; return; }
-  clearInterval(spinTimer);
-  stage.className = 'spinstage rolling';
-  let i = 0;
-  spinTimer = setInterval(() => {
-    const a = pool[Math.floor(Math.random() * pool.length)];
-    stage.innerHTML = `<div class="se">${a.e}</div><h3>${esc(a.t)}</h3>`;
-    if (++i >= 16) {
-      clearInterval(spinTimer);
-      const win = pool[Math.floor(Math.random() * pool.length)];
-      stage.className = 'spinstage landed';
-      stage.innerHTML = `<div class="se">${win.e}</div><h3>${esc(win.t)}</h3><p>${esc(win.d)}</p>`;
-    }
-  }, 75);
+function showLightbox(id){
+  const s = SIGHTS.find(x => x.id === id), img = IMG[id];
+  if (!img) return;
+  const o = $('#lightbox');
+  o.innerHTML = `<button class="lbclose" data-action="lightbox-close" aria-label="Close photo">✕</button>
+    <img src="img/${esc(id)}.webp" width="${img.w}" height="${img.h}" alt="${s ? esc(s.name) : ''}">
+    <div class="lbcap">${s ? esc(s.name) + ' · ' + esc(CITY_NAMES[s.city]) : ''}</div>`;
+  o.hidden = false;
 }
+
+/* ---------------- QUIZ (Thai Master) ---------------- */
+let quizStage = 'menu';   // menu | solo-setup | champ-setup | play | handoff | end
+let QZ = null;            // active session
+let champSel = [];        // selected players during championship setup
+function shuffle(arr){ const a = arr.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function pickQuestions(n){
+  return shuffle(QUIZ).slice(0, n).map(q => {
+    const order = shuffle([0, 1, 2, 3]);
+    return { q: q.q, cat: q.cat, fact: q.fact, opts: order.map(i => q.c[i]), ans: order.indexOf(q.a) };
+  });
+}
+function recordScore(name, score){
+  if (!S.quizScores[name]) S.quizScores[name] = { best: 0, rounds: 0 };
+  S.quizScores[name].rounds++;
+  if (score > S.quizScores[name].best) S.quizScores[name].best = score;
+  save();
+}
+function startSolo(name){
+  QZ = { mode: 'solo', players: [name], qs: pickQuestions(10), idx: 0, turn: 0, scores: { [name]: 0 }, answered: false, chosen: -1 };
+  quizStage = 'play'; RENDER.quiz();
+}
+function startChamp(players){
+  const scores = {}; players.forEach(p => scores[p] = 0);
+  QZ = { mode: 'champ', players, qs: pickQuestions(10), idx: 0, turn: 0, scores, answered: false, chosen: -1 };
+  quizStage = 'handoff'; RENDER.quiz();
+}
+function quizAnswer(i){
+  if (!QZ || QZ.answered) return;
+  QZ.answered = true; QZ.chosen = i;
+  if (i === QZ.qs[QZ.idx].ans) QZ.scores[QZ.players[QZ.turn]]++;
+  RENDER.quiz();
+}
+function quizNext(){
+  if (!QZ) return;
+  QZ.answered = false; QZ.chosen = -1; QZ.idx++;
+  if (QZ.idx < QZ.qs.length) { RENDER.quiz(); return; }
+  if (QZ.mode === 'solo'){
+    recordScore(QZ.players[0], QZ.scores[QZ.players[0]]);
+    quizStage = 'end';
+  } else {
+    QZ.turn++; QZ.idx = 0;
+    if (QZ.turn >= QZ.players.length){
+      QZ.players.forEach(p => recordScore(p, QZ.scores[p]));
+      quizStage = 'end';
+    } else {
+      quizStage = 'handoff';
+    }
+  }
+  RENDER.quiz();
+}
+function quizRankingHTML(){
+  const ranked = QZ.players.map(p => ({ p, s: QZ.scores[p] })).sort((a, b) => b.s - a.s);
+  const rows = ranked.map((r, i) => `<tr><td>${i + 1}</td><td>${esc(r.p)}</td><td class="mono" style="text-align:right">${r.s}</td></tr>`).join('');
+  return `<div class="method-label"><span class="caps" style="color:var(--accent-ink)">Standings so far</span></div>
+    <table class="tbl"><thead><tr><th>#</th><th>Player</th><th style="text-align:right">Score</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+function quizLeaderboardHTML(){
+  const entries = Object.keys(S.quizScores);
+  if (!entries.length) return `<div class="method-label"><span class="caps" style="color:var(--accent-ink)">Leaderboard</span></div>
+    <div class="card muted" style="font-size:14px">No rounds played yet. The first Thai Master is up for grabs.</div>`;
+  const ranked = entries.map(n => ({ n, best: S.quizScores[n].best, rounds: S.quizScores[n].rounds })).sort((a, b) => b.best - a.best || b.rounds - a.rounds);
+  const rows = ranked.map((r, i) => `<tr><td>${i + 1}</td><td>${esc(r.n)}</td><td class="mono" style="text-align:right">${r.best}</td><td class="mono" style="text-align:right">${r.rounds}</td></tr>`).join('');
+  return `<div class="method-label"><span class="caps" style="color:var(--accent-ink)">Leaderboard</span></div>
+    <table class="tbl"><thead><tr><th>#</th><th>Player</th><th style="text-align:right">Best</th><th style="text-align:right">Rounds</th></tr></thead><tbody>${rows}</tbody></table>
+    <p class="lede" style="font-size:12.5px;margin-top:8px">Scores are saved on this phone only — a family home console, not a global ranking.</p>`;
+}
+function quizPlayHTML(){
+  const q = QZ.qs[QZ.idx], player = QZ.players[QZ.turn];
+  const scoreLine = QZ.mode === 'champ' ? `${player} · score ${QZ.scores[player]}` : `Score ${QZ.scores[player]}`;
+  const opts = q.opts.map((o, i) => {
+    let cls = 'quizopt';
+    if (QZ.answered){ cls += i === q.ans ? ' correct' : (i === QZ.chosen ? ' wrong' : ' dim'); }
+    return `<button class="${cls}" data-action="quiz-answer" data-arg="${i}"${QZ.answered ? ' disabled' : ''}>${esc(o)}</button>`;
+  }).join('');
+  const lastQ = QZ.idx + 1 >= QZ.qs.length;
+  const nextLbl = lastQ ? (QZ.mode === 'solo' ? 'See your score' : 'Finish turn') : 'Next question';
+  return `
+    <div class="quizbar"><span class="chip">${esc(q.cat)}</span><span class="qprog mono">Question ${QZ.idx + 1} / ${QZ.qs.length}</span></div>
+    <div class="quizscore caps">${esc(scoreLine)}</div>
+    <div class="quizq">${esc(q.q)}</div>
+    <div class="quizopts">${opts}</div>
+    ${QZ.answered ? `<div class="quizfact ${QZ.chosen === q.ans ? 'right' : 'notright'}"><b>${QZ.chosen === q.ans ? 'Correct!' : 'Not quite.'}</b> ${esc(q.fact)}</div>
+      <button class="btn" data-action="quiz-next">${nextLbl}</button>` : ''}`;
+}
+function quizHandoffHTML(){
+  const next = QZ.players[QZ.turn];
+  const first = QZ.turn === 0;
+  return `${first ? '' : quizRankingHTML()}
+    <div class="handoff">
+      <div class="handicon">📱→</div>
+      <h3 class="display">Hand the phone to</h3>
+      <div class="handname">${esc(next)}</div>
+      <p class="muted">No peeking, everyone else — same ten questions for all.</p>
+      <button class="btn" data-action="quiz-begin-turn">${esc(next)} is ready</button>
+    </div>`;
+}
+function quizEndHTML(){
+  if (QZ.mode === 'solo'){
+    const player = QZ.players[0], score = QZ.scores[player], total = QZ.qs.length;
+    const best = (S.quizScores[player] || {}).best || score;
+    const msg = score >= 9 ? 'Thai Master!' : score >= 7 ? 'Seriously impressive.' : score >= 5 ? 'Solid effort.' : 'Room to grow — play again!';
+    return `<div class="quizend">
+      <div class="overline">Round complete</div>
+      <div class="bigscore display">${score}<span>/ ${total}</span></div>
+      <h3 class="display">${esc(player)} — ${msg}</h3>
+      <p class="muted">Personal best: ${best} / ${total}</p>
+      <button class="btn" data-action="quiz-solo-setup" style="margin-top:14px">Play again</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost" data-action="quiz-menu">Back to menu</button>
+    </div>${quizLeaderboardHTML()}`;
+  }
+  const ranked = QZ.players.map(p => ({ p, s: QZ.scores[p] })).sort((a, b) => b.s - a.s);
+  const total = QZ.qs.length;
+  const podium = ranked.map((r, i) => {
+    const medal = ['🥇', '🥈', '🥉'][i] || (i + 1) + '.';
+    return `<div class="podrow ${i === 0 ? 'win' : ''}"><span class="pod-m">${medal}</span><span class="pod-n">${esc(r.p)}</span><span class="pod-s mono">${r.s} / ${total}</span></div>`;
+  }).join('');
+  return `<div class="quizend">
+    <div class="overline">Championship result</div>
+    <h3 class="display" style="margin-bottom:4px">👑 ${esc(ranked[0].p)} wins!</h3>
+    <div class="podium">${podium}</div>
+    <button class="btn" data-action="quiz-champ-setup" style="margin-top:6px">Rematch</button>
+    <div style="height:8px"></div>
+    <button class="btn ghost" data-action="quiz-menu">Back to menu</button>
+  </div>${quizLeaderboardHTML()}`;
+}
+RENDER.quiz = function(){
+  let html = crumbs('Thai Master') + `<div class="section-head"><span class="sec-num">— 09</span><h2 class="display">Thai Master</h2></div>`;
+  if (quizStage === 'menu'){
+    html += `<p class="lede">How much does your family really know about Thailand? Play solo, or run a pass-the-phone championship.</p>
+      <div class="card-grid" style="margin-top:6px">
+        <button class="qcard" data-action="quiz-solo-setup"><span class="big-num">◆</span><h3>Solo round</h3><small>10 questions, just you. Beat your best.</small></button>
+        <button class="qcard" data-action="quiz-champ-setup"><span class="big-num">♛</span><h3>Championship</h3><small>2–5 players, same questions, one winner.</small></button>
+      </div>
+      ${quizLeaderboardHTML()}`;
+  } else if (quizStage === 'solo-setup'){
+    const chips = names().map(n => `<button class="fchip" data-action="quiz-start-solo" data-arg="${esc(n)}">${esc(n)}</button>`).join('');
+    html += `<p class="lede">Who's playing?</p><div class="chiprow">${chips}</div>
+      <button class="btn ghost" data-action="quiz-menu">Back</button>`;
+  } else if (quizStage === 'champ-setup'){
+    const chips = names().map(n => `<button class="fchip ${champSel.includes(n) ? 'on' : ''}" data-action="quiz-champ-toggle" data-arg="${esc(n)}">${esc(n)}</button>`).join('');
+    const ready = champSel.length >= 2;
+    html += `<p class="lede">Tap 2–5 players. Everyone answers the same 10 questions, passing the phone between turns.</p>
+      <div class="chiprow">${chips}</div>
+      <button class="btn" data-action="quiz-start-champ"${ready ? '' : ' disabled style="opacity:.4;pointer-events:none"'}>Start championship (${champSel.length})</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost" data-action="quiz-menu">Back</button>`;
+  } else if (quizStage === 'play'){
+    html += quizPlayHTML();
+  } else if (quizStage === 'handoff'){
+    html += quizHandoffHTML();
+  } else if (quizStage === 'end'){
+    html += quizEndHTML();
+  }
+  $('#view-quiz').innerHTML = html;
+};
 
 /* ---------------- GUIDE ---------------- */
 RENDER.guide = function(){
-  let taxiBtns = '';
-  TAXI_PRESETS.forEach((p, i) => {
-    taxiBtns += `<button class="taxibtn" data-action="taxi-show" data-arg="p${i}"><span class="tb-en">${esc(p.label)}</span><div class="tb-th" lang="th">${esc(p.th)}</div></button>`;
-  });
-  for (const c of S.taxiCustom) {
-    taxiBtns += `<button class="taxibtn" data-action="taxi-show" data-arg="c${c.id}"><span class="tb-en">${esc(c.label)}</span><div class="tb-th">Your card — tap to show the driver</div></button>`;
-  }
+  const taxiBtns = taxiCardsHTML();
   $('#view-guide').innerHTML = `
     ${crumbs('Survival guide')}
     <div class="section-head"><span class="sec-num">— 06</span><h2 class="display">Survival guide</h2></div>
@@ -1070,12 +1720,41 @@ RENDER.guide = function(){
       <li><b>Tipping:</b> not expected; rounding up for great service is appreciated.</li>
       <li>Grab a <b>local eSIM at the airport</b> — fast data for pocket money. (This app needs none.)</li>
     </ul></div></details>
-    <div class="method-label"><span class="caps" style="color:var(--accent)">Show-the-driver cards</span></div>
-    <p class="lede" style="margin-top:2px">Tap one — it fills the screen in Thai so any driver can read it.</p>
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">Show-the-driver cards</span></div>
+    <p class="lede" style="margin-top:2px">Tap one — it fills the screen in Thai so any driver can read it. Your city's cards come first; tap ✕ to hide any you don't need.</p>
     ${taxiBtns}
-    <button class="btn ghost" data-action="taxi-custom">+ Make your own card</button>
+    <button class="btn ghost" data-action="taxi-custom" style="margin-top:8px">+ Make your own card</button>
   `;
 };
+function taxiCardsHTML(){
+  const cur = currentCity();
+  const order = [cur].concat(CITY_ORDER.filter(c => c !== cur));
+  let html = '';
+  for (const city of order){
+    const presets = (TAXI_PRESETS[city] || []).filter(p => !S.taxiHidden.includes(p.id));
+    if (!presets.length) continue;
+    html += `<div class="taxi-citylabel"><span class="caps">${esc(CITY_NAMES[city])}</span>${city === cur ? '<span class="chip" style="margin-left:8px">Where you are</span>' : ''}</div>`;
+    for (const p of presets){
+      html += `<div class="taxirow">
+        <button class="taximain" data-action="taxi-show" data-arg="${esc(p.id)}"><span class="tb-en">${esc(p.label)}</span><div class="tb-th" lang="th">${esc(p.th)}</div></button>
+        <button class="taxix" data-action="taxi-hide" data-arg="${esc(p.id)}" aria-label="Hide card: ${esc(p.label)}">✕</button>
+      </div>`;
+    }
+  }
+  if (S.taxiCustom.length){
+    html += `<div class="taxi-citylabel"><span class="caps">Your cards</span></div>`;
+    for (const c of S.taxiCustom){
+      html += `<div class="taxirow">
+        <button class="taximain" data-action="taxi-show" data-arg="cust-${esc(c.id)}"><span class="tb-en">${esc(c.label)}</span><div class="tb-th">Your card — tap to show the driver</div></button>
+        <button class="taxix" data-action="taxi-delcustom" data-arg="${esc(c.id)}" aria-label="Delete card: ${esc(c.label)}">🗑</button>
+      </div>`;
+    }
+  }
+  if (S.taxiHidden.length){
+    html += `<button class="btn ghost slim" data-action="taxi-restore" style="margin-top:8px">Restore hidden cards (${S.taxiHidden.length})</button>`;
+  }
+  return html;
+}
 
 /* ---------------- VAULT ---------------- */
 let vaultSeedEntries = null; // decrypted from VAULT_SEED once
@@ -1093,7 +1772,7 @@ RENDER.vault = function(){
     for (const sec of VAULT_SECTIONS) {
       const rows = all.filter(e => e.sec === sec);
       if (!rows.length) continue;
-      sections += `<div class="method-label vault-sec"><span class="caps" style="color:var(--accent)">${sec}</span></div>`;
+      sections += `<div class="method-label vault-sec"><span class="caps" style="color:var(--accent-ink)">${sec}</span></div>`;
       for (const e of rows) {
         const isLocal = S.vaultLocal.some(x => x.id === e.id);
         sections += `<button class="ventry" data-action="${isLocal ? 'vault-edit' : 'noop'}" data-arg="${e.id}">
@@ -1107,7 +1786,7 @@ RENDER.vault = function(){
       <p class="lede">Booking refs, flight numbers, key contacts. Everything here stays on this phone — and anything published to the family link is <b>encrypted with the family passcode</b>.</p>
       ${sections || '<div class="card" style="color:var(--muted);font-size:15px">Nothing stored yet. Add your flight numbers, hotel bookings and emergency contacts — then they\'re one tap away at the airport.</div>'}
       <button class="btn" data-action="vault-add" style="margin-top:10px">+ Add an entry</button>
-      <div class="method-label"><span class="caps" style="color:var(--accent)">Share with the family</span></div>
+      <div class="method-label"><span class="caps" style="color:var(--accent-ink)">Share with the family</span></div>
       <div class="card" style="font-size:14.5px;color:var(--muted)">
         Entries you add live only on this phone. To put them on <b style="color:var(--ink)">everyone's</b> phones:
         tap below to copy an <b style="color:var(--ink)">encrypted blob</b>, send it to the trip organiser, and it gets baked into the next update — still unreadable without the family passcode.
@@ -1146,6 +1825,12 @@ function showTaxi(smallLabel, bigThai, english){
     ${english ? `<div class="ten">${esc(english)}</div>` : ''}<div class="tclose">Tap anywhere to close</div>`;
   o.hidden = false;
 }
+function quickTaxi(){
+  const city = currentCity();
+  const list = (TAXI_PRESETS[city] || []).filter(p => !S.taxiHidden.includes(p.id));
+  const p = list[0] || (TAXI_PRESETS[city] || [])[0];
+  if (p) showTaxi('Please take us to · กรุณาพาเราไปที่', esc(p.th), p.label);
+}
 
 /* ---------------- sheet ---------------- */
 function openSheet(html){
@@ -1164,7 +1849,8 @@ function moreSheet(){
   openSheet(`
     ${sheetHead('More')}
     <div class="more-grid">
-      <button class="qcard" data-action="go" data-arg="eat"><span class="sec-num">04</span><h3>Eat & spin</h3><small>Dishes + adventure wheel</small></button>
+      <button class="qcard" data-action="go" data-arg="eat"><span class="sec-num">04</span><h3>Cities &amp; food</h3><small>Sights, dishes & top tables</small></button>
+      <button class="qcard" data-action="go" data-arg="quiz"><span class="sec-num">05</span><h3>Thai Master</h3><small>Quiz — solo or championship</small></button>
       <button class="qcard" data-action="go" data-arg="guide"><span class="sec-num">06</span><h3>Guide</h3><small>Etiquette, scams, emergencies</small></button>
       <button class="qcard" data-action="go" data-arg="vault"><span class="sec-num">07</span><h3>Vault</h3><small>Bookings & contacts, encrypted</small></button>
       <button class="qcard" data-action="go" data-arg="journal"><span class="sec-num">08</span><h3>Journal</h3><small>One line a day</small></button>
@@ -1226,7 +1912,7 @@ function packingSheet(){
   const chips = nm.map((n, i) => `<button class="fchip ${i === packTraveler ? 'on' : ''}" data-action="pack-traveler" data-arg="${i}">${esc(n)}</button>`).join('');
   let groups = '', done = 0, total = 0;
   PACK.forEach((g, gi) => {
-    groups += `<div class="packgroup"><div class="method-label" style="margin:14px 0 4px"><span class="caps" style="color:var(--accent)">${esc(g.cat)}</span></div>`;
+    groups += `<div class="packgroup"><div class="method-label" style="margin:14px 0 4px"><span class="caps" style="color:var(--accent-ink)">${esc(g.cat)}</span></div>`;
     g.items.forEach((it, ii) => {
       const k = packTraveler + ':' + gi + ':' + ii;
       const on = !!S.packing[k]; total++; if (on) done++;
@@ -1235,7 +1921,7 @@ function packingSheet(){
     groups += `</div>`;
   });
   if (S.packCustom.length) {
-    groups += `<div class="packgroup"><div class="method-label" style="margin:14px 0 4px"><span class="caps" style="color:var(--accent)">Your extras</span></div>`;
+    groups += `<div class="packgroup"><div class="method-label" style="margin:14px 0 4px"><span class="caps" style="color:var(--accent-ink)">Your extras</span></div>`;
     for (const c of S.packCustom) {
       const k = packTraveler + ':custom:' + c.id;
       const on = !!S.packing[k]; total++; if (on) done++;
@@ -1371,14 +2057,14 @@ async function journalExport(){
 
 /* ---- settings ---- */
 function settingsSheet(){
-  const t = [0,1,2,3].map(i => `<div class="field"><label>Traveler ${i + 1}${i > 0 ? ' (optional)' : ''}</label><input class="tname" data-i="${i}" value="${esc(S.travelers[i] || '')}" placeholder="Name"></div>`).join('');
+  const t = [0,1,2,3,4,5].map(i => `<div class="field"><label>Traveler ${i + 1}${i > 0 ? ' (optional)' : ''}</label><input class="tname" data-i="${i}" value="${esc(S.travelers[i] || '')}" placeholder="Name"></div>`).join('');
   const sh = openSheet(`
     ${sheetHead('Settings')}
     <div class="field"><label>Departure date</label><input id="fDep" type="date" value="${esc(S.depart)}"></div>
     <div class="field"><label>Return date</label><input id="fRet" type="date" value="${esc(S.ret)}"></div>
     ${t}
     <div class="btnrow"><button class="btn" id="fSave">Save</button></div>
-    <div class="method-label"><span class="caps" style="color:var(--accent)">Privacy</span></div>
+    <div class="method-label"><span class="caps" style="color:var(--accent-ink)">Privacy</span></div>
     <div class="btnrow"><button class="btn ghost" id="fLock">Lock this device</button></div>
     <div class="btnrow"><button class="btn warn" id="fReset">Reset all app data</button></div>
   `);
@@ -1395,13 +2081,14 @@ function settingsSheet(){
   };
   sh.querySelector('#fReset').onclick = () => {
     if (!confirm('Wipe the itinerary, expenses, journal, vault and settings on this phone?')) return;
-    localStorage.removeItem(KEY); localStorage.removeItem(KEYSLOT); location.reload();
+    localStorage.removeItem(KEY); localStorage.removeItem(KEYSLOT); localStorage.removeItem(KIDSLOT); location.reload();
   };
 }
 
 /* ---------------- svg fragments ---------------- */
 const SVG_SPK = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10v4h3l4.5 4V6L7 10z" fill="currentColor" stroke="none"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>';
 const SVG_PEN = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z"/></svg>';
+const SVG_PIN = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
 
 /* ---------------- actions ---------------- */
 const ACTIONS = {
@@ -1424,15 +2111,32 @@ const ACTIONS = {
   'exp-add':      () => addExpense(),
   'exp-del':      (el, arg) => { if (confirm('Delete this expense?')) { S.expenses = S.expenses.filter(e => e.id !== arg); save(); RENDER.money(); } },
   'exp-budget':   () => budgetSheet(),
-  'spin':         () => doSpin(),
-  'spin-region':  (el, arg) => { spinRegion = arg; RENDER.eat(); },
-  'spin-mood':    (el, arg) => { spinMood = arg; RENDER.eat(); },
+  'quick-taxi':   () => quickTaxi(),
+  'quick-sos':    () => { showView('guide'); setTimeout(() => { const b = document.querySelector('#view-guide .sosband'); if (b) b.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 60); },
+  'quick-expense':() => { moneyTab = 'exp'; showView('money'); setTimeout(() => { const a = $('#expAmt'); if (a) a.focus(); }, 60); },
+  'phrase-jump':  (el, arg) => { const t = document.getElementById(arg); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  'eat-city':     (el, arg) => { eatCity = arg; RENDER.eat(); },
+  'lightbox':     (el, arg) => showLightbox(arg),
+  'lightbox-close': () => { $('#lightbox').hidden = true; },
   'taxi-custom':  () => taxiCustomSheet(),
   'taxi-close':   () => { $('#taxioverlay').hidden = true; },
+  'taxi-hide':    (el, arg) => { if (!S.taxiHidden.includes(arg)) S.taxiHidden.push(arg); save(); RENDER.guide(); },
+  'taxi-restore': () => { S.taxiHidden = []; save(); RENDER.guide(); },
+  'taxi-delcustom': (el, arg) => { if (confirm('Delete this card?')) { S.taxiCustom = S.taxiCustom.filter(x => x.id !== arg); save(); RENDER.guide(); } },
   'taxi-show':    (el, arg) => {
-    if (arg[0] === 'p') { const p = TAXI_PRESETS[+arg.slice(1)]; if (p) showTaxi('Please take us to · กรุณาพาเราไปที่', esc(p.th), p.label); }
-    else { const c = S.taxiCustom.find(x => x.id === arg.slice(1)); if (c) showTaxi('กรุณาพาเราไปที่ · Please take us to', esc(c.label), ''); }
+    if (arg.indexOf('cust-') === 0) { const c = S.taxiCustom.find(x => x.id === arg.slice(5)); if (c) showTaxi('กรุณาพาเราไปที่ · Please take us to', esc(c.label), ''); return; }
+    const p = ALL_PRESETS.find(x => x.id === arg);
+    if (p) showTaxi('Please take us to · กรุณาพาเราไปที่', esc(p.th), p.label);
   },
+  'quiz-menu':        () => { quizStage = 'menu'; QZ = null; RENDER.quiz(); },
+  'quiz-solo-setup':  () => { quizStage = 'solo-setup'; RENDER.quiz(); },
+  'quiz-champ-setup': () => { quizStage = 'champ-setup'; champSel = []; RENDER.quiz(); },
+  'quiz-start-solo':  (el, arg) => startSolo(arg),
+  'quiz-champ-toggle':(el, arg) => { const i = champSel.indexOf(arg); if (i >= 0) champSel.splice(i, 1); else if (champSel.length < 5) champSel.push(arg); RENDER.quiz(); },
+  'quiz-start-champ': () => { if (champSel.length >= 2) startChamp(champSel.slice()); },
+  'quiz-answer':      (el, arg) => quizAnswer(+arg),
+  'quiz-next':        () => quizNext(),
+  'quiz-begin-turn':  () => { quizStage = 'play'; RENDER.quiz(); },
   'vault-add':    () => vaultEntrySheet(null),
   'vault-edit':   (el, arg) => vaultEntrySheet(arg),
   'vault-export': () => vaultExport(),
@@ -1469,6 +2173,7 @@ function showLock(){
       const bits = await derive(pass);
       if (b64(bits.slice(0, 32)) === AUTH.verify) {
         localStorage.setItem(KEYSLOT, b64(bits.slice(32)));
+        localStorage.setItem(KIDSLOT, AUTH.kid);
         bootApp();
       } else {
         $('#lockErr').textContent = 'That\'s not it — ask the trip organiser.';
@@ -1485,6 +2190,11 @@ function showLock(){
     // No WebCrypto (plain file:// copy) or unbuilt auth — open without the lock.
     bootApp();
     return;
+  }
+  // Stale-key re-lock: a key derived from an older passcode generation must not
+  // unlock silently after a passcode change. Drop it and demand the new passcode.
+  if (localStorage.getItem(KEYSLOT) && localStorage.getItem(KIDSLOT) !== AUTH.kid) {
+    localStorage.removeItem(KEYSLOT);
   }
   if (localStorage.getItem(KEYSLOT)) bootApp();
   else showLock();
